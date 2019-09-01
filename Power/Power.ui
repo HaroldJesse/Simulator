@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Power</class>
+ <widget class="QWidget" name="Power">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>770</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: black;
+</string>
+  </property>
+  <widget class="QPushButton" name="ReactorCore1">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>80</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Fusion Reactor #1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg1">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>140</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg2">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>160</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg3">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>180</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg4">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>200</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg5">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>220</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg6">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>240</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg8">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>280</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg9">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>300</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg7">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>260</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg10">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg14">
+   <property name="geometry">
+    <rect>
+     <x>246</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg12">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg13">
+   <property name="geometry">
+    <rect>
+     <x>223</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg11">
+   <property name="geometry">
+    <rect>
+     <x>177</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg15">
+   <property name="geometry">
+    <rect>
+     <x>268</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg16">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg17">
+   <property name="geometry">
+    <rect>
+     <x>312</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg18">
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg19">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>290</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Main Bus</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Reactor1">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>360</y>
+     <width>111</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Reactor 1 Startup</string>
+   </property>
+   <widget class="QPushButton" name="Auto1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Auto</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Manual1">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Manual</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="Done">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>380</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg9_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>300</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg5_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>220</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg2_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>160</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg6_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>240</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg4_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>200</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg3_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>180</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg7_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>260</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ReactorCore2">
+   <property name="geometry">
+    <rect>
+     <x>325</x>
+     <y>80</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Fusion Reactor #2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg1_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>140</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg8_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>280</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg10_2">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg6_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>240</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg3_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>180</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ReactorCore3">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>80</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Fusion Reactor #3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg2_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>160</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg5_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>221</y>
+     <width>25</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg7_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>260</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg1_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>140</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg8_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>280</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg4_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>200</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg9_3">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>300</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg15_3">
+   <property name="geometry">
+    <rect>
+     <x>477</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg16_3">
+   <property name="geometry">
+    <rect>
+     <x>499</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg14_3">
+   <property name="geometry">
+    <rect>
+     <x>453</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg13_3">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg11_3">
+   <property name="geometry">
+    <rect>
+     <x>384</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg18_2">
+   <property name="geometry">
+    <rect>
+     <x>544</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg17_3">
+   <property name="geometry">
+    <rect>
+     <x>522</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg12_3">
+   <property name="geometry">
+    <rect>
+     <x>407</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg13_2">
+   <property name="geometry">
+    <rect>
+     <x>633</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg16_2">
+   <property name="geometry">
+    <rect>
+     <x>702</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg17_2">
+   <property name="geometry">
+    <rect>
+     <x>725</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg14_2">
+   <property name="geometry">
+    <rect>
+     <x>656</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg12_2">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg15_2">
+   <property name="geometry">
+    <rect>
+     <x>678</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Seg11_2">
+   <property name="geometry">
+    <rect>
+     <x>587</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>290</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Main Bus</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>290</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Main Bus</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Reactor2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>360</y>
+     <width>111</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Reactor 2 Startup</string>
+   </property>
+   <widget class="QPushButton" name="Auto2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Auto</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Manual2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Manual</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="Reactor3">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>360</y>
+     <width>111</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Reactor 3 Startup</string>
+   </property>
+   <widget class="QPushButton" name="Auto3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Auto</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Manual3">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Manual</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="Seg18_3">
+   <property name="geometry">
+    <rect>
+     <x>748</x>
+     <y>320</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Title">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>20</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Done</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>Done()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>467</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Auto1</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>AutoStartup1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>467</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Manual1</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>ManualStartup1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Manual2</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>ManualStartup2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Manual3</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>ManualStartup3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>589</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Auto2</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>AutoStartup2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Auto3</sender>
+   <signal>clicked()</signal>
+   <receiver>Power</receiver>
+   <slot>AutoStartup3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>539</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Done()</slot>
+  <slot>ManualStartup1()</slot>
+  <slot>AutoStartup1()</slot>
+  <slot>ManualStartup2()</slot>
+  <slot>ManualStartup3()</slot>
+  <slot>AutoStartup2()</slot>
+  <slot>AutoStartup3()</slot>
+ </slots>
+</ui>
