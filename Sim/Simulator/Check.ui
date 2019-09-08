@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CheckID</class>
+ <widget class="QDialog" name="CheckID">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowOpacity">
+   <double>0.750000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 255, 0);</string>
+  </property>
+  <widget class="QPushButton" name="ConnectDevice">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Connect Device</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Simulator">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>250</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 0);</string>
+   </property>
+   <property name="text">
+    <string>Go to Simulator</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="Message">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>341</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="plainText">
+    <string>Insert your ID device
+
+This device keeps track of your Identification, Class, Certificates, Flight hours, Simulator hours, Logs, and other data. 
+
+If you don't have an ID device you  will need to buy one. You can use any removable device like a USB dongle or an SD card.
+
+You can also indicate a hard drive as your ID device and copy it to a removable device later.
+
+If you dont want to use an ID device you can enter the simulator but no record of your skills will be recorded
+
+ </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Quit">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>250</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ConnectDevice</sender>
+   <signal>clicked()</signal>
+   <receiver>CheckID</receiver>
+   <slot>ConnectDevice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Simulator</sender>
+   <signal>clicked()</signal>
+   <receiver>CheckID</receiver>
+   <slot>Simulator()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Quit</sender>
+   <signal>clicked()</signal>
+   <receiver>CheckID</receiver>
+   <slot>Quit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ConnectDevice()</slot>
+  <slot>Simulator()</slot>
+  <slot>Quit()</slot>
+ </slots>
+</ui>
