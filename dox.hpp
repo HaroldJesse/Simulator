@@ -10,7 +10,7 @@
  * This spacecraft simulator tries to provide a real world experience.
  * The user can choose the type of craft to pilot. In some cases the Object
  * that these craft operate in can also be chosen.
- *
+ * new line added.
  *
  *
  */
