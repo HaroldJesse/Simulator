@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RCS1000</class>
+ <widget class="QWidget" name="RCS1000">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1083</width>
+    <height>284</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+  </property>
+  <widget class="QLineEdit" name="YawAngle">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>20</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Mark">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>20</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="YawAnglelbl">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>50</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Yaw Angle</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="PositionThrust:s">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>150</y>
+     <width>401</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Thrusters</string>
+   </property>
+   <widget class="QGroupBox" name="UpDwnThrust:_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Up/Dwn</string>
+    </property>
+    <widget class="QSlider" name="UpDwnTSlider">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="maximum">
+      <number>10</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="FwdRvrThrust:_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Port/Starboard</string>
+    </property>
+    <widget class="QSlider" name="PrtSrbTSlider">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="maximum">
+      <number>10</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+     <property name="tickInterval">
+      <number>1</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="PrtSrbThrust:_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Forward/Reverse</string>
+    </property>
+    <widget class="QSlider" name="FwdRvrTSlider">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="maximum">
+      <number>10</number>
+     </property>
+     <property name="singleStep">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+     <property name="tickInterval">
+      <number>1</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="UpDwnValue">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="PrtSrbValue">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="FwdRvrValue">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="Heading">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>20</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="RotationThrusters">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>150</y>
+     <width>401</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Thrusters</string>
+   </property>
+   <widget class="QGroupBox" name="PitchThrust:_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Pitch</string>
+    </property>
+    <widget class="QSlider" name="PitchTSlider">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>9</number>
+     </property>
+     <property name="singleStep">
+      <number>1</number>
+     </property>
+     <property name="pageStep">
+      <number>9</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+     <property name="tickInterval">
+      <number>1</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="YawThrust:_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Yaw</string>
+    </property>
+    <widget class="QSlider" name="YawTSlider">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="maximum">
+      <number>10</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="RollThrust:_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Roll</string>
+    </property>
+    <widget class="QSlider" name="RollTSlider">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="maximum">
+      <number>10</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLineEdit" name="PitchValue">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="YawValue">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="RollValue">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>60</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="Distance">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>20</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PitchAngle">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>20</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Translation">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>70</y>
+     <width>401</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Translation</string>
+   </property>
+   <widget class="QGroupBox" name="X_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Up/Down</string>
+    </property>
+    <widget class="QPushButton" name="TransUp">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(6, 6, 6);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="TransDown">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="UpDwnThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Y_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Port/Starboard</string>
+    </property>
+    <widget class="QPushButton" name="TransPort">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="TransStarboard">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="PrtStbThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Z_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Forward/Reverse</string>
+    </property>
+    <widget class="QPushButton" name="TransForward">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="FwdRevThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="TransReverse">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="RCS1000_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>0</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>RCS 1000</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Headinglbl">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>50</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Heading</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="RollAngle">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>20</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PitchAnglelbl">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>50</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Pitch Angle</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="RollAnglelbl">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>50</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Roll Angle</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Rotation">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>401</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string>Rotation</string>
+   </property>
+   <widget class="QGroupBox" name="Pitch_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Pitch</string>
+    </property>
+    <widget class="QPushButton" name="PitchUp">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="PitchDown">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="PitchThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Yaw_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Yaw</string>
+    </property>
+    <widget class="QPushButton" name="YawLeft">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="YawRight">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="YawThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Roll_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Roll</string>
+    </property>
+    <widget class="QPushButton" name="CW">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CCW">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="RollThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="Marklbl">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>50</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Mark</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Distancelbl">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>50</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Distance</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Off">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>250</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>Off</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>TransUp</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>TranslateUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TransDown</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>TranslateDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>490</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TransPort</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>TranslatePort()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TransStarboard</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>TranslateStarboard()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>620</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TransForward</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>TranslateForward()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PitchTSlider</sender>
+   <signal>rangeChanged(int,int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetPitchValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PitchTSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetPitchValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>YawTSlider</sender>
+   <signal>rangeChanged(int,int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetYawValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>YawTSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetYawValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RollTSlider</sender>
+   <signal>rangeChanged(int,int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetRollValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RollTSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetRollValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UpDwnTSlider</sender>
+   <signal>rangeChanged(int,int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetUpDwnValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>500</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>UpDwnTSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetUpDwnValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>500</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PrtSrbTSlider</sender>
+   <signal>rangeChanged(int,int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetPrtSrbValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PrtSrbTSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetPrtSrbValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FwdRvrTSlider</sender>
+   <signal>rangeChanged(int,int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetFwdRvrValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>755</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FwdRvrTSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>RCS1000</receiver>
+   <slot>SetFwdRvrValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>755</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PitchUp</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>PitchUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PitchDown</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>PitchDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>YawLeft</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>YawLeft()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>YawRight</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>YawRight()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CW</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>RollClockWise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CCW</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>RollCounterClockWise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Off</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>Exit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>427</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TransReverse</sender>
+   <signal>clicked()</signal>
+   <receiver>RCS1000</receiver>
+   <slot>TranslateReverse()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>759</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>541</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>PitchUp()</slot>
+  <slot>PitchDown()</slot>
+  <slot>YawLeft()</slot>
+  <slot>YawRight()</slot>
+  <slot>RollClockWise()</slot>
+  <slot>RollCounterClockWise()</slot>
+  <slot>TranslateUp()</slot>
+  <slot>TranslateDown()</slot>
+  <slot>TranslatePort()</slot>
+  <slot>TranslateStarboard()</slot>
+  <slot>TranslateForward()</slot>
+  <slot>TranslateReverse()</slot>
+  <slot>SetUpDwnValue()</slot>
+  <slot>SetPrtSrbValue()</slot>
+  <slot>SetFwdRvrValue()</slot>
+  <slot>SetPitchValue()</slot>
+  <slot>SetYawValue()</slot>
+  <slot>SetRollValue()</slot>
+  <slot>Exit()</slot>
+ </slots>
+</ui>

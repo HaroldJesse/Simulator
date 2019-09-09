@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NavTime</class>
+ <widget class="QWidget" name="NavTime">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 255);
+color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QPushButton" name="Done">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>530</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LocalTime">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>40</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LocalDate">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>40</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Targetlbl">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>310</y>
+     <width>50</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Target</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Obserberlbl">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>310</y>
+     <width>50</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Observer</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Calculate">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>530</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255);
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string>Calculate</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="Target">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>330</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Sun</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mercury</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Venus</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Earth</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Moon</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mars</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jupiter</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Saturn</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Uranus</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Neptune</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pluto</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="Observer">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>330</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Sun</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mercury</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Venus</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Earth</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Moon</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Mars</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Jupiter</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Saturn</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Uranus</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Neptune</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pluto</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="EphemerisTime">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>100</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Position0">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>170</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="Frame">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>380</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>J2000</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>J1950</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="AberrationCorrection">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>380</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>None</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>LT</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>LT+S</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>CN</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>CN+S</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>XLT</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>XLT+S</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>XCN</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>XCN+S</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="Framelbl">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>360</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Frame</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Abberationlbl">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>360</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aberration Correction</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Postion1">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>210</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Position2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>250</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Velocity5">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>250</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Velocity3">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>170</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Velocity4">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>210</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LT">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>210</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Done</sender>
+   <signal>clicked()</signal>
+   <receiver>NavTime</receiver>
+   <slot>Exit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>264</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Calculate</sender>
+   <signal>clicked()</signal>
+   <receiver>NavTime</receiver>
+   <slot>SetETTime()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>264</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SetTime()</slot>
+  <slot>SetETTime()</slot>
+  <slot>Exit()</slot>
+ </slots>
+</ui>
