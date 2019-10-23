@@ -16,7 +16,7 @@ class Spice : public QDialog
     Q_OBJECT
 
 public:
-    explicit Spice(QWidget *parent = 0);
+    explicit Spice(QWidget *parent = nullptr);
     ~Spice();
 
     /*

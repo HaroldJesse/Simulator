@@ -23,19 +23,19 @@ public:
     ~RCS2000();
 
     static double FwdRevThrottle;
-    static bool  FwdRevThrusterOn;
-    static int   FwdRevDirection;
+    static bool   FwdRevThrusterOn;
+    static int    FwdRevDirection;
     static double FwdRevThrust;
 
-    static double PrtSrbThrottle;
-    static bool  PrtSrbThrusterOn;
-    static int   PrtSrbDirection;
-    static double PrtSrbThrust;
+    static double HeadingThrottle;
+    static bool   HeadingThrusterOn;
+    static int    HeadingDirection;
+    static double HeadingThrust;
 
-    static double UpDwnThrottle;
-    static bool  UpDwnThrusterOn;
-    static int   UpDwnDirection;
-    static double UpDwnThrust;
+    static double MarkThrottle;
+    static bool   MarkThrusterOn;
+    static int    MarkDirection;
+    static double  MarkThrust;
 
     static bool  ThrusterSync;
 

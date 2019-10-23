@@ -40,7 +40,8 @@ Setup::Setup(QWidget *parent) :
     Verbalize->setRate(0);
     Verbalize->stop();
 
-    Setup::SimTypeList << "Training" << "Simulation" << "Deployment";
+    Setup::SimTypeList << "" << "Training" << "Simulation" << "Deployment";
+
     ui->Type->clear();
     ui->Type->addItems(Setup::SimTypeList);
     ui->Branch->hide();
@@ -62,7 +63,7 @@ Setup::Setup(QWidget *parent) :
     ui->Objectlbl->hide();
 
     QStringList CraftList;
-    CraftList << "CargoShortHaul" << "CargoLongHaul" << "TransportShortHaul" << "TransportLongHaul" << "Research" << "Prospector";
+    CraftList << "" << "CargoShortHaul" << "CargoLongHaul" << "TransportShortHaul" << "TransportLongHaul" << "Research" << "Prospector";
     ui->CraftClass->clear();
     ui->CraftClass->addItems(CraftList);
     ui->CraftClass->show();
@@ -75,7 +76,7 @@ Setup::Setup(QWidget *parent) :
 
     QStringList CraftNameList;
 
-    CraftNameList << "Silva " + number << "Isis " + number << "Zeus" + number << "Odin" + number;
+    CraftNameList << "" << "Silva " + number << "Isis " + number << "Zeus" + number << "Odin" + number;
 
     ui->CraftName->clear();
     ui->CraftName->addItems(CraftNameList);
@@ -99,11 +100,21 @@ Setup::Setup(QWidget *parent) :
                                     "To select a simulation click on the type listed in the box for simulation type. "
                                     "Once you have selected a simulation type you will need to select a branch type and then a class type");
 
-    Verbalize->say(ui->SimTypeInstruction->toPlainText());
 
-    Setup::SimQuadranList << "Alpha";
+
+    while (Verbalize->state() == QTextToSpeech::Speaking)
+    {
+        qDebug() << "speaking";
+    }
+
+    //Verbalize->say(ui->SimTypeInstruction->toPlainText());
+
+    Setup::SimQuadranList << "" << "Alpha" << "Beta" << "Gama" << "Delta";
     ui->Quadrant->clear();
     ui->Quadrant->addItems(Setup::SimQuadranList);
+
+    //Verbalize->stop();
+    Verbalize->say("Choose a Simulation type");
 
 }
 
@@ -114,14 +125,14 @@ Setup::~Setup()
 
 void Setup::TypeChanged (void)
 {
-    Verbalize->stop();
     ui->SimTypeInstruction->hide();
     Setup::SimBranch = ui->Type->currentText();
+
 
     if(ui->Type->currentText() == "Training")
     {
        QStringList BranchList;
-       BranchList << "Basic Training" << "Advanced Training" << "Leadership Training";
+       BranchList << "" << "Basic Training" << "Advanced Training" << "Leadership Training";
        ui->Branch->clear();
        ui->Branch->addItems(BranchList);
        ui->Branch->show();
@@ -132,7 +143,7 @@ void Setup::TypeChanged (void)
     {
 
         QStringList BranchList;
-        BranchList << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
+        BranchList << "" << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
         ui->Branch->clear();
         ui->Branch->addItems(BranchList);
         ui->Branch->show();
@@ -142,7 +153,7 @@ void Setup::TypeChanged (void)
     if(ui->Type->currentText() == "Deployment")
     {
         QStringList BranchList;
-        BranchList << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
+        BranchList << "" << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
         ui->Branch->clear();
         ui->Branch->addItems(BranchList);
         ui->Branch->show();
@@ -151,17 +162,21 @@ void Setup::TypeChanged (void)
 
     Verbalize->say("You have chosen the simulation type  " +  ui->Type->currentText());
     SimType = ui->Type->currentText();
+
+    //Verbalize->stop();
+    Verbalize->say("Choose a branch type");
 }
 
 void Setup::BranchChanged (void)
 {
-    Verbalize->stop();
+
+
     Setup::SimBranch = ui->Branch->currentText();
 
     if(ui->Branch->currentText() == "Basic Training")
     {
        QStringList ClassList;
-       ClassList << "Astronomy" << "Astrogeology" << "Mathematics";
+       ClassList << " " << "Astronomy" << "Astrogeology" << "Mathematics";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();
@@ -171,7 +186,7 @@ void Setup::BranchChanged (void)
     if(ui->Branch->currentText() == "Space Craft")
     {
        QStringList ClassList;
-       ClassList << "Pilot" << "Navigator" << "Communication";
+       ClassList << " " << "Pilot" << "Navigator" << "Communication";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();
@@ -181,7 +196,7 @@ void Setup::BranchChanged (void)
     if(ui->Branch->currentText() == "Extra Vehicular Activity")
     {
        QStringList ClassList;
-       ClassList << "Station Outside Support" << "Craft Outside Support" << "Surface  Research";
+       ClassList << " " << "Station Outside Support" << "Craft Outside Support" << "Surface  Research";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();
@@ -190,16 +205,22 @@ void Setup::BranchChanged (void)
 
     Verbalize->say("You have chosen the branch type  " +  ui->Branch->currentText());
     SimBranch = ui->Branch->currentText();
+
+    //Verbalize->stop();
+    Verbalize->say("Choose a class type");
 }
 
 void Setup::ClassChanged (void)
 {
-    Verbalize->stop();
+
+
     Setup::SimClass = ui->Class->currentText();
 
     if(ui->Class->currentText() == "Astronomy")
     {
-
+        Verbalize->say("You have chosen the class type  " +  ui->Class->currentText());
+        SimClass = ui->Class->currentText();
+        Verbalize->say("Choose a Quadrant");
     }
 
     if(ui->Class->currentText() == "Astrogeology")
@@ -213,8 +234,10 @@ void Setup::ClassChanged (void)
     }
 
 
-    Verbalize->say("You have chosen the class type  " +  ui->Class->currentText());
-    SimClass = ui->Class->currentText();
+
+
+    //Verbalize->stop();
+
 
 
     //Prompt user
@@ -226,44 +249,94 @@ void Setup::ClassChanged (void)
 
     if(ui->Branch->currentText() == "Space Craft")
     {
-        ui->SimTypeInstruction->setPlainText("You must set up the class location. Select the Quadrant, Sector, Location, Object and craft.");
+        ui->SimTypeInstruction->setPlainText("You must set up the class location. Select the Quadrant, Sector, Location, Object and Craft");
         ui->SimCraft->show();
         ui->CraftClasslbl->show();
         ui->CraftNamelbl->show();
         ui->CraftClass->show();
         ui->CraftName->show();
+
+        Verbalize->say("You have chosen the class type  " +  ui->Class->currentText());
+        SimClass = ui->Class->currentText();
+        Verbalize->say(ui->SimTypeInstruction->toPlainText());
+        Verbalize->say("Choose a Quadrant");
     }
 
     if(ui->Branch->currentText() == "Extra Vehicular Activity")
     {
-        ui->SimTypeInstruction->setPlainText("You must set up the class location. Select the Quadrant, Sector, Location, and Object ");
+        //Verbalize->say(ui->SimTypeInstruction->toPlainText());
     }
 
     ui->SimTypeInstruction->show();
     ui->SimLocation->show();
-    Verbalize->say(ui->SimTypeInstruction->toPlainText());
+
 }
 
 void Setup::QuadrantChanged (void)
 {
-    Verbalize->stop();
-
     if(ui->Quadrant->currentText() == "Alpha")
     {
        QStringList Sector;
-       Setup::SimSectorList << "Sol";
+       Setup::SimSectorList << " " << "Sol";
        ui->Sector->clear();
        ui->Sector->addItems(SimSectorList);
        ui->Sector->show();
        ui->Sectorlbl->show();
-     }
 
-     Verbalize->say("You have chosen the quadrant" +  ui->Quadrant->currentText());
-     SimQuadrant = ui->Quadrant->currentText();
+       Verbalize->say("You have chosen the quadrant" +  ui->Quadrant->currentText());
+       SimQuadrant = ui->Quadrant->currentText();
+       Verbalize->say("Choose a Sector");
+     }
+     
+     if(ui->Quadrant->currentText() == "Beta")
+     {
+        QStringList Sector;
+        Setup::SimSectorList << " " << "Carng";
+        ui->Sector->clear();
+        ui->Sector->addItems(SimSectorList);
+        ui->Sector->show();
+        ui->Sectorlbl->show();
+
+        Verbalize->say("You have chosen the quadrant" +  ui->Quadrant->currentText());
+        SimQuadrant = ui->Quadrant->currentText();
+      }
+
+      
+      if(ui->Quadrant->currentText() == "Gamma")
+      {
+         QStringList Sector;
+         Setup::SimSectorList << " " << "Solio";
+         ui->Sector->clear();
+         ui->Sector->addItems(SimSectorList);
+         ui->Sector->show();
+         ui->Sectorlbl->show();
+
+         Verbalize->say("You have chosen the quadrant" +  ui->Quadrant->currentText());
+         SimQuadrant = ui->Quadrant->currentText();
+       }
+
+       
+       if(ui->Quadrant->currentText() == "Delta")
+       {
+          QStringList Sector;
+          Setup::SimSectorList << " " << "Zxio";
+          ui->Sector->clear();
+          ui->Sector->addItems(SimSectorList);
+          ui->Sector->show();
+          ui->Sectorlbl->show();
+
+          Verbalize->say("You have chosen the quadrant" +  ui->Quadrant->currentText());
+          SimQuadrant = ui->Quadrant->currentText();
+        }
+
+        //Verbalize->stop();
+        //Verbalize->say("Choose a Sector");
+        
 }
 void Setup::SectorChanged (void)
 {
-    Verbalize->stop();
+
+
     if(ui->Sector->currentText() == "Sol")
     {
         SimLocationList << "Sun" << "Mercury" << "Venus" << "Earth" << "Mars" << "Jupiter" << "Asteroid Belt" << "Saturn"  << "Uranus" << "Neptune" << "Kuiper Belt" << "Oort Cloud";
@@ -274,6 +347,9 @@ void Setup::SectorChanged (void)
     Verbalize->say("You have chosen the sector" +  ui->Sector->currentText());
     SimSector = ui->Sector->currentText();
 
+    //Verbalize->stop();
+    Verbalize->say("Choose a Location");
+
     ui->Location->show();
     ui->Locationlbl->show();
 
@@ -281,7 +357,8 @@ void Setup::SectorChanged (void)
 
 void Setup::LocationChanged (void)
 {
-    Verbalize->stop();
+
+
     if(ui->Location->currentText() == "Sun")
     {
         QStringList Object;
@@ -401,6 +478,11 @@ void Setup::LocationChanged (void)
     Verbalize->say("You have set the location to  " + ui->Location->currentText());
     SimLocation = ui->Location->currentText();
 
+    //Verbalize->stop();
+    Verbalize->say("Choose an Object");
+
+
+
     ui->Object->show();
     ui->Objectlbl->show();
 
@@ -411,7 +493,14 @@ void Setup::ObjectChanged (void)
     ui->SimTypeInstruction->hide();
     Verbalize->say("You have set the object to  " +  ui->Object->currentText());
     SimObject = ui->Object->currentText();
-    //qDebug() << "Object changed: " << SimObject;
+
+    if (SimType == "Simulation")
+    {
+        //Verbalize->stop();
+        Verbalize->say("Choose a Craft type");
+
+    }
+
 }
 
 void Setup::CraftClass(void)
@@ -419,6 +508,9 @@ void Setup::CraftClass(void)
     ui->SimTypeInstruction->hide();
     Verbalize->say("You have set the craft class to  " +  ui->CraftClass->currentText());
     SimCraftClass = ui->CraftClass->currentText();
+
+    //Verbalize->stop();
+    Verbalize->say("Choose a Craft name");
 }
 
 void Setup::CraftName(void)

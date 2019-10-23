@@ -22,12 +22,12 @@ public:
     static QVector3D Orientation;
     static QVector3D Object;
 
-    static float Distance;
-    static float Heading;
-    static float Mark;
-    static float PitchAngle;
-    static float YawAngle;
-    static float RollAngle;
+    static double Distance;
+    static double Heading;
+    static double Mark;
+    static double PitchAngle;
+    static double YawAngle;
+    static double RollAngle;
 
     static QSize Size;
 

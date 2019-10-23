@@ -123,4 +123,6 @@ LIBS    +=\
 DEFINES += \
     SPICE
 
+DISTFILES +=
+
 

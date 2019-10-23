@@ -5,6 +5,11 @@ Helm::Helm(QWidget *parent) : QWidget(parent)
 
 }
 
+Helm::~Helm()
+{
+
+}
+
 bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 {
 

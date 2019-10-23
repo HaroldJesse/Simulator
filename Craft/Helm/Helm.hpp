@@ -11,13 +11,18 @@
 #include "RCS2000.hpp"
 #include "RCS1000.hpp"
 
+namespace Ui {
+class Helm;
+}
+
+
 class Helm : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit Helm(QWidget *parent = nullptr);
-    //~Helm();
+    ~Helm();
 
     bool LoadHelm (Qt3DRender::QCamera *CameraEntity);
     bool UnLoadHelm (Qt3DRender::QCamera *CameraEntity);

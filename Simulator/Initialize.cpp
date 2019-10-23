@@ -51,8 +51,7 @@ Initialize::Initialize()
 
     //Window
 
-    QString StartupPath = QDir::currentPath();
-    //qDebug() << "Startup:" << StartupPath;
+    Initialize::StartupPath = QDir::currentPath();
 
     Qt3DExtras::Qt3DWindow *View = new Qt3DExtras::Qt3DWindow();
     View->setFlag(Qt::FramelessWindowHint);
@@ -99,15 +98,23 @@ Initialize::Initialize()
     //qDebug() << "ID";
     IDCheck ID;
     ID.exec();
+    //qDebug() << "Current Path ID: " << QDir::currentPath();
 
-    //qDebug() << "Certificate";
+
     Certificate Cert;
     Cert.exec();
 
+    //qDebug() << "Current Path Certificate: " << QDir::currentPath();
+
 
     //qDebug() << "LogView";
-    Log LogView;
-    LogView.Initialize();
+    //Log LogView;
+    //LogView.Initialize();
+
+    //qDebug() << "Current Path Log: " << QDir::currentPath();
+
+    //Reset from removable device path
+    QDir::setCurrent(Initialize::StartupPath);
 
     //qDebug() << "Setup";
     Setup Set;
@@ -175,11 +182,11 @@ Initialize::Initialize()
 
 
     Qt3DRender::QTextureImage *ObjectTexture = new Qt3DRender::QTextureImage;
-    QString ObjectTextureFile = Initialize::StartupPath + "/Location/" + Setup::SimLocation +"/" + Setup::SimObject + ".jpg";
+    QString ObjectTextureFile = "Location/" + Setup::SimLocation +"/" + Setup::SimObject + ".jpg";
+    //qDebug() << "Location folder" << ObjectTextureFile;
     QString TargetObject = "file:" + ObjectTextureFile;
     QFile Image(ObjectTextureFile);
 
-    //qDebug() << "InitializeCurrentPath: " << QDir::currentPath();
     //qDebug() << "Texture file:" << ObjectTextureFile;
 
     //Check for texture photo
@@ -191,7 +198,7 @@ Initialize::Initialize()
     else
 
     {
-        QString ObjectTextureFile = Initialize::StartupPath + "/Location/Bogus.jpg";
+        QString ObjectTextureFile = "Location/Bogus.jpg";
         QString TargetObject = "file:" + ObjectTextureFile;
         ObjectTexture->setSource (QUrl(TargetObject));
     }
@@ -217,7 +224,7 @@ Initialize::Initialize()
     ObjectAnim->start ();
 
 
-
+/*
     //SpaceStation
     //qDebug() << "SpaceStation";
 
@@ -241,7 +248,7 @@ Initialize::Initialize()
     //add SpaceStation Texture
     Qt3DRender::QTextureImage *SpaceStationTexture = new Qt3DRender::QTextureImage;
     Setup::SimObject = "Moon";
-    QString StationTextureFile = Initialize::StartupPath + "/Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
+    QString StationTextureFile = "Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
     QString StationObject = "file:" + StationTextureFile;
 
 
@@ -287,12 +294,10 @@ Initialize::Initialize()
 
     Qt3DRender::QTextureImage *MoonTexture = new Qt3DRender::QTextureImage;
     Setup::SimObject = "Moon";
-    QString MoonTextureFile = Initialize::StartupPath + "/Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
+    QString MoonTextureFile = "Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
     QString MoonObject = "file:" + MoonTextureFile;
 
     MoonTexture->setSource (QUrl(MoonObject));
-    //qDebug() << "MoonTexture: " << MoonObject;
-
     Qt3DExtras::QDiffuseMapMaterial *MoonDiffuse = new Qt3DExtras::QDiffuseMapMaterial;
     MoonDiffuse->setShininess (2.0);
     MoonDiffuse->setSpecular (QColor::fromRgbF(0.2, 0.2, 0.2, 1.0));
@@ -337,13 +342,15 @@ Initialize::Initialize()
     //qDebug() << "Current directory: " << directory;
     QUrl SourceFileName;
 
+    qDebug() << "Before: " << Setup::SimObject;
     Setup::SimLocation = "SpaceCraft";
     Setup::SimObject = "Enterprise";
-    SourceFileName = "file:" + Initialize::StartupPath + "/Location/Object/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
+
+    SourceFileName = "file:" + "Location/Object/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
     //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Enterprise/Enterprise.obj";
     //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Spider.obj";
     //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Enterprise.obj";
-    //qDebug() << "sourcefilename: " << SourceFileName << Initialize::StartupPath;
+    //qDebug() << "sourcefilename: " << SourceFileName;
 
     SceneLoader->setSource(QUrl(SourceFileName));
 
@@ -355,6 +362,8 @@ Initialize::Initialize()
     ShipDiffuse->setSpecular (QColor::fromRgbF(0.2, 0.2, 0.2, 1.0));
     //ShipDiffuse->diffuse ()->addTextureImage (ShipTexture);
     SceneLoaderEntity->addComponent(ShipDiffuse);
+
+*/
 
 
     //Stars
@@ -547,6 +556,8 @@ Initialize::Initialize()
     //playlist->p
 */
     //if (Setup::SimType == "Simulation" && Setup::SimBranch == "SpaceCraft")
+
+
 
     if (Setup::SimType == "Simulation")
     {

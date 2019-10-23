@@ -111,30 +111,30 @@ void RCS2000::RollClockWise(void)
 // Translation
 void RCS2000::TranslateUp(void)
 {
-    Craft::UpDwnDirection = 1;
-    Craft::UpDwnThrusterOn = true;
-    PThruster::UpDwnThrust += Craft::UpDwnDirection * PThruster::UpDwnThrottle;
+    Craft::MarkDirection = 1;
+    Craft::MarkThrusterOn = true;
+    PThruster::MarkThrust += Craft::MarkDirection * PThruster::MarkThrottle;
 }
 
 void RCS2000::TranslateDown(void)
 {
-    Craft::UpDwnDirection = -1;
-    Craft::UpDwnThrusterOn = true;
-    PThruster::UpDwnThrust += Craft::UpDwnDirection * PThruster::UpDwnThrottle;
+    Craft::MarkDirection = -1;
+    Craft::MarkThrusterOn = true;
+    PThruster::MarkThrust += Craft::MarkDirection * PThruster::MarkThrottle;
 }
 
 void RCS2000::TranslatePort(void)
 {
-    Craft::PrtSrbDirection = 1;
-    Craft::PrtSrbThrusterOn = true;
-    PThruster::PrtSrbThrust += Craft::PrtSrbDirection * PThruster::PrtSrbThrottle;
+    Craft::HeadingDirection = 1;
+    Craft::HeadingThrusterOn = true;
+    PThruster::HeadingThrust += Craft::MarkDirection * PThruster::HeadingThrottle;
 }
 
 void RCS2000::TranslateStarboard(void)
 {
-    Craft::PrtSrbDirection = -1;
-    Craft::PrtSrbThrusterOn = true;
-    PThruster::PrtSrbThrust += Craft::PrtSrbDirection * PThruster::PrtSrbThrottle;
+    Craft::HeadingDirection = -1;
+    Craft::HeadingThrusterOn = true;
+    PThruster::HeadingThrust += Craft::HeadingDirection * PThruster::HeadingThrottle;
 }
 
 void RCS2000::TranslateForward(void)
@@ -153,15 +153,15 @@ void RCS2000::TranslateReverse(void)
 
 void RCS2000::UpDateSphericalPosition (void)
 {
-    float Distance = Craft::Heading.z ();
+    double Distance = Craft::Heading.z ();
     QString distance;
     distance = distance.setNum (Distance);
 
-    float Heading = Craft::Heading.x ();
+    double Heading = Craft::Heading.x ();
     QString heading;
     heading = heading.setNum (Heading);
 
-    float Mark = Craft::Heading.y ();
+    double Mark = Craft::Heading.y ();
     QString mark;
     mark = mark.setNum (Mark);
 
@@ -197,10 +197,10 @@ void RCS2000::UpDateCartesianPosition (void)
 void RCS2000::UpDatePositionThrust (void)
 {
     QString Value;
-    Value = Value.setNum (PThruster::UpDwnThrust);
-    ui->UpDwnThrust->setText (Value);
-    Value = Value.setNum (PThruster::PrtSrbThrust);
-    ui->PrtStbThrust->setText (Value);
+    Value = Value.setNum (PThruster::MarkThrust);
+    ui->MarkThrust->setText (Value);
+    Value = Value.setNum (PThruster::HeadingThrust);
+    ui->HeadingThrust->setText (Value);
     Value = Value.setNum (PThruster::FwdRevThrust);
     ui->FwdRevThrust->setText (Value);
 }
@@ -231,8 +231,8 @@ void RCS2000::MasterUpdate (void)
 {
 /*
     qDebug() << "FwdRvrThrottle: " << FwdRvrThrottle;
-    qDebug() << "PrtSrbThrottle: " << PrtSrbThrottle;
-    qDebug() << "UpDwnThrottle: " << UpDwnThrottle;
+    qDebug() << "HeadingThrottle: " << HeadingThrottle;
+    qDebug() << "MarkThrottle: " << MarkThrottle;
     qDebug() << "PitchThrottle: " << PitchThrottle;
     qDebug() << "YawThrottle: " << YawThrottle;
     qDebug() << "RollThrottle: " << RollThrottle;
@@ -243,7 +243,7 @@ void RCS2000::MasterUpdate (void)
 
     if (Craft::PitchThrusterOn == true)
     {
-        if(OThruster::PitchThrust == 0)
+        if(OThruster::PitchThrust <= 0)
         {
             Craft::PitchThrusterOn = false;
         }
@@ -268,7 +268,7 @@ void RCS2000::MasterUpdate (void)
 
     if (Craft::YawThrusterOn == true)
     {
-        if(OThruster::YawThrust == 0)
+        if(OThruster::YawThrust <= 0)
         {
             Craft::YawThrusterOn = false;
         }
@@ -292,7 +292,7 @@ void RCS2000::MasterUpdate (void)
 
     if (Craft::RollThrusterOn == true)
     {
-        if(OThruster::RollThrust == 0)
+        if(OThruster::RollThrust <= 0)
         {
             Craft::RollThrusterOn = false;
         }
@@ -315,21 +315,21 @@ void RCS2000::MasterUpdate (void)
 
     }
 
-    if (Craft::UpDwnThrusterOn == true)
+    if (Craft::MarkThrusterOn == true)
     {
-        Craft::ShipTranslation = QVector3D (0.0f,PThruster::UpDwnThrust,0.0f);
+        Craft::ShipTranslation = QVector3D (PThruster::MarkThrust,0.0,0.0);
         Camera->translateWorld(Craft::ShipTranslation);
     }
 
-    if (Craft::PrtSrbThrusterOn == true)
+    if (Craft::HeadingThrusterOn == true)
     {
-        Craft::ShipTranslation = QVector3D (PThruster::PrtSrbThrust,0.0f,0.0f);
+        Craft::ShipTranslation = QVector3D (PThruster::HeadingThrust,0.0,0.0);
         Camera->translateWorld(Craft::ShipTranslation);
     }
 
     if (Craft::FwdRevThrusterOn == true)
     {
-        Craft::ShipTranslation = QVector3D (0.0f,0.0f,PThruster::FwdRevThrust);
+        Craft::ShipTranslation = QVector3D (0.0,0.0,PThruster::FwdRevThrust);
         Camera->translateWorld(Craft::ShipTranslation);
     }
 

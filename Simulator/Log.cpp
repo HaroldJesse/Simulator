@@ -31,15 +31,14 @@ void Log::CreateLog (QString LogName)
     //qDebug() << "Create Log" ;
 
     QDir FileName;
-    QString CurrentDir = FileName.currentPath();
+    QString CurrentDir = Initialize::StartupPath;
     QString SimLogFileName = Initialize::StartupPath + "/SimLogs/" + LogName;
+    //qDebug() << "Logname: " << SimLogFileName;
     QFile Log(SimLogFileName);
-
-    //qDebug() << " IDCheckDevice:" << Initialize::StartupPath +  "/SimLogs/" + LogName;
 
     if (Log.exists() == true)
     {
-       /*
+
         qApp->beep();
         QMessageBox LogExists;
         LogExists.setText(LogName + " Log file already exists");
@@ -47,8 +46,6 @@ void Log::CreateLog (QString LogName)
         Verbalize.say(LogExists.text());
         LogExists.exec();
         Log.close();
-        */
-
         return ;
     }
 
@@ -57,9 +54,11 @@ void Log::CreateLog (QString LogName)
     {
         //create new Log database and check if good connection
         QSqlDatabase Logdb = QSqlDatabase::addDatabase("QSQLITE",LogName);
+        //qDebug() << "LogName: " << LogName;
+
         Logdb.setDatabaseName(SimLogFileName);
 
-        //qDebug() << "DatabaseName: " << Logdb.databaseName();
+        //qDebug() << "DatabaseName: " << SimLogFileName;
 
         if (Logdb.open() == false) //try to connect to the database
         {
@@ -75,7 +74,7 @@ void Log::CreateLog (QString LogName)
 
         //qDebug() << "Start table creation";
 
-    QString SimLogFileName = CurrentDir  +  "/SimLogs/" + LogName;
+    QString SimLogFileName = CurrentDir  +  "SimLogs/" + LogName;
     QFile DatabaseFile(SimLogFileName);
 
 
@@ -93,6 +92,7 @@ void Log::CreateLog (QString LogName)
     //check if good connection
     QSqlDatabase SimLog = QSqlDatabase::addDatabase("QSQLITE","SimLog");
     SimLog.setDatabaseName(SimLogFileName);
+    //qDebug() << "SimLogFileName:" <<SimLogFileName;
 
     if (SimLog.open() == false) //try to connect to the database
     {
@@ -114,7 +114,7 @@ void Log::CreateLog (QString LogName)
 
         if (Query.lastError().isValid())
         {
-            qDebug() << Query.lastError();
+            //qDebug() << Query.lastError();
         }
 
         SimLog.close();
@@ -174,7 +174,7 @@ bool Log::WriteLog (QString LogName, QString Type,const QString Source,const QSt
 
     if (query.lastError().isValid())
     {
-        qDebug() << query.lastError();
+        //qDebug() << query.lastError();
         return false;
     }
 
@@ -185,7 +185,7 @@ bool Log::WriteLog (QString LogName, QString Type,const QString Source,const QSt
 bool Log::ReadLog (QString LogName)
 {
 
-    qDebug() << "Read Log:";
+    //qDebug() << "Read Log:";
     if (LogName == "")
     {
         return false;

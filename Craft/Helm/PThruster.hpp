@@ -18,12 +18,12 @@ public:
     ~PThruster();
 
     static double FwdRevThrust;
-    static double PrtSrbThrust;
-    static double UpDwnThrust;
+    static double HeadingThrust;
+    static double  MarkThrust;
 
     static double FwdRevThrottle;
-    static double PrtSrbThrottle;
-    static double UpDwnThrottle;
+    static double HeadingThrottle;
+    static double MarkThrottle;
 
     static QSize Size;
 

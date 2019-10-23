@@ -98,11 +98,7 @@ bool IDCheck::GetIDFile (void)
             IDCheck::File = File.fileName();
 
             GetID();
-            //qDebug() << "GetID()";
 
-            QDir CurrentDir;
-            CurrentDir.setCurrent(Initialize::StartupPath);
-            //qDebug() << "GetIDFilePath: " << CurrentDir.current();
             Verbalize->say("Greetings " + IDCheck::Level + " " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
 
         }

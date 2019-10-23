@@ -6,14 +6,14 @@
 //QVector3D Object (0,0,0);
 
 //Position
-float PositionOrientation::Distance (0);
-float PositionOrientation::Heading (0);
-float PositionOrientation::Mark (0);
+double PositionOrientation::Distance (0);
+double PositionOrientation::Heading (0);
+double PositionOrientation::Mark (0);
 
 //Orientation
-float PositionOrientation::PitchAngle (0);
-float PositionOrientation::YawAngle (0);
-float PositionOrientation::RollAngle (0);
+double PositionOrientation::PitchAngle (0);
+double PositionOrientation::YawAngle (0);
+double PositionOrientation::RollAngle (0);
 
 QSize PositionOrientation::Size (0,0);
 

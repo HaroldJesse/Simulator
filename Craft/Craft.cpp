@@ -4,7 +4,7 @@
 
 int Craft::CraftTime = 0; // time in seconds
 
-// Initialize static varaiables
+// Initialize static variables
 bool  Craft::ThrusterSync = false;
 QVector3D Craft::Attitude(0,0,0);
 QVector3D Craft::Velocity(0,0,0);
@@ -24,48 +24,51 @@ QVector3D Craft::ShipTranslation (0,0,0);
 //Forward/Reverse
 double Craft::FwdRevThrottle (0);
 bool   Craft::FwdRevThrusterOn (false);
-double Craft::FwdRevDirection (0);
-double Craft::FwdRevThrust(0);
+double  Craft::FwdRevDirection (0);
+double  Craft::FwdRevThrust(0);
+//double  Craft::FwdRevValue(0);
 
 //Port/Starboard
-double Craft::PrtSrbThrottle (0);
-bool   Craft::PrtSrbThrusterOn (false);
-double Craft::PrtSrbDirection (0);
-double Craft::PrtSrbThrust(0);
+double Craft::HeadingThrottle (0);
+bool   Craft::HeadingThrusterOn (false);
+double  Craft::HeadingDirection (0);
+double  Craft::HeadingThrust(0);
+//double  Craft::HeadingValue(0);
 
 //Up/Down
-double Craft::UpDwnThrottle (0);
-bool   Craft::UpDwnThrusterOn (false);
-double Craft::UpDwnDirection (0);
-double Craft::UpDwnThrust(0);
+double  Craft::MarkThrottle (0);
+bool   Craft::MarkThrusterOn (false);
+double  Craft::MarkDirection (0);
+double  Craft::MarkThrust(0);
+//double  Craft::MarkValue(0);
 
 // ROTATION
 
 //Pitch
-double Craft::PitchThrottle (0);
+double  Craft::PitchThrottle (0);
 bool   Craft::PitchThrusterOn = false;
-double Craft::PitchDirection (0);
-double Craft::PitchThrust (0);
-double Craft::PitchAngle (0);
+double  Craft::PitchDirection (0);
+double  Craft::PitchThrust (0);
+double  Craft::PitchAngle (0);
 
 //Yaw
-double Craft::YawThrottle (0);
+double  Craft::YawThrottle (0);
 bool   Craft::YawThrusterOn = false;
 int    Craft::YawDirection (0);
-double Craft::YawThrust (0);
-int    Craft::YawAngle (0);
+double  Craft::YawThrust (0);
+double  Craft::YawAngle (0);
 
 //Roll
-double Craft::RollThrottle (0);
+double  Craft::RollThrottle (0);
 bool   Craft::RollThrusterOn = false;
-int    Craft::RollDirection (0);
-double Craft::RollThrust (0);
-int    Craft::RollAngle (0);
+double  Craft::RollDirection (0);
+double  Craft::RollThrust (0);
+double  Craft::RollAngle (0);
 
 QVector3D Craft::Heading (0,0,0);
-float     Craft::Direction (0);
-float     Craft::Mark (0);
-float     Craft::Distance(0);
+double  Craft::Direction (0);
+double  Craft::Mark (0);
+double  Craft::Distance(0);
 
 Craft::Craft()
 {

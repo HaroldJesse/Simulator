@@ -11,53 +11,60 @@ public:
 
     static int   CraftTime;
 
-    static double   FwdRevThrottle;
-    static bool     FwdRevThrusterOn;
-    static double   FwdRevDirection;
-    static double   FwdRevThrust;
+    static double    FwdRevThrottle;
+    static bool      FwdRevThrusterOn;
+    static double    FwdRevDirection;
+    static double    FwdRevThrust;
+    //static double    FwdRevValue;
 
-    static double   PrtSrbThrottle;
-    static bool     PrtSrbThrusterOn;
-    static double   PrtSrbDirection;
-    static double   PrtSrbThrust;
+    static double    HeadingThrottle;
+    static bool      HeadingThrusterOn;
+    static double    HeadingDirection;
+    static double    HeadingThrust;
+    //static double    HeadingValue;
 
-    static double   UpDwnThrottle;
-    static bool     UpDwnThrusterOn;
-    static double   UpDwnDirection;
-    static double   UpDwnThrust;
+    static double    MarkThrottle;
+    static bool      MarkThrusterOn;
+    static double    MarkDirection;
+    static double    MarkThrust;
+    //static double    MarkValue;
 
-    static bool     ThrusterSync;
 
-    static double   PitchThrottle;
-    static double   PitchDirection;
-    static bool     PitchThrusterOn;
+    static bool      ThrusterSync;
 
-    static double   YawThrottle;
-    static int      YawDirection;
-    static bool     YawThrusterOn;
+    static double    PitchThrottle;
+    static double    PitchDirection;
+    static bool      PitchThrusterOn;
 
-    static double   RollThrottle;
-    static int      RollDirection;
-    static bool     RollThrusterOn;
+    static double    YawThrottle;
+    static int       YawDirection;
+    static bool      YawThrusterOn;
+
+    static double    RollThrottle;
+    static double    RollDirection;
+    static bool      RollThrusterOn;
 
 
     static QQuaternion RotationQuat;
     static QVector3D CartPosition;
     static QVector3D ShipTranslation;
-
     static QVector3D Heading;
-    static float Direction;
-    static float Mark;
-    static float Distance;
 
-    static double PitchThrust;
-    static double PitchAngle;
-    static double YawThrust;
-    static int  YawAngle;
-    static double RollThrust;
-    static int  RollAngle;
+    static double  Direction;
+    static double  Mark;
+    static double  Distance;
 
-    static double Angle;
+    static double  PitchThrust;
+    static double  PitchAngle;
+
+    static double  YawThrust;
+    static double  YawAngle;
+
+    static double  RollThrust;
+    static double  RollAngle;
+
+    static double  Angle;
+
     static QVector3D Attitude;
     static QVector3D Velocity;
 

@@ -270,20 +270,21 @@ void BasicData::Basic()
     ui->UM25->setText("");
 
 
+
     QFile Name ("DataBase/Objects.db");
 
     //Check for database
     if (Name.exists() == false)
     {
-        qDebug() << "No object database found";
+        Verbalize->say("No object database found");
     }
 
     else
 
     {
         //create new Objectsdb database and check if good connection
-        QSqlDatabase Objectsdb = QSqlDatabase::addDatabase("QSQLITE","Objects");
 
+        QSqlDatabase Objectsdb = QSqlDatabase::addDatabase("QSQLITE","Objects");
         Objectsdb.setConnectOptions("QSQLITE_OPEN_READONLY");
         Objectsdb.setDatabaseName("Database/Objects.db");
 

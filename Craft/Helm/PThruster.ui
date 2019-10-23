@@ -59,7 +59,7 @@ color: rgb(255, 255, 255);</string>
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="QScrollBar" name="PrtSrbTSlider">
+  <widget class="QScrollBar" name="HeadingTSlider">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -341,7 +341,7 @@ color: rgb(255, 255, 255);</string>
     </property>
    </widget>
   </widget>
-  <widget class="QScrollBar" name="UpDwnTSlider">
+  <widget class="QScrollBar" name="MarkTSlider">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -368,7 +368,7 @@ color: rgb(255, 255, 255);</string>
  <resources/>
  <connections>
   <connection>
-   <sender>PrtSrbTSlider</sender>
+   <sender>HeadingTSlider</sender>
    <signal>sliderMoved(int)</signal>
    <receiver>PThruster</receiver>
    <slot>SetPrtSrbValue()</slot>
@@ -560,7 +560,7 @@ color: rgb(255, 255, 255);</string>
    </hints>
   </connection>
   <connection>
-   <sender>PrtSrbTSlider</sender>
+   <sender>HeadingTSlider</sender>
    <signal>actionTriggered(int)</signal>
    <receiver>PThruster</receiver>
    <slot>SetPrtSrbValue()</slot>
@@ -576,7 +576,7 @@ color: rgb(255, 255, 255);</string>
    </hints>
   </connection>
   <connection>
-   <sender>UpDwnTSlider</sender>
+   <sender>MarkTSlider</sender>
    <signal>sliderMoved(int)</signal>
    <receiver>PThruster</receiver>
    <slot>SetUpDwnValue()</slot>
@@ -592,7 +592,7 @@ color: rgb(255, 255, 255);</string>
    </hints>
   </connection>
   <connection>
-   <sender>UpDwnTSlider</sender>
+   <sender>MarkTSlider</sender>
    <signal>actionTriggered(int)</signal>
    <receiver>PThruster</receiver>
    <slot>SetUpDwnValue()</slot>

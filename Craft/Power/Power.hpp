@@ -15,7 +15,7 @@ class Power : public QDialog
     Q_OBJECT
 
 public:
-    explicit Power(QDialog *parent = 0);
+    explicit Power(QDialog *parent = nullptr);
     static QString TitleName;
     static QString Type;
 

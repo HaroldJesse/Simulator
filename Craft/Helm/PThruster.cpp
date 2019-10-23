@@ -2,12 +2,12 @@
 #include "ui_PThruster.h"
 
 double PThruster::FwdRevThrust (0);
-double PThruster::PrtSrbThrust (0);
-double PThruster::UpDwnThrust (0);
+double PThruster::HeadingThrust (0);
+double PThruster::MarkThrust (0);
 
 double PThruster::FwdRevThrottle (0);
-double PThruster::PrtSrbThrottle (0);
-double PThruster::UpDwnThrottle (0);
+double PThruster::HeadingThrottle (0);
+double PThruster::MarkThrottle (0);
 
 QSize PThruster::Size (0,0);
 
@@ -31,11 +31,11 @@ PThruster::PThruster(QDialog *parent) :
     ui->PSTenth->setChecked(true);
     ui->FRTenth->setChecked(true);
 
-    UpDwnThrottle = ui->UpDwnTSlider->value() * Multiplier;
-    ui->UpDwnT->setText("UpDwn: " + Value.setNum(UpDwnThrottle));
+    MarkThrottle = ui->MarkTSlider->value() * Multiplier;
+    ui->UpDwnT->setText("UpDwn: " + Value.setNum(MarkThrottle));
 
-    PrtSrbThrottle = ui->PrtSrbTSlider->value() * Multiplier;
-    ui->PrtSrbT->setText("PrtSrb: " + Value.setNum(PrtSrbThrottle));
+    HeadingThrottle = ui->HeadingTSlider->value() * Multiplier;
+    ui->PrtSrbT->setText("PrtSrb: " + Value.setNum(HeadingThrottle));
 
     FwdRevThrottle = ui->FwdRevTSlider->value() * Multiplier;
     ui->FwdRevT->setText("FwdRev: " + Value.setNum(FwdRevThrottle));
@@ -70,8 +70,8 @@ void PThruster::SetUpDwnValue(void)
 
     Multiplier = .01;
 
-    UpDwnThrottle = ui->UpDwnTSlider->value() * Multiplier;
-    ui->UpDwnT->setText("UpDwn: " + Value.setNum(UpDwnThrottle));
+    MarkThrottle = ui->MarkTSlider->value() * Multiplier;
+    ui->UpDwnT->setText("UpDwn: " + Value.setNum(MarkThrottle));
 }
 
 void PThruster::UpDwnRange (void)
@@ -97,8 +97,8 @@ void PThruster::UpDwnRange (void)
 
     Multiplier = .01;
 
-    UpDwnThrottle = ui->UpDwnTSlider->value() * Multiplier;
-    ui->UpDwnT->setText("UpDwn: " + Value.setNum(UpDwnThrottle));
+    MarkThrottle = ui->MarkTSlider->value() * Multiplier;
+    ui->UpDwnT->setText("UpDwn: " + Value.setNum(MarkThrottle));
 }
 
 void PThruster::SetPrtSrbValue(void)
@@ -124,8 +124,8 @@ void PThruster::SetPrtSrbValue(void)
 
     Multiplier = .01;
 
-    PrtSrbThrottle = ui->PrtSrbTSlider->value() * Multiplier;
-    ui->PrtSrbT->setText("PrtSrb: " + Value.setNum(PrtSrbThrottle));
+    HeadingThrottle = ui->HeadingTSlider->value() * Multiplier;
+    ui->PrtSrbT->setText("PrtSrb: " + Value.setNum(HeadingThrottle));
 }
 
 void PThruster::PrtSrbRange (void)
@@ -151,8 +151,8 @@ void PThruster::PrtSrbRange (void)
 
     Multiplier = .01;
 
-    PrtSrbThrottle = ui->PrtSrbTSlider->value() * Multiplier;
-    ui->PrtSrbT->setText("PrtSrb: " + Value.setNum(PrtSrbThrottle));
+    HeadingThrottle = ui->HeadingTSlider->value() * Multiplier;
+    ui->PrtSrbT->setText("PrtSrb: " + Value.setNum(HeadingThrottle));
 }
 
 void PThruster::SetFwdRevValue(void)

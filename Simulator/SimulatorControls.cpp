@@ -55,13 +55,13 @@ void SimulatorControls::Written (void)
     if (WrittenUp == false)
     {
         ui->Written->setStyleSheet(GrnRnd15);
-        QFile Name (Initialize::StartupPath + "/Description/" + Setup::SimObject + ".html");
+
+        QFile Name ("Description/" + Setup::SimObject + ".html");
         //qDebug() << "Name: " << Name;
 
         //Check for database
         if (Name.exists() == false)
         {
-            //qDebug() << "No object database found";
             Verbalize->say("No object text file found");
         }
 

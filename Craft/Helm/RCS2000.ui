@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>90</height>
+    <height>93</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -243,7 +243,7 @@ background-color: rgb(0, 0, 0);
    <property name="title">
     <string>Translation</string>
    </property>
-   <widget class="QGroupBox" name="X">
+   <widget class="QGroupBox" name="Y">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -256,72 +256,7 @@ background-color: rgb(0, 0, 0);
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="title">
-     <string>Up/Down</string>
-    </property>
-    <widget class="QPushButton" name="TransUp">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(6, 6, 6);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="default">
-      <bool>false</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="TransDown">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>20</y>
-       <width>21</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="UpDwnThrust">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>20</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="Y">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>20</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="title">
-     <string>Port/Starboard</string>
+     <string>Heading</string>
     </property>
     <widget class="QPushButton" name="TransPort">
      <property name="geometry">
@@ -349,7 +284,7 @@ background-color: rgb(0, 0, 0);</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLineEdit" name="PrtStbThrust">
+    <widget class="QLineEdit" name="HeadingThrust">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -412,6 +347,71 @@ background-color: rgb(0, 0, 0);</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="FwdRevThrust">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="X">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Mark</string>
+    </property>
+    <widget class="QPushButton" name="TransUp">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(6, 6, 6);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="TransDown">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>21</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="MarkThrust">
      <property name="geometry">
       <rect>
        <x>70</x>

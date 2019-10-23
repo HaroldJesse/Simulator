@@ -24,9 +24,7 @@ class CraftControls : public QDialog
     Q_OBJECT
 
 public:
-    explicit CraftControls(Qt3DRender::QCamera *CameraEntity, QWidget *parent = 0);
-
-
+    explicit CraftControls(Qt3DRender::QCamera *CameraEntity, QWidget *parent = nullptr);
     ~CraftControls();
 
     static QString ShipTime;

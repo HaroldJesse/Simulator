@@ -242,7 +242,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Craft Class</string>
+     <string>Craft Type</string>
     </property>
    </widget>
    <widget class="QComboBox" name="CraftName">

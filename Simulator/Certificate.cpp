@@ -35,7 +35,6 @@ void Certificate::GetID (void)
     QDir CurrentDir;
     CurrentDir = QDir::current();
     QString Current = QDir::currentPath();
-    //qDebug() << "GetID currentpath:" << Current;
 
     QDir  Device;
     Device.cd(IDCheck::Device);
@@ -206,6 +205,7 @@ void Certificate::GetSimulators (void)
 
     //Restore previous path
     QDir::setCurrent(Current);
+
 
     //setWindowTitle(tr("Certificates"));
 }
