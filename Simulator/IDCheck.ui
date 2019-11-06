@@ -116,7 +116,7 @@ If you dont want to use an ID device you can enter the simulator but no record o
    <sender>Simulator</sender>
    <signal>clicked()</signal>
    <receiver>IDCheck</receiver>
-   <slot>Simulator()</slot>
+   <slot>Quit()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>320</x>

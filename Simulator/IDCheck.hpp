@@ -44,6 +44,7 @@ public:
     static QString SimCertificate;
     static QDateTime IssueDate;
     static QString IssuedBy;
+    static QString Status;
 
 
     void  AddIndividual(void);

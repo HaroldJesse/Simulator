@@ -18,6 +18,8 @@ QString IDCheck::SimCertificate("");
 QDateTime IDCheck::IssueDate = QDateTime(QDateTime::currentDateTime());
 QString IDCheck::IssuedBy("");
 
+QString IDCheck::Status = "Running";
+
 IDCheck::IDCheck(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::IDCheck)
@@ -63,7 +65,8 @@ void IDCheck::ConnectDevice (void)
 void IDCheck::Simulator (void)
 {
     Verbalize->stop();
-    this->close();
+    IDCheck::Status = "Simulator";
+    //this->close();
 }
 
 
@@ -402,8 +405,8 @@ void IDCheck::SetRoundedCorners(int Radius_tl, int Radius_tr, int Radius_bl, int
 
 void IDCheck::Quit (void)
 {
-    //Initialize::Abort = true;
     Verbalize->stop();
+    IDCheck::Status = "Abort";
     this->close();
 }
 

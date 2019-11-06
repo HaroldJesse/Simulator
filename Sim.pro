@@ -15,7 +15,7 @@ TEMPLATE = app
 SOURCES +=\
     Craft/Helm/RCS1000.cpp \
     Simulator/Audio.cpp \
-    Simulator/Log.cpp \
+    Simulator/Logs.cpp \
     Simulator/Setup.cpp \
     Simulator/Initialize.cpp \
     Simulator/IDPort.cpp \
@@ -49,7 +49,7 @@ HEADERS  += \
     Craft/Helm/Helm.hpp \
     Craft/Helm/RCS1000.hpp \
     Simulator/Audio.hpp \
-    Simulator/Log.hpp \
+    Simulator/Logs.hpp \
     Simulator/SimConstants.hpp \
     Simulator/SimGlobals.hpp \
     Simulator/Setup.hpp \
@@ -83,7 +83,7 @@ HEADERS  += \
 
 FORMS    += \
     Craft/Helm/RCS1000.ui \
-    Simulator/Log.ui \
+    Simulator/Logs.ui \
     Simulator/Setup.ui \
     Simulator/IDPort.ui \
     Craft/Power/Power.ui \

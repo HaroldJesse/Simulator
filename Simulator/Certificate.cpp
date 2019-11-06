@@ -9,9 +9,6 @@ Certificate::Certificate(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    GetID();
-    //qDebug() << CertificateStatus;
-
     if (CertificateStatus == "Normal")
     {
         GetCertificates();
@@ -22,6 +19,9 @@ Certificate::Certificate(QWidget *parent) :
     {
         return;
     }
+
+    GetID();
+    //qDebug() << CertificateStatus;
 }
 
 Certificate::~Certificate()
@@ -212,6 +212,6 @@ void Certificate::GetSimulators (void)
 
 void Certificate::Quit (void)
 {
-    Certificate::CertificateStatus = "Aborted";
+    Initialize::Abort = true;
     this->close();
 }

@@ -45,13 +45,13 @@ Initialize::Initialize()
     //Start Initialization
 
     //LogView.WriteLog(LogView.MasterLog,LogView.Info,"Main","Logging is on");
-
     //LogView.ReadLog(LogView.MasterLog);
     //LogView.exec();
 
     //Window
 
     Initialize::StartupPath = QDir::currentPath();
+    //qDebug() << "StartupPath: " << Initialize::StartupPath;
 
     Qt3DExtras::Qt3DWindow *View = new Qt3DExtras::Qt3DWindow();
     View->setFlag(Qt::FramelessWindowHint);
@@ -100,18 +100,21 @@ Initialize::Initialize()
     ID.exec();
     //qDebug() << "Current Path ID: " << QDir::currentPath();
 
+    if (IDCheck::Status == "Running")
+    {
+        Certificate Cert;
+        Cert.exec();
+    }
 
-    Certificate Cert;
-    Cert.exec();
 
     //qDebug() << "Current Path Certificate: " << QDir::currentPath();
 
 
     //qDebug() << "LogView";
-    //Log LogView;
-    //LogView.Initialize();
+    Logs LogsView;
+    LogsView.exec();
 
-    //qDebug() << "Current Path Log: " << QDir::currentPath();
+
 
     //Reset from removable device path
     QDir::setCurrent(Initialize::StartupPath);

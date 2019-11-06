@@ -22,7 +22,7 @@
 #include "SimulatorControls.hpp"
 #include "IDCheck.hpp"
 #include "Certificate.hpp"
-#include "Log.hpp"
+#include "Logs.hpp"
 #include "Setup.hpp"
 #include "CraftControls.hpp"
 
