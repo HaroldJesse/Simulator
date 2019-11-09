@@ -62,12 +62,7 @@ void IDCheck::ConnectDevice (void)
          this->close();
 }
 
-void IDCheck::Simulator (void)
-{
-    Verbalize->stop();
-    IDCheck::Status = "Simulator";
-    //this->close();
-}
+
 
 
 bool IDCheck::GetIDFile (void)
@@ -284,7 +279,7 @@ void  IDCheck::AddIndividual(void)
 }
 
 void IDCheck::GetID (void)
-{
+{    
     QDir CurrentDir;
     CurrentDir = QDir::current();
     QString Current = QDir::currentPath();
@@ -407,6 +402,15 @@ void IDCheck::Quit (void)
 {
     Verbalize->stop();
     IDCheck::Status = "Abort";
+    Initialize::Abort = true;
+    this->close();
+}
+
+void IDCheck::Simulator (void)
+{
+    Verbalize->stop();
+    IDCheck::Status = "Simulator";
+    Initialize::Abort = false;
     this->close();
 }
 

@@ -20,8 +20,16 @@ Certificate::Certificate(QWidget *parent) :
         return;
     }
 
-    GetID();
-    //qDebug() << CertificateStatus;
+    else if (CertificateStatus != "Simulator")
+    {
+        return;
+    }
+
+
+
+    qDebug() << CertificateStatus;
+    return;
+
 }
 
 Certificate::~Certificate()
@@ -212,6 +220,6 @@ void Certificate::GetSimulators (void)
 
 void Certificate::Quit (void)
 {
-    Initialize::Abort = true;
+    //Initialize::Abort = true;
     this->close();
 }

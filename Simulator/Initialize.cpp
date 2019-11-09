@@ -53,7 +53,10 @@ Initialize::Initialize()
     Initialize::StartupPath = QDir::currentPath();
     //qDebug() << "StartupPath: " << Initialize::StartupPath;
 
+
+
     Qt3DExtras::Qt3DWindow *View = new Qt3DExtras::Qt3DWindow();
+
     View->setFlag(Qt::FramelessWindowHint);
     View->defaultFrameGraph()->setClearColor(Qt::black);
     View->setVisibility(QWindow::FullScreen);
@@ -111,17 +114,22 @@ Initialize::Initialize()
 
 
     //qDebug() << "LogView";
-    Logs LogsView;
-    LogsView.exec();
+    //Logs LogsView;
+    //LogsView.exec();
 
 
 
     //Reset from removable device path
     QDir::setCurrent(Initialize::StartupPath);
 
-    //qDebug() << "Setup";
-    Setup Set;
-    Set.exec();
+
+    if (IDCheck::Status == "Running" || IDCheck::Status == "Simulator")
+    {
+        //qDebug() << "Setup";
+        Setup Set;
+        Set.exec();
+    }
+
 
     // Scene Root
     Qt3DCore::QEntity *SceneRoot = new Qt3DCore::QEntity();
@@ -156,6 +164,7 @@ Initialize::Initialize()
 
     LightEntity->addComponent(LightTransform);
 
+    //qDebug() << "Initialize Abort: " << Initialize::Abort;
     if (Initialize::Abort == true)
     {
         View->close();

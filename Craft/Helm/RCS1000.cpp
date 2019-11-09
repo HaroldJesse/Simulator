@@ -600,7 +600,7 @@ void RCS1000::SetFwdRvrValue(void)
     Craft::FwdRevThrottle = ui->FwdRvrTSlider->value() * Multiplier;
     ui->FwdRevValue->setText(QString::number(Craft::FwdRevThrottle));
     ui->FwdRevThrust->setText(QString::number(Craft::FwdRevThrottle));
-    qDebug() << "FrwRevSlider: " << ui->FwdRvrTSlider->value() << "Throttle:   " << Craft::FwdRevThrottle;
+    //qDebug() << "FrwRevSlider: " << ui->FwdRvrTSlider->value() << "Throttle:   " << Craft::FwdRevThrottle;
 
 
 }
