@@ -26,11 +26,11 @@ public:
     explicit Logs(QWidget *parent = nullptr);
     ~Logs();
 
-    QString MasterLog = ("MasterLog.sim");
-    QString SimulatorLog  = ("SimulatorLog.sim");
-    QString EngineeringLog = ("EngineeringLog.sim");
-    QString Helmlog = ("HelmLog.sim");
-    QString CommunicationsLog = ("CommunicationsLog.sim");
+    QString MasterLog = ("Master.log");
+    QString SimulatorLog  = ("Simulator.log");
+    QString EngineeringLog = ("Engineering.log");
+    QString HelmLog = ("Helm.log");
+    QString CommunicationsLog = ("Communications.log");
 
     QString Info = ("INFO");
     QString Warning = ("WARNING");

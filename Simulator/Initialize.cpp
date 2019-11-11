@@ -114,13 +114,15 @@ Initialize::Initialize()
 
 
     //qDebug() << "LogView";
-    //Logs LogsView;
-    //LogsView.exec();
+    Logs LogsView;
+    //LogsView.Initialize();
+    LogsView.exec();
 
 
 
     //Reset from removable device path
     QDir::setCurrent(Initialize::StartupPath);
+
 
 
     if (IDCheck::Status == "Running" || IDCheck::Status == "Simulator")
@@ -354,7 +356,7 @@ Initialize::Initialize()
     //qDebug() << "Current directory: " << directory;
     QUrl SourceFileName;
 
-    qDebug() << "Before: " << Setup::SimObject;
+    //qDebug() << "Before: " << Setup::SimObject;
     Setup::SimLocation = "SpaceCraft";
     Setup::SimObject = "Enterprise";
 
@@ -416,7 +418,7 @@ Initialize::Initialize()
 
     if (query.lastError().isValid())
     {
-        qDebug() << "Error: " << query.lastError().text();
+        //qDebug() << "Error: " << query.lastError().text();
     }
 
     int count = 0;

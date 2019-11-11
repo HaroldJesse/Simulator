@@ -1,6 +1,8 @@
 #ifndef INITIALIZE_HPP
 #define INITIALIZE_HPP
 
+#include <QDir>
+#include <iostream>
 #include <QDialog>
 #include <QString>
 #include <Qt3DCore>

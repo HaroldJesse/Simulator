@@ -166,7 +166,7 @@ void IDCheck::CreateID (void)
         msgBox.setStandardButtons(QMessageBox::Ok);
         Verbalize->say(msgBox.text());
         msgBox.exec();
-        qDebug() << "File Error: " << FileName.errorString();
+        //qDebug() << "File Error: " << FileName.errorString();
     }
 
     //else
@@ -202,7 +202,7 @@ void IDCheck::CreateID (void)
 
         if (IDQuery.lastError().isValid())
         {
-            qDebug() << IDQuery.lastError();
+            //qDebug() << IDQuery.lastError();
 
             QMessageBox msgBox;
             msgBox.setText("Sorry! could not create ID table");
@@ -224,7 +224,7 @@ void IDCheck::CreateID (void)
 
         if (CertQuery.lastError().isValid())
         {
-            qDebug() << IDQuery.lastError();
+            //qDebug() << IDQuery.lastError();
 
             QMessageBox msgBox;
             msgBox.setText("Sorry! could not create Certificate table");
@@ -245,7 +245,7 @@ void IDCheck::CreateID (void)
 
         if (SimulatorQuery.lastError().isValid())
         {
-            qDebug() << IDQuery.lastError();
+            //qDebug() << IDQuery.lastError();
 
             QMessageBox msgBox;
             msgBox.setText("Sorry! could not create Simulators table");
@@ -334,11 +334,11 @@ void IDCheck::GetID (void)
 void IDCheck::SetRectHole (int PosX, int PosY, int H, int W)
 {
     QRegion region(PosX, PosY, width(), height(), QRegion::Rectangle);
-    qDebug() << "Region: " << region;
+    //qDebug() << "Region: " << region;
     QRegion Hole(PosX,PosY,H,W,QRegion::Rectangle);
-    qDebug() << "Hole: " << Hole;
+    //qDebug() << "Hole: " << Hole;
     region = region.subtracted(region.subtracted(Hole));
-    qDebug() << "Finished Region: " << region;
+    //qDebug() << "Finished Region: " << region;
 
     setMask(region);
 }

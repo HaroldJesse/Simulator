@@ -27,7 +27,7 @@ Certificate::Certificate(QWidget *parent) :
 
 
 
-    qDebug() << CertificateStatus;
+    //qDebug() << CertificateStatus;
     return;
 
 }

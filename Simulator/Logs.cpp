@@ -7,12 +7,13 @@ Logs::Logs(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QStringList LogNameList;
-
-    LogNameList << "" << "CommunicationsLog.sim"  << "EngineeringLog.sim"  << "HelmLog.sim" << "MasterLog.sim" << "SimulatorLog.sim";
+    QDir directory(Initialize::StartupPath + "/SimLogs");
+    QStringList NameFilter("*.log");
+    QStringList LogFiles = directory.entryList(NameFilter);
+    //qDebug() << "LogFiles: " << LogFiles;
 
     ui->LogSelection->clear();
-    ui->LogSelection->addItems(LogNameList);
+    ui->LogSelection->addItems(LogFiles);
     ui->LogSelection->show();
     ui->LogSelectionlbl->show() ;
 }
@@ -26,19 +27,17 @@ void Logs::Initialize (void)
 {
     //qDebug() << "Logs Initializeation";
 
-    //CreateLog (Log::MasterLog);
-    //CreateLog (Log::SimulatorLog);
-    //CreateLog (Log::EngineeringLog);
-    //CreateLog (Log::Helmlog);
-    //CreateLog (Log::CommunicationsLog);
-
-    //ReadLog(Logs::MasterLog);
+    //CreateLog (Logs::MasterLog);
+    //CreateLog (Logs::SimulatorLog);
+    //CreateLog (Logs::EngineeringLog);
+    //CreateLog (Logs::HelmLog);
+    //CreateLog (Logs::CommunicationsLog);
+    //CreateLog (Logs::MasterLog);
 }
 
 void Logs::Name (void)
 {
     ReadLog (ui->LogSelection->currentText());
-    //qDebug() << "Current log Selection: " << ui->LogSelection->currentText();
 }
 
 bool Logs::CreateLog (QString LogsName)
@@ -55,6 +54,7 @@ bool Logs::CreateLog (QString LogsName)
     QDir::setCurrent(Initialize::StartupPath);
     QString SimLogFileName = Initialize::StartupPath + "/SimLogs/" + LogsName;
     QFile Log(SimLogFileName);
+    //qDebug() << "SimLogFileName: " << SimLogFileName;
 
     if (Log.exists() == true)
     {
@@ -108,7 +108,7 @@ bool Logs::CreateLog (QString LogsName)
     //check if good connection
     QSqlDatabase SimLog = QSqlDatabase::addDatabase("QSQLITE","SimLog");
     SimLog.setDatabaseName(SimLogFileName);
-    //qDebug() << "SimLogFileName:" <<SimLogFileName;
+    qDebug() << "SimLogFileName:" <<SimLogFileName;
 
     if (SimLog.open() == false) //try to connect to the database
     {
@@ -229,7 +229,6 @@ bool Logs::ReadLog (QString LogsName)
     QDir::setCurrent(Initialize::StartupPath);
     QString SimLogFileName = Initialize::StartupPath + "/SimLogs/" + LogsName;
     QFile Log(SimLogFileName);
-    qDebug() << "ReadLogName: " << SimLogFileName;
 
     if (Log.exists() == false)
     {
@@ -294,13 +293,9 @@ bool Logs::ReadLog (QString LogsName)
 
             QString Line = ui->plainTextEdit->toPlainText();
 
-            //qDebug() << "LogLine: " << LogLine;
-
         }
 
         //create new Objects.db database and check if good connection
-        //QSqlDatabase Logsdb = QSqlDatabase::addDatabase("QSQLITE","LogsName");
-        //Logsdb.setDatabaseName(SimLogFileName);
 
         if (Logsdb.open() == false) //try to connect to the database
         {
@@ -311,15 +306,13 @@ bool Logs::ReadLog (QString LogsName)
             return false;
         }
 
-        //qDebug()<< "Table: " << TableName;
-
         model = new QSqlTableModel(this, Logsdb);
         model->setTable(QString ("Log"));
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
         model->select();
 
         ui->tableView->setModel(model);
-        qDebug() << "Model: " << ui->tableView;
+        //qDebug() << "Model: " << ui->tableView;
         //ui->tableView->setColumnHidden(model->fieldIndex("ID"), true);
         //ui->tableView->resizeColumnsToContents();
 
