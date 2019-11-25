@@ -1,17 +1,15 @@
+#pragma once
 #ifndef IDCHECK_HPP
 #define IDCHECK_HPP
+//#endif // IDCHECK_HPP
 
 #include <QString>
-#include <QDateTime>
 #include <QDialog>
-#include <Voice.hpp>
-#include <QTextToSpeech>
 #include <QSqlError>
+#include <QDateTime>
+#include <QMessageBox>
 #include <QSqlDatabase>
 #include <QSqlQuery>
-#include <QMessageBox>
-#include <QFileInfoList>
-#include <QDir>
 
 #include "IDPort.hpp"
 #include "IDAdd.hpp"
@@ -32,7 +30,7 @@ public:
     static QString DeviceFolder;
     static QString File;
 
-    static qint64 RecordNumber;
+    static qint64  RecordNumber;
     static QString IndividualName;
     static QString FamilyName;
     static QString Department;

@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef SIMULATORCONTROLS_HPP
 #define SIMULATORCONTROLS_HPP
+//#endif // SIMULATORCONTROLS_HPP
 
 #include <QDialog>
 #include <QFile>
@@ -53,7 +55,7 @@ public:
                           " color: white;"
                           "border-radius: 15px;";
 public slots:
-
+    void Name(void);
     void BasicDataDisplay (void);
 
 private:

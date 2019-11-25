@@ -1,5 +1,7 @@
+#pragma once
 #ifndef INITIALIZE_HPP
 #define INITIALIZE_HPP
+//#endif // INITIALIZE_HPP
 
 #include <QDir>
 #include <iostream>
@@ -24,7 +26,7 @@
 #include "SimulatorControls.hpp"
 #include "IDCheck.hpp"
 #include "Certificate.hpp"
-#include "Logs.hpp"
+//#include "Logs.hpp"
 #include "Setup.hpp"
 #include "CraftControls.hpp"
 
@@ -75,8 +77,6 @@ public slots:
 };
 
 #endif // INITIALIZE_HPP
-
-
 /*
 public:
     SceneWalker(Qt3DRender::QSceneLoader *loader) : m_loader(loader) { }

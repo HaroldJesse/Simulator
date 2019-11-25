@@ -1,10 +1,15 @@
+#pragma once
 #ifndef RCS1000_HPP
 #define RCS1000_HPP
+//#endif // RCS1000_HPP
 
-#include "QDialog"
+
+//#include <QDialog>
 #include <Qt3DRender>
+#include "Initialize.hpp"
+#include "Craft.hpp"
 
-#include "CraftControls.hpp"
+//#include "CraftControls.hpp"
 
 namespace Ui {
 class RCS1000;
@@ -15,7 +20,7 @@ class RCS1000 : public QDialog
     Q_OBJECT
 
 public:
-    explicit RCS1000(Qt3DRender::QCamera *CameraEntity, QDialog *parent = 0);
+    explicit RCS1000(Qt3DRender::QCamera *CameraEntity, QDialog *parent = nullptr);
     ~RCS1000();
 
 public slots:

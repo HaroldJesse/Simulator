@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef COORDINATE_HPP
 #define COORDINATE_HPP
+//#endif // COORDINATE_HPP
 
 #include <QVector3D>
 #include <QtMath>

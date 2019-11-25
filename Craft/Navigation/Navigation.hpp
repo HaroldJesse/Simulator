@@ -1,5 +1,7 @@
+#pragma once
 #ifndef NAVIGATION_HPP
 #define NAVIGATION_HPP
+//#endif // NAVIGATION_HPP
 
 #include <QDialog>
 #include <QtTextToSpeech>
@@ -19,7 +21,7 @@ class Navigation : public QDialog
     Q_OBJECT
 
 public:
-    explicit Navigation(QDialog *parent = 0);
+    explicit Navigation(QDialog *parent = nullptr);
     ~Navigation();
 
     bool LoadNavigation (void);

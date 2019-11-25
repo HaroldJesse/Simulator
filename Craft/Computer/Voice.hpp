@@ -1,13 +1,15 @@
+//#pragma once
 #ifndef VOICE_HPP
 #define VOICE_HPP
+//#endif // VOICE_HPP
 
 #include <QDialog>
-#include <QWidget>
 #include <QTextToSpeech>
 #include <QDebug>
 
-namespace Ui {
-class Voice;
+namespace Ui
+{
+    class Voice;
 }
 
 class Voice : public QDialog
@@ -21,8 +23,11 @@ public:
 private:
     Ui::Voice *ui;
 
-private slots:
+    void SetVoice (void);
+    void SetLocale (void);
+    void SetGender (void);
 
+private slots:
     void Setup (void);
 };
 

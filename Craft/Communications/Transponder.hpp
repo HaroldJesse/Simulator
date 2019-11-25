@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef TRANSPONDER_HPP
 #define TRANSPONDER_HPP
+//#endif // TRANSPONDER_HPP
 
 #include <QDialog>
 #include <QUdpSocket>
@@ -15,7 +17,7 @@ class Transponder : public QDialog
     Q_OBJECT
 
 public:
-    explicit Transponder(QWidget *parent = 0);
+    explicit Transponder(QWidget *parent = nullptr);
     void StartBroadcast(void);
 
     static QByteArray TransponderData;
@@ -39,5 +41,4 @@ private slots:
     void Listen (void);
 
 };
-
 #endif // TRANSPONDER_HPP

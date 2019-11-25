@@ -111,6 +111,7 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 
 void Helm::ExitHelm (void)
 {
+    emit Helmoff();
     emit CloseHelm();
     this->close();
 }

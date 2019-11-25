@@ -1,5 +1,7 @@
+#pragma once
 #ifndef HELM_HPP
 #define HELM_HPP
+//#endif // HELM_HPP
 
 #include <QWidget>
 #include <Qt3DRender>
@@ -22,15 +24,16 @@ class Helm : public QWidget
 
 public:
     explicit Helm(QWidget *parent = nullptr);
+    void ExitHelm (void);
     ~Helm();
 
     bool LoadHelm (Qt3DRender::QCamera *CameraEntity);
     bool UnLoadHelm (Qt3DRender::QCamera *CameraEntity);
 
 public slots:
-    void ExitHelm (void);
 
 signals:
+    void Helmoff();
     void CloseHelm();
 
 private:

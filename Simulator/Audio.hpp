@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef AUDIO_HPP
 #define AUDIO_HPP
+//#endif // AUDIO_HPP
 
 #include <QString>
 #include <QMediaPlayer>

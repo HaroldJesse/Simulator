@@ -1,5 +1,7 @@
+#pragma once
 #ifndef SETUP_HPP
 #define SETUP_HPP
+#endif // SETUP_HPP
 
 #include <QString>
 #include <QDialog>
@@ -69,5 +71,3 @@ private slots:
     void CraftName(void);
 
 };
-
-#endif // SETUP_HPP

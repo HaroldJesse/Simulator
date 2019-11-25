@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef SIMCONSTANTS_HPP
 #define SIMCONSTANTS_HPP
+//#endif // SIMCONSTANTS_HPP
 
 #include <QColor>
 class SimConstants

@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef SPICE_HPP
 #define SPICE_HPP
+//#endif // SPICE_HPP
 
 #include <QDialog>
 #include <QWidget>

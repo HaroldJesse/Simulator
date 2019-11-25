@@ -1,5 +1,7 @@
+#pragma once
 #ifndef RCS2000_HPP
 #define RCS2000_HPP
+//#endif // RCS2000_HPP
 
 #include <QDialog>
 #include <Qt3DRender>
@@ -19,7 +21,7 @@ class RCS2000 : public QDialog
     Q_OBJECT
 
 public:
-    explicit RCS2000(Qt3DRender::QCamera *CameraEntity, QDialog *parent = 0);
+    explicit RCS2000(Qt3DRender::QCamera *CameraEntity, QDialog *parent = nullptr);
     ~RCS2000();
 
     static double FwdRevThrottle;

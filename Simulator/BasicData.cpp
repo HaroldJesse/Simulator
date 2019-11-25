@@ -17,7 +17,7 @@ BasicData::BasicData(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->move(Initialize::WindowWidth - Width  ,Initialize::WindowHeight - Height - 175);
 
-    Basic();
+    //Basic();
 
 }
 

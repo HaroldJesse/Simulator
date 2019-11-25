@@ -1,5 +1,7 @@
+#pragma once
 #ifndef PTHRUSTER_HPP
 #define PTHRUSTER_HPP
+#endif // PTHRUSTER_HPP
 
 #include <QDialog>
 
@@ -14,7 +16,7 @@ class PThruster : public QDialog
     Q_OBJECT
 
 public:
-    explicit PThruster (QDialog *parent = 0);
+    explicit PThruster (QDialog *parent = nullptr);
     ~PThruster();
 
     static double FwdRevThrust;
@@ -40,4 +42,4 @@ private slots:
     void SetFwdRevValue(void);
 };
 
-#endif // PTHRUSTER_HPP
+

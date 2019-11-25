@@ -14,9 +14,8 @@ ComputerControl::~ComputerControl()
     delete ui;
 }
 
-
-
-//ComputeControl::SetVoice (void)
+//void ComputerControl::Computer (void)
 //{
+    //Computer Comp;
 
 //}

@@ -1,5 +1,7 @@
+#pragma once
 #ifndef IDPORT_HPP
 #define IDPORT_HPP
+//#endif // IDPORT_HPP
 
 #include <QDialog>
 #include <QTextToSpeech>

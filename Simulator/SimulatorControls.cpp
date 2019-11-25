@@ -10,7 +10,7 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     ui(new Ui::SimulatorControls)
 {
     ui->setupUi(this);
-    ui->ObjectText->setGeometry(5,15,1900,100);
+    //ui->ObjectText->setGeometry(5,15,1900,100);
 
 
     this->setWindowFlags(Qt::FramelessWindowHint);
@@ -20,12 +20,34 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     //ui->ObjectText->setReadOnly(true);
     ui->ObjectText->hide();
 
+    QDir directory(Initialize::StartupPath + "/Description");
+    QStringList NameFilter("*.html");
+    QStringList DescriptionFiles = directory.entryList(NameFilter);
+    qDebug() << "SelectionFiles: " << DescriptionFiles;
+
+    ui->DescriptionSelection->clear();
+    ui->DescriptionSelection->addItems(DescriptionFiles);
+    ui->DescriptionSelection->show();
+    ui->DescriptionSelectionlbl->show();
+
+    QString TextFile = ui->DescriptionSelection->currentText();
+    TextFile.chop(5);
+    qDebug() << "Trimmed: " << TextFile;
+
 }
 
 SimulatorControls::~SimulatorControls()
 {
     delete ui;
 }
+
+void SimulatorControls::Name (void)
+{
+    Setup::SimObject = (ui->DescriptionSelection->currentText());
+    qDebug() << "link: " << Setup::SimObject;
+}
+
+
 
 void SimulatorControls::Run (void)
 {
@@ -56,8 +78,9 @@ void SimulatorControls::Written (void)
     {
         ui->Written->setStyleSheet(GrnRnd15);
 
-        QFile Name ("Description/" + Setup::SimObject + ".html");
-        //qDebug() << "Name: " << Name;
+        QFile Name ("Description/" + Setup::SimObject);
+
+        qDebug() << "Name: " << Name;
 
         //Check for database
         if (Name.exists() == false)

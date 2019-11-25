@@ -1,9 +1,12 @@
+#pragma once
 #ifndef IDADD_HPP
 #define IDADD_HPP
+//#endif // IDADD_HPP
 
 #include <QDialog>
 #include <QMessageBox>
 #include <QDir>
+#include <QSqlRecord>
 #include <QSqlQuery>
 #include <QSqlTableModel>
 #include <QTextToSpeech>
@@ -23,7 +26,7 @@ class IDAdd : public QDialog
 public:
     explicit IDAdd(QWidget *parent = nullptr);
     ~IDAdd();
-/*
+
     static int RecordNumber;
     static QString IndividualName;
     static QString FamilyName;
@@ -36,7 +39,7 @@ public:
     static QString SimCertificate;
     static QDateTime IssueDate;
     static QString IssuedBy;
-*/
+
     void CertificateAdd (void);
 
 public slots:

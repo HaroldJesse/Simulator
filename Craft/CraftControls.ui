@@ -31,7 +31,7 @@
    <property name="title">
     <string>Craft Master Panel</string>
    </property>
-   <widget class="QPushButton" name="Com">
+   <widget class="QPushButton" name="Communication">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -49,13 +49,13 @@ color: rgb(255, 255, 255);
 border-radius: 5px;</string>
     </property>
     <property name="text">
-     <string>Communicatons</string>
+     <string>Communicaton</string>
     </property>
     <property name="shortcut">
      <string>Shift+C</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Nav">
+   <widget class="QPushButton" name="Navigation">
     <property name="geometry">
      <rect>
       <x>620</x>
@@ -79,7 +79,7 @@ border-radius: 5px;</string>
      <string>Shift+N</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Cmp">
+   <widget class="QPushButton" name="Computer">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -151,7 +151,7 @@ border-radius: 5px;</string>
      <string>Shift+N</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Say">
+   <widget class="QPushButton" name="Sensors">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -169,7 +169,7 @@ color: rgb(255, 255, 255);
 border-radius: 5px;</string>
     </property>
     <property name="text">
-     <string>Sensor Array</string>
+     <string>Sensors</string>
     </property>
     <property name="shortcut">
      <string>Shift+N</string>
@@ -207,7 +207,7 @@ border-radius: 20px;</string>
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="Pwr">
+   <widget class="QPushButton" name="Power">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -234,7 +234,7 @@ border-radius: 5px;
      <string>Shift+P</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Trn">
+   <widget class="QPushButton" name="Transponder">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -256,7 +256,7 @@ border-radius: 5px;
      <string>Transponder</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Env">
+   <widget class="QPushButton" name="Enviroment">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -340,10 +340,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Pwr</sender>
+   <sender>Power</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>PowerType()</slot>
+   <slot>Power()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>129</x>
@@ -356,10 +356,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Trn</sender>
+   <sender>Transponder</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>TransponderType()</slot>
+   <slot>Transponder()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>254</x>
@@ -372,10 +372,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Cmp</sender>
+   <sender>Computer</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>ComputerType()</slot>
+   <slot>Computer()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>329</x>
@@ -388,10 +388,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Env</sender>
+   <sender>Enviroment</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>EnvironmentType()</slot>
+   <slot>Environment()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>404</x>
@@ -404,10 +404,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Com</sender>
+   <sender>Communication</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>CommunicationType()</slot>
+   <slot>Communication()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>489</x>
@@ -420,10 +420,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Say</sender>
+   <sender>Sensors</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>SensorArrayType()</slot>
+   <slot>Sensors()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>574</x>
@@ -436,10 +436,10 @@ border-radius: 5px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>Nav</sender>
+   <sender>Navigation</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>NavigationType()</slot>
+   <slot>Navigation()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>649</x>
@@ -455,7 +455,7 @@ border-radius: 5px;</string>
    <sender>Helm</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>HelmType()</slot>
+   <slot>CCHelm()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>709</x>
@@ -517,14 +517,14 @@ border-radius: 5px;</string>
   </connection>
  </connections>
  <slots>
-  <slot>PowerType()</slot>
-  <slot>HelmType()</slot>
-  <slot>NavigationType()</slot>
-  <slot>EnvironmentType()</slot>
-  <slot>CommunicationType()</slot>
-  <slot>TransponderType()</slot>
-  <slot>ComputerType()</slot>
-  <slot>SensorArrayType()</slot>
+  <slot>Power()</slot>
+  <slot>CCHelm()</slot>
+  <slot>Navigation()</slot>
+  <slot>Environment()</slot>
+  <slot>Communication()</slot>
+  <slot>Transponder()</slot>
+  <slot>Computer()</slot>
+  <slot>Sensors()</slot>
   <slot>Exit()</slot>
   <slot>SetUTC()</slot>
   <slot>SetLocal()</slot>

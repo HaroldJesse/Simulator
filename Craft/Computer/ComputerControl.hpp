@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef COMPUTERCONTROL_HPP
 #define COMPUTERCONTROL_HPP
+//#endif // COMPUTERCONTROL_HPP
 
 #include <QDialog>
 
@@ -15,11 +17,13 @@ public:
     explicit ComputerControl(QWidget *parent = nullptr);
     ~ComputerControl();
 
+    ComputerControl (void);
+
 private:
     Ui::ComputerControl *ui;
 
 private slots:
-        //void SetVoice (void);
+
 };
 
 #endif // COMPUTERCONTROL_HPP

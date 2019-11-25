@@ -32,13 +32,13 @@ CraftControls::CraftControls(Qt3DRender::QCamera *BasicCamera, QWidget *parent) 
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->move(Initialize::WindowWidth/2 - Width/2,Initialize::WindowHeight - Height);
 
-
-    ui->Com->hide();
-    ui->Env->hide();
-    ui->Trn->hide();
-    ui->Cmp->hide();
-    ui->Nav->hide();
-    ui->Say->hide();
+    ui->Communication->hide();
+    ui->Computer->hide();
+    ui->Enviroment->hide();
+    ui->Transponder->hide();
+    ui->Computer->hide();
+    ui->Navigation->hide();
+    ui->Sensors->hide();
     ui->Helm->hide();
     ui->Local->setCheckable(true);
     ui->Local->setChecked(false);
@@ -61,30 +61,30 @@ CraftControls::~CraftControls()
     delete ui;
 }
 
-void CraftControls::PowerType (void)
+void CraftControls::Power (void)
 {
     if (PwrUp == false)
     {
-        Power Pwr;
-        Pwr.exec();
+        //Power *Pwr = new Power();
+        //Pwr.exec();
 
         // Set up transponder
         UDPSocket = new QUdpSocket(this);
         connect(Timer, SIGNAL(timeout()), this, SLOT(Broadcast()));
-        ui->Pwr->setStyleSheet(GrnRnd);
 
         PwrUp = true;
         TranUp = true;
 
-        ui->Com->show();
-        ui->Env->show();
-        ui->Trn->show();
+        ui->Communication->show();
+        ui->Computer->show();
+        ui->Enviroment->show();
+        ui->Transponder->show();
         ui->Helm->show();
-        ui->Cmp->show();
-        ui->Nav->show();
-        ui->Say->show();
+        ui->Computer->show();
+        ui->Navigation->show();
+        ui->Sensors->show();
 
-        ui->Trn->setStyleSheet(GrnRnd);
+        ui->Transponder->setStyleSheet(GrnRnd);
 
         //qDebug() << "Transponder Initialized";
     }
@@ -96,41 +96,25 @@ void CraftControls::PowerType (void)
 
         //Transponder Power Off
 
-        ui->Pwr->setStyleSheet(RedSqr);
-        ui->Trn->setStyleSheet(RedSqr);
+        ui->Power->setStyleSheet(RedSqr);
+        ui->Transponder->setStyleSheet(RedSqr);
 
         PwrUp = false;
         TranUp = false;
 
-        ui->Com->hide();
-        ui->Env->hide();
-        ui->Trn->hide();
+        ui->Communication->hide();
+        ui->Computer->hide();
+        ui->Enviroment->hide();
+        ui->Transponder->hide();
         ui->Helm->hide();
-        ui->Cmp->hide();
-        ui->Nav->hide();
-        ui->Say->hide();
+        //ui->Computer->hide();
+        ui->Navigation->hide();
+        ui->Sensors->hide();
+
     }
 }
 
-void CraftControls::CommunicationType (void)
-{
-    if (ComUp == false)
-    {
-        ui->Com->setStyleSheet(GrnRnd);
-        ComUp = true;
-    }
-
-    else
-
-    if (ComUp == true)
-    {
-        ui->Com->setStyleSheet(RedSqr);
-        ComUp = false;
-    }
-
-}
-
-void CraftControls::TransponderType (void)
+void CraftControls::Transponder (void)
 {
     if (TranUp == false)
     {
@@ -140,16 +124,35 @@ void CraftControls::TransponderType (void)
     else
 
     {
-        Transponder Trans;
-        Trans.exec();
+        //Transponder Trans;
+        //Trans.exec();
     }
 }
 
-void CraftControls::EnvironmentType (void)
+void CraftControls::Computer (void)
+{
+    if (CompUp == false)
+    {
+        CompUp = true;
+        ui->Computer->setStyleSheet(GrnRnd);
+
+        //ComputerControl *CompControl = new ComputerControl() ;
+    }
+
+    else
+
+    if (CompUp == true)
+    {
+        ui->Computer->setStyleSheet(RedSqr);
+        CompUp = false;
+    }
+}
+
+void CraftControls::Environment (void)
 {
     if (EnvUp == false)
     {
-        ui->Env->setStyleSheet(GrnRnd);
+        ui->Enviroment->setStyleSheet(GrnRnd);
         EnvUp = true;
     }
 
@@ -157,20 +160,77 @@ void CraftControls::EnvironmentType (void)
 
     if (EnvUp == true)
     {
-        ui->Env->setStyleSheet(RedSqr);
+        ui->Enviroment->setStyleSheet(RedSqr);
         EnvUp = false;
     }
 
 }
 
-void CraftControls::HelmType (void)
+void CraftControls::Communication (void)
 {
-    Helm *H = new Helm();
+    if (ComUp == false)
+    {
+        ui->Communication->setStyleSheet(GrnRnd);
+        ComUp = true;
+    }
+
+    else
+
+    if (ComUp == true)
+    {
+        ui->Communication->setStyleSheet(RedSqr);
+        ComUp = false;
+    }
+
+}
+
+void CraftControls::Sensors (void)
+{
+    if (SensUp == false)
+    {
+        ui->Sensors->setStyleSheet(GrnRnd);
+        SensUp = true;
+    }
+
+    else
+
+    if (SensUp == true)
+    {
+        ui->Sensors->setStyleSheet(RedSqr);
+        SensUp = false;
+    }
+}
+
+void CraftControls::Navigation (void)
+{
+    if (NavUp == false)
+    {
+        //Navigation *Nav = new Navigation();
+        //N->LoadNavigation();
+        //connect(this, SIGNAL(CloseNavigation()), N, SLOT(Exit()));
+        ui->Navigation->setStyleSheet(GrnRnd);
+        NavUp = true;
+    }
+
+    else
+
+    if (NavUp == true)
+    {
+        ui->Navigation->setStyleSheet(RedSqr);
+        NavUp = false;
+        //emit CloseNavigation();
+    }
+
+}
+
+void CraftControls::CCHelm (void)
+{
+
 
     if (HelmUp == false)
     {
-        H->LoadHelm(Camera);
-        connect(this, SIGNAL(CloseHelm()), H, SLOT(ExitHelm()));
+
+
         ui->Helm->setStyleSheet(GrnRnd);
         HelmUp = true;
     }
@@ -179,73 +239,17 @@ void CraftControls::HelmType (void)
 
     if (HelmUp == true)
     {
+        Helm *H = new Helm();
+        H->LoadHelm(Camera);
+        connect(this, SIGNAL(Helmoff()), H, SLOT(ExitHelm()));
         ui->Helm->setStyleSheet(RedSqr);
         HelmUp = false;
         emit CloseHelm();
-    }
-}
-
-void CraftControls::NavigationType (void)
-{
-    if (NavUp == false)
-    {
-        Navigation *N = new Navigation();
-        N->LoadNavigation();
-        connect(this, SIGNAL(CloseNavigation()), N, SLOT(Exit()));
-        ui->Nav->setStyleSheet(GrnRnd);
-        NavUp = true;
-    }
-
-    else
-
-    if (NavUp == true)
-    {
-        ui->Nav->setStyleSheet(RedSqr);
-        NavUp = false;
-        emit CloseNavigation();
+        emit Helmoff();
     }
 
 }
 
-
-void CraftControls::ComputerType (void)
-{
-    if (CompUp == false)
-    {
-        ui->Cmp->setStyleSheet(GrnRnd);
-        CompUp = true;
-
-        Voice AIVoice;
-        AIVoice.exec();
-    }
-
-    else
-
-    if (CompUp == true)
-    {
-        ui->Cmp->setStyleSheet(RedSqr);
-        CompUp = false;
-
-
-    }
-}
-
-void CraftControls::SensorArrayType (void)
-{
-    if (SensUp == false)
-    {
-        ui->Say->setStyleSheet(GrnRnd);
-        SensUp = true;
-    }
-
-    else
-
-    if (SensUp == true)
-    {
-        ui->Say->setStyleSheet(RedSqr);
-        SensUp = false;
-    }
-}
 
 void CraftControls::SetLocal (void)
 {
@@ -270,7 +274,7 @@ void CraftControls::SetUTC (void)
 
 void CraftControls::Exit (void)
 {
-    emit CloseAll();
+    //emit CloseAll();
     Timer->stop();
     this->close();
 }
@@ -374,3 +378,4 @@ void CraftControls::Broadcast (void)
     //qDebug() << "Bytes sent: " << Count;
 
 }
+

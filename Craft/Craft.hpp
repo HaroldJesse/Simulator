@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef CRAFT_HPP
 #define CRAFT_HPP
+//#endif // CRAFT_HPP
 
 #include <QVector3D>
 #include <QQuaternion>
@@ -15,19 +17,19 @@ public:
     static bool      FwdRevThrusterOn;
     static double    FwdRevDirection;
     static double    FwdRevThrust;
-    //static double    FwdRevValue;
+    static double    FwdRevValue;
 
     static double    HeadingThrottle;
     static bool      HeadingThrusterOn;
     static double    HeadingDirection;
     static double    HeadingThrust;
-    //static double    HeadingValue;
+    static double    HeadingValue;
 
     static double    MarkThrottle;
     static bool      MarkThrusterOn;
     static double    MarkDirection;
     static double    MarkThrust;
-    //static double    MarkValue;
+    static double    MarkValue;
 
 
     static bool      ThrusterSync;

@@ -1,5 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma once
 #ifndef SIMGLOBALS_HPP
 #define SIMGLOBALS_HPP
+#endif //SIMGLOBALS_HPP
 
 //Qt base includes
 
@@ -138,5 +158,5 @@
 #include "Voice.hpp"
 #include "BasicData.hpp"
 
+};
 
-#endif //SIMGLOBALS_HPP

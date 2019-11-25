@@ -19,8 +19,8 @@
   <widget class="QPushButton" name="Pause">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>190</y>
+     <x>1120</x>
+     <y>160</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -43,8 +43,8 @@ border-radius: 5px;</string>
   <widget class="QPushButton" name="Run">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>190</y>
+     <x>1120</x>
+     <y>130</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -70,8 +70,8 @@ border-radius: 5px;
   <widget class="QPushButton" name="Written">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>190</y>
+     <x>1120</x>
+     <y>40</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -92,8 +92,8 @@ border-radius: 5px;
   <widget class="QPushButton" name="Verbal">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>190</y>
+     <x>1120</x>
+     <y>70</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -116,7 +116,7 @@ border-radius: 5px;</string>
   <widget class="QPushButton" name="Exit">
    <property name="geometry">
     <rect>
-     <x>760</x>
+     <x>1120</x>
      <y>190</y>
      <width>80</width>
      <height>20</height>
@@ -142,8 +142,8 @@ border-radius: 5px;</string>
     <rect>
      <x>5</x>
      <y>11</y>
-     <width>1201</width>
-     <height>171</height>
+     <width>1001</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -156,8 +156,8 @@ background-color: rgb(0, 0, 0);
   <widget class="QPushButton" name="BasicData">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>190</y>
+     <x>1120</x>
+     <y>100</y>
      <width>80</width>
      <height>20</height>
     </rect>
@@ -178,6 +178,37 @@ border-radius: 5px;
    </property>
    <property name="shortcut">
     <string>Shift+P</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="DescriptionSelection">
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>10</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DescriptionSelectionlbl">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>10</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>Description Selection</string>
    </property>
   </widget>
  </widget>
@@ -263,6 +294,22 @@ border-radius: 5px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>DescriptionSelection</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>SimulatorControls</receiver>
+   <slot>Name()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1160</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>607</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>Exit()</slot>
@@ -276,5 +323,6 @@ border-radius: 5px;
   <slot>Left()</slot>
   <slot>Right()</slot>
   <slot>BasicDataDisplay()</slot>
+  <slot>Name()</slot>
  </slots>
 </ui>

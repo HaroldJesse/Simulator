@@ -114,9 +114,9 @@ Initialize::Initialize()
 
 
     //qDebug() << "LogView";
-    Logs LogsView;
+    //Logs LogsView;
     //LogsView.Initialize();
-    LogsView.exec();
+    //LogsView.exec();
 
 
 

@@ -1,5 +1,7 @@
+#pragma once
 #ifndef OThruster_HPP
 #define OThruster_HPP
+//#endif // OThruster_HPP
 
 #include <QDialog>
 #include "Initialize.hpp"
@@ -13,7 +15,7 @@ class OThruster : public QDialog
     Q_OBJECT
 
 public:
-    explicit OThruster(QDialog *parent = 0);
+    explicit OThruster(QDialog *parent = nullptr);
     ~OThruster();
 
     static double PitchThrust;

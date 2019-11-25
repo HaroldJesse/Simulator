@@ -1,5 +1,7 @@
+#pragma once
 #ifndef BASICDATA_HPP
 #define BASICDATA_HPP
+//#endif // BASICDATA_HPP
 
 #include <QDialog>
 #include <QTextToSpeech>

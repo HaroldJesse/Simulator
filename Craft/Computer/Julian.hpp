@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef JULIAN_HPP
 #define JULIAN_HPP
+//#endif // JULIAN_HPP
 
 #include <QDate>
 #include <QTime>

@@ -186,7 +186,7 @@ void Setup::BranchChanged (void)
     if(ui->Branch->currentText() == "Space Craft")
     {
        QStringList ClassList;
-       ClassList << " " << "Pilot" << "Navigator" << "Communication";
+       ClassList << " " << "Pilot" << "Navigator" << "Communications ";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();

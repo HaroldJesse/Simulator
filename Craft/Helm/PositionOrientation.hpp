@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef POSITIONORIENTATION_HPP
 #define POSITIONORIENTATION_HPP
+//#endif // POSITIONORIENTATION_HPP
 
 #include <QDialog>
 #include <QTimer>
@@ -16,7 +18,7 @@ class PositionOrientation : public QDialog
     Q_OBJECT
 
 public:
-    explicit PositionOrientation(QDialog *parent = 0);
+    explicit PositionOrientation(QDialog *parent = nullptr);
     ~PositionOrientation();
 
     static QVector3D Orientation;

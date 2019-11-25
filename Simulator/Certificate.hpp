@@ -1,5 +1,7 @@
+//#pragma once
 #ifndef CERTIFICATE_HPP
 #define CERTIFICATE_HPP
+//#endif // CERTIFICATE_HPP
 
 #include <QDialog>
 #include <QSqlTableModel>

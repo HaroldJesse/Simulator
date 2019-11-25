@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CRAFTCONTROLS_HPP
 #define CRAFTCONTROLS_HPP
 
@@ -61,8 +62,9 @@ public slots:
 
 signals:
     void CloseHelm (void);
-    void CloseNavigation (void);
-    void CloseAll (void);
+    void Helmoff();
+    //void CloseNavigation (void);
+    //void CloseAll (void);
 
 
 private:
@@ -85,14 +87,14 @@ private:
 
 
 private slots:
-    void PowerType (void);
-    void HelmType (void);
-    void NavigationType (void);
-    void EnvironmentType (void);
-    void CommunicationType (void);
-    void TransponderType (void);
-    void ComputerType (void);
-    void SensorArrayType (void);
+    void Power (void);
+    void CCHelm (void);
+    void Navigation (void);
+    void Environment (void);
+    void Communication (void);
+    void Transponder (void);
+    void Computer (void);
+    void Sensors (void);
     void SetTime (void);
     void Broadcast (void);
     void SetLocal (void);

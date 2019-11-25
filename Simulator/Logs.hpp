@@ -1,5 +1,7 @@
+#pragma once
 #ifndef LOGS_HPP
 #define LOGS_HPP
+#endif // LOGS_HPP
 
 #include <QDialog>
 #include <QtTextToSpeech>
@@ -13,6 +15,7 @@
 #include <qtableview.h>
 
 #include "IDCheck.hpp"
+#include "Initialize.hpp"
 
 namespace Ui {
 class Logs;
@@ -56,5 +59,3 @@ public slots:
 signals:
 
 };
-
-#endif // LOGS_HPP
