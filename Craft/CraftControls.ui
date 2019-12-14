@@ -117,11 +117,13 @@ border-radius: 5px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
 background-color: rgb(255, 0, 0);
 border-radius: 5px;</string>
     </property>
     <property name="text">
-     <string>Shut Down</string>
+     <string>Off</string>
     </property>
     <property name="shortcut">
      <string>Esc</string>
@@ -343,7 +345,7 @@ border-radius: 5px;</string>
    <sender>Power</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Power()</slot>
+   <slot>CraftPower()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>129</x>
@@ -359,7 +361,7 @@ border-radius: 5px;</string>
    <sender>Transponder</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Transponder()</slot>
+   <slot>CraftTransponder()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>254</x>
@@ -375,7 +377,7 @@ border-radius: 5px;</string>
    <sender>Computer</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Computer()</slot>
+   <slot>CraftComputer()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>329</x>
@@ -391,7 +393,7 @@ border-radius: 5px;</string>
    <sender>Enviroment</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Environment()</slot>
+   <slot>CraftEnvironment()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>404</x>
@@ -407,7 +409,7 @@ border-radius: 5px;</string>
    <sender>Communication</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Communication()</slot>
+   <slot>CraftCommunication()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>489</x>
@@ -423,7 +425,7 @@ border-radius: 5px;</string>
    <sender>Sensors</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Sensors()</slot>
+   <slot>CraftSensors()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>574</x>
@@ -439,7 +441,7 @@ border-radius: 5px;</string>
    <sender>Navigation</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>Navigation()</slot>
+   <slot>CraftNavigation()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>649</x>
@@ -455,7 +457,7 @@ border-radius: 5px;</string>
    <sender>Helm</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>CCHelm()</slot>
+   <slot>CraftHelm()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>709</x>
@@ -471,7 +473,7 @@ border-radius: 5px;</string>
    <sender>UTC</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>SetUTC()</slot>
+   <slot>CraftSetUTC()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>830</x>
@@ -487,7 +489,7 @@ border-radius: 5px;</string>
    <sender>Solar</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>SetSolar()</slot>
+   <slot>CraftSetSolar()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>835</x>
@@ -503,7 +505,7 @@ border-radius: 5px;</string>
    <sender>Local</sender>
    <signal>clicked()</signal>
    <receiver>CraftControls</receiver>
-   <slot>SetLocal()</slot>
+   <slot>CraftSetLocal()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>835</x>
@@ -517,17 +519,17 @@ border-radius: 5px;</string>
   </connection>
  </connections>
  <slots>
-  <slot>Power()</slot>
-  <slot>CCHelm()</slot>
-  <slot>Navigation()</slot>
-  <slot>Environment()</slot>
-  <slot>Communication()</slot>
-  <slot>Transponder()</slot>
-  <slot>Computer()</slot>
-  <slot>Sensors()</slot>
+  <slot>CraftPower()</slot>
+  <slot>CraftHelm()</slot>
+  <slot>CraftNavigation()</slot>
+  <slot>CraftEnvironment()</slot>
+  <slot>CraftCommunication()</slot>
+  <slot>CraftTransponder()</slot>
+  <slot>CraftComputer()</slot>
+  <slot>CraftSensors()</slot>
   <slot>Exit()</slot>
-  <slot>SetUTC()</slot>
-  <slot>SetLocal()</slot>
-  <slot>SetSolar()</slot>
+  <slot>CraftSetUTC()</slot>
+  <slot>CraftSetLocal()</slot>
+  <slot>CraftSetSolar()</slot>
  </slots>
 </ui>

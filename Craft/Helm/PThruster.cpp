@@ -17,6 +17,8 @@ PThruster::PThruster(QDialog *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    this->setModal(true);
+
     int Width = this->width();
     int Height = this->height();
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);

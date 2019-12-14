@@ -30,17 +30,17 @@ public:
     static QString SimSector;
     static QString SimLocation;
     static QString SimObject;
-    static QString SimCraftClass;
+    static QString SimCraftType;
     static QString SimCraftName;
 
     static QStringList SimTypeList;
     static QStringList SimBranchList;
-    static QStringList SimCraftClassList;
-    static QStringList SimCraftNameList;
     static QStringList SimQuadranList;
     static QStringList SimSectorList;
     static QStringList SimLocationList;
     static QStringList SimObjectList;
+    static QStringList SimCraftTypeList;
+    static QStringList SimCraftNameList;
 
 
 private:
@@ -67,7 +67,7 @@ private slots:
     void SectorChanged(void);
     void LocationChanged(void);
     void ObjectChanged(void);
-    void CraftClass(void);
+    void CraftType(void);
     void CraftName(void);
 
 };

@@ -7,6 +7,8 @@
 #include <QTextToSpeech>
 #include <QDebug>
 
+#include "Craft.hpp"
+
 namespace Ui
 {
     class Voice;
@@ -18,17 +20,24 @@ class Voice : public QDialog
 
 public:
     explicit Voice(QWidget *parent = nullptr);
+
     ~Voice();
 
-private:
+private:    
     Ui::Voice *ui;
 
+    void Setup (void);
     void SetVoice (void);
     void SetLocale (void);
     void SetGender (void);
 
+    void Alert (QString Text);
+    void Error (void);
+    void Warning (void);
+    void Instruction (void);
+
 private slots:
-    void Setup (void);
+
 };
 
 #endif // VOICE_HPP

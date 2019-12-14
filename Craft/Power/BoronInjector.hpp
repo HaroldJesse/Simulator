@@ -6,7 +6,7 @@
 #include <QTimer>
 #include <QMessageBox>
 
-#include "BoronInjector.hpp"
+//#include "BoronInjector.hpp"
 
 namespace Ui {
 class BoronInjector;

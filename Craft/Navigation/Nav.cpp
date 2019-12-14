@@ -1,9 +1,9 @@
-#include "Navigation.hpp"
-#include "ui_Navigation.h"
+#include "Nav.hpp"
+#include "ui_Nav.h"
 
-Navigation::Navigation(QDialog *parent) :
-    QDialog(parent),
-    ui(new Ui::Navigation)
+Nav::Nav(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Nav)
 {
     ui->setupUi(this);
 
@@ -14,17 +14,16 @@ Navigation::Navigation(QDialog *parent) :
     this->move(Initialize::WindowWidth/2 - Width/2,0);
 }
 
-Navigation::~Navigation()
+Nav::~Nav()
 {
     delete ui;
 }
 
-
-bool Navigation::LoadNavigation (void)
+bool Nav::LoadNavigation (void)
 {
     //Camera = CameraEntity;
 
-    if (Setup::SimCraftType == "Unknown")
+    if (Setup::SimCraftClass == "Unknown")
     {
         qApp->beep();
         QMessageBox msgBox;
@@ -36,7 +35,7 @@ bool Navigation::LoadNavigation (void)
 
     else
 
-    if (Setup::SimCraftType == "CargoShortHaul")
+    if (Setup::SimCraftClass == "CargoShortHaul")
     {
         Navigation *Nav1 =  new Navigation();
         connect (this, SIGNAL(CloseNavigation()), Nav1,SLOT(Exit()));
@@ -44,7 +43,7 @@ bool Navigation::LoadNavigation (void)
         Nav1->show();
     }
 
-    if (Setup::SimCraftType == "CargoLongHaul")
+    if (Setup::SimCraftClass == "CargoLongHaul")
     {
         qDebug() << "Nav: ";
         Navigation *Nav1 =  new Navigation();
@@ -52,14 +51,14 @@ bool Navigation::LoadNavigation (void)
         Nav1->show();
     }
 
-    if (Setup::SimCraftType == "TransportShortHaul")
+    if (Setup::SimCraftClass == "TransportShortHaul")
     {
         Navigation *Nav1 =  new Navigation();
         connect (this, SIGNAL(CloseNavigation()), Nav1,SLOT(Exit()));
         Nav1->exec();
     }
 
-    if (Setup::SimCraftType == "TransportLongHaul")
+    if (Setup::SimCraftClass == "TransportLongHaul")
     {
         Navigation *Nav1 =  new Navigation();
         connect (this, SIGNAL(CloseNavigation()), Nav1,SLOT(Exit()));
@@ -68,12 +67,12 @@ bool Navigation::LoadNavigation (void)
     return (true);
 }
 
-bool Navigation::UnLoadNavigation (void)
+bool Nav::UnLoadNavigation (void)
 {
     return (true);
 }
 
-void Navigation::SetNavTime (void)
+void Nav::SetNavTime (void)
 {
     Spice *CSpice = new Spice();
     //CSpice->show();
@@ -81,15 +80,15 @@ void Navigation::SetNavTime (void)
 }
 
 
-void Navigation::Exit (void)
+void Nav::Exit (void)
 {
     //qDebug() << "Nav Exit";
-    emit CloseNavigation();
+    emit CloseNav();
     this->close();
 }
 
 
-void Navigation::ID (void)
+void Nav::ID (void)
 {
 
     qDebug() << "ID";

@@ -23,6 +23,8 @@ PositionOrientation::PositionOrientation(QDialog *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    this->setModal(true);
+
     Size = this->size();
 
     int Width = this->width();

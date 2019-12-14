@@ -228,7 +228,7 @@ color: rgb(255, 255, 255);</string>
      <string>Craft Name</string>
     </property>
    </widget>
-   <widget class="QLabel" name="CraftClasslbl">
+   <widget class="QLabel" name="CraftTypelbl">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -260,7 +260,7 @@ background-color: rgb(100, 100, 100);
 </string>
     </property>
    </widget>
-   <widget class="QComboBox" name="CraftClass">
+   <widget class="QComboBox" name="CraftType">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -532,10 +532,10 @@ background-color: rgb(0, 0, 0);</string>
    </hints>
   </connection>
   <connection>
-   <sender>CraftClass</sender>
+   <sender>CraftType</sender>
    <signal>activated(QString)</signal>
    <receiver>Setup</receiver>
-   <slot>CraftClass()</slot>
+   <slot>CraftType()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1129</x>
@@ -574,7 +574,7 @@ background-color: rgb(0, 0, 0);</string>
   <slot>TypeChanged()</slot>
   <slot>BranchChanged()</slot>
   <slot>ClassChanged()</slot>
-  <slot>CraftClass()</slot>
+  <slot>CraftType()</slot>
   <slot>CraftName()</slot>
  </slots>
 </ui>

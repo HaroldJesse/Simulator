@@ -1425,7 +1425,7 @@ background-color: rgb(0, 0, 0);
     <string>Distance</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Off">
+  <widget class="QPushButton" name="Exit">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -1670,7 +1670,7 @@ color: rgb(255, 255, 255);</string>
    </hints>
   </connection>
   <connection>
-   <sender>Off</sender>
+   <sender>Exit</sender>
    <signal>clicked()</signal>
    <receiver>RCS1000</receiver>
    <slot>Exit()</slot>

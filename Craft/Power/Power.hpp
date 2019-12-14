@@ -1,3 +1,4 @@
+# pragma once
 #ifndef POWER_HPP
 #define POWER_HPP
 
@@ -5,6 +6,7 @@
 #include <QTimer>
 
 #include "FusionCore.hpp"
+#include "Power.hpp"
 
 namespace Ui {
 class Power;

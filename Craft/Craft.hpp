@@ -11,7 +11,7 @@ class Craft
 public:
     Craft();
 
-    static int   CraftTime;
+    static int       CraftTime;
 
     static double    FwdRevThrottle;
     static bool      FwdRevThrusterOn;
@@ -25,11 +25,11 @@ public:
     static double    HeadingThrust;
     static double    HeadingValue;
 
-    static double    MarkThrottle;
-    static bool      MarkThrusterOn;
-    static double    MarkDirection;
-    static double    MarkThrust;
-    static double    MarkValue;
+    static float    MarkThrottle;
+    static bool     MarkThrusterOn;
+    static float    MarkDirection;
+    static float    MarkThrust;
+    static float    MarkValue;
 
 
     static bool      ThrusterSync;

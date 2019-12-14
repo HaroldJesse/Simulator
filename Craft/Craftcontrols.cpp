@@ -25,7 +25,7 @@ CraftControls::CraftControls(Qt3DRender::QCamera *BasicCamera, QWidget *parent) 
     CraftControls::Size = this->size();
     CraftControls::Width = this->width();
     CraftControls::Height = this->height();
-    CraftControls::SetTime();
+    CraftControls::CraftSetTime();
 
     Camera = BasicCamera;
 
@@ -49,8 +49,12 @@ CraftControls::CraftControls(Qt3DRender::QCamera *BasicCamera, QWidget *parent) 
 
     //Set up master .1 second timer
     Timer = new QTimer(this);
-    connect(Timer, SIGNAL(timeout()), this, SLOT(SetTime()));
+    connect(Timer, SIGNAL(timeout()), this, SLOT(CraftSetTime()));
     Timer->start(1000);
+
+    Helm *HelmSig = new Helm(this);
+    connect(HelmSig, SIGNAL(CloseHelm()), this, SLOT(HelmOff()));
+
 
     //Camera = BasicCamera;
     //qDebug() << "Create Camera: " << Camera;
@@ -61,16 +65,16 @@ CraftControls::~CraftControls()
     delete ui;
 }
 
-void CraftControls::Power (void)
+void CraftControls::CraftPower (void)
 {
     if (PwrUp == false)
     {
-        //Power *Pwr = new Power();
-        //Pwr.exec();
+        Power *Pwr = new Power();
+        Pwr->exec();
 
         // Set up transponder
         UDPSocket = new QUdpSocket(this);
-        connect(Timer, SIGNAL(timeout()), this, SLOT(Broadcast()));
+        //connect(Timer, SIGNAL(timeout()), this, SLOT(Broadcast()));
 
         PwrUp = true;
         TranUp = true;
@@ -114,7 +118,7 @@ void CraftControls::Power (void)
     }
 }
 
-void CraftControls::Transponder (void)
+void CraftControls::CraftTransponder (void)
 {
     if (TranUp == false)
     {
@@ -129,7 +133,7 @@ void CraftControls::Transponder (void)
     }
 }
 
-void CraftControls::Computer (void)
+void CraftControls::CraftComputer (void)
 {
     if (CompUp == false)
     {
@@ -148,7 +152,7 @@ void CraftControls::Computer (void)
     }
 }
 
-void CraftControls::Environment (void)
+void CraftControls::CraftEnvironment (void)
 {
     if (EnvUp == false)
     {
@@ -166,7 +170,7 @@ void CraftControls::Environment (void)
 
 }
 
-void CraftControls::Communication (void)
+void CraftControls::CraftCommunication (void)
 {
     if (ComUp == false)
     {
@@ -184,7 +188,7 @@ void CraftControls::Communication (void)
 
 }
 
-void CraftControls::Sensors (void)
+void CraftControls::CraftSensors (void)
 {
     if (SensUp == false)
     {
@@ -201,15 +205,19 @@ void CraftControls::Sensors (void)
     }
 }
 
-void CraftControls::Navigation (void)
+void CraftControls::CraftNavigation (void)
 {
     if (NavUp == false)
     {
-        //Navigation *Nav = new Navigation();
-        //N->LoadNavigation();
-        //connect(this, SIGNAL(CloseNavigation()), N, SLOT(Exit()));
         ui->Navigation->setStyleSheet(GrnRnd);
         NavUp = true;
+
+        Navigation *Nav = new Navigation();
+        Nav->LoadNavigation();
+
+        ui->Navigation->setStyleSheet(RedSqr);
+        NavUp = false;
+
     }
 
     else
@@ -218,54 +226,52 @@ void CraftControls::Navigation (void)
     {
         ui->Navigation->setStyleSheet(RedSqr);
         NavUp = false;
-        //emit CloseNavigation();
-    }
+     }
 
 }
 
-void CraftControls::CCHelm (void)
+void CraftControls::CraftHelm (void)
 {
-
-
     if (HelmUp == false)
     {
-
-
         ui->Helm->setStyleSheet(GrnRnd);
         HelmUp = true;
-    }
+
+        Helm *H = new Helm();
+        //H->show();
+        H->LoadHelm(Camera);
+
+        ui->Helm->setStyleSheet(RedSqr);
+        HelmUp = false;
+     }
 
     else
 
     if (HelmUp == true)
     {
-        Helm *H = new Helm();
-        H->LoadHelm(Camera);
-        connect(this, SIGNAL(Helmoff()), H, SLOT(ExitHelm()));
         ui->Helm->setStyleSheet(RedSqr);
         HelmUp = false;
-        emit CloseHelm();
-        emit Helmoff();
+
     }
 
 }
 
 
-void CraftControls::SetLocal (void)
+void CraftControls::CraftSetLocal (void)
 {
     ui->Local->setChecked(true);
     ui->Solar->setChecked(false);
     ui->UTC->setChecked(false);
 }
 
-void CraftControls::SetSolar (void)
+void CraftControls::CraftSetSolar (void)
 {
     ui->Local->setChecked(false);
     ui->Solar->setChecked(true);
     ui->UTC->setChecked(false);
 }
 
-void CraftControls::SetUTC (void)
+void CraftControls::CraftSetUTC (void)
 {
     ui->Local->setChecked(false);
     ui->Solar->setChecked(false);
@@ -274,13 +280,12 @@ void CraftControls::SetUTC (void)
 
 void CraftControls::Exit (void)
 {
-    //emit CloseAll();
     Timer->stop();
     this->close();
 }
 
 
-void  CraftControls::SetTime (void)
+void  CraftControls::CraftSetTime (void)
 {
     if (ui->Local->isChecked() == true)
     {
@@ -345,7 +350,7 @@ void  CraftControls::SetTime (void)
     Transponder::TransponderDataSend.append("Time: ");
     Transponder::TransponderDataSend.append(ShipTime);
     Transponder::TransponderDataSend.append(NewLine);
-    Transponder::TransponderDataSend.append(Setup::SimCraftClass.toLatin1());
+    Transponder::TransponderDataSend.append(Setup::SimCraftType.toLatin1());
     Transponder::TransponderDataSend.append(NewLine);
     Transponder::TransponderDataSend.append(Setup::SimCraftName.toLatin1());
     Transponder::TransponderDataSend.append(NewLine);
@@ -353,7 +358,7 @@ void  CraftControls::SetTime (void)
 
 }
 
-void CraftControls::Broadcast (void)
+void CraftControls::CraftBroadcast (void)
 {
     if (TranUp == false)
     {
@@ -378,4 +383,13 @@ void CraftControls::Broadcast (void)
     //qDebug() << "Bytes sent: " << Count;
 
 }
+
+
+void CraftControls::HelmOff (void)
+    {
+        ui->Helm->setStyleSheet(RedSqr);
+        HelmUp = false;
+
+        qDebug() << "Helm signal";
+    }
 

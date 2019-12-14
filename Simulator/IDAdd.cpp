@@ -43,10 +43,6 @@ void IDAdd::CreateID (void)
     IDCheck::Level = "Trainee";
     IDCheck::ActivationDate = QDateTime(QDateTime::currentDateTime());
 
-
-    //qDebug() << "Name: " << IDCheck::IndividualName << IDCheck::FamilyName;
-
-
     //set up database
     QString DataBase = IDCheck::Device + "/" + IDCheck::DeviceFolder + "/" + "ID.sim";
 
@@ -133,7 +129,6 @@ void IDAdd::CreateCertificates (void)
 
     QSqlDatabase IDdb = QSqlDatabase::database("ID");
     IDdb.setDatabaseName(DataBase);
-    //qDebug() << "Database: " << DataBase;
 
     if (IDdb.open() == false) //try to connect to the database
     {

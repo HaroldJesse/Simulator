@@ -108,7 +108,6 @@ bool Logs::CreateLog (QString LogsName)
     //check if good connection
     QSqlDatabase SimLog = QSqlDatabase::addDatabase("QSQLITE","SimLog");
     SimLog.setDatabaseName(SimLogFileName);
-    qDebug() << "SimLogFileName:" <<SimLogFileName;
 
     if (SimLog.open() == false) //try to connect to the database
     {

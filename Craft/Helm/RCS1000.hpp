@@ -22,7 +22,6 @@ class RCS1000 : public QDialog
 public:
     explicit RCS1000(Qt3DRender::QCamera *CameraEntity, QDialog *parent = nullptr);
     ~RCS1000();
-
 public slots:
     void Exit (void);
 
@@ -65,6 +64,9 @@ private slots:
 
     void MasterUpdate (void);
 
+signals:
+
+    void CloseHelm();
 
 };
 

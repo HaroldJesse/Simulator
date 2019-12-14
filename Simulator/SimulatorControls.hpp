@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #ifndef SIMULATORCONTROLS_HPP
 #define SIMULATORCONTROLS_HPP
 //#endif // SIMULATORCONTROLS_HPP

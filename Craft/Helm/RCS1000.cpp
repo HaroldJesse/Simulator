@@ -688,5 +688,6 @@ void RCS1000::SetRollValue(void)
 
 void RCS1000::Exit (void)
 {
+    emit CloseHelm();
     this->close();
 }

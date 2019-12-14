@@ -35,6 +35,29 @@ void Voice::SetGender (void)
 
 }
 
+void Voice::Alert (QString Text)
+{
+    qDebug() << "Text: " << Text;
+    QTextToSpeech Verbalize;
+    //while (!Verbalize.Ready)
+    Verbalize.say(Text);
+}
+
+void Voice::Error (void)
+{
+
+}
+
+void Voice::Warning (void)
+{
+
+}
+
+void Voice::Instruction (void)
+{
+
+}
+
 /*
 
 #include "mainwindow.h"

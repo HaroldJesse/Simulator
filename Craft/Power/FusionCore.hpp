@@ -17,7 +17,7 @@ class FusionCore : public QDialog
     Q_OBJECT
 
 public:
-    explicit FusionCore(QWidget *parent = 0);
+    explicit FusionCore(QWidget *parent = nullptr);
 
     static bool BoronInjectionOn;
     static bool AlphaInjectionOn;

@@ -1,9 +1,8 @@
-#pragma once
-#ifndef NAVIGATION_HPP
-#define NAVIGATION_HPP
-//#endif // NAVIGATION_HPP
+//#pragma once
+#ifndef NAV_HPP
+#define NAV_HPP
 
-#include <QDialog>
+#include <QWidget>
 #include <QtTextToSpeech>
 #include <QMessageBox>
 
@@ -12,16 +11,16 @@
 #include "Spice.hpp"
 
 namespace Ui {
-class Navigation;
+class Nav;
 }
 
-class Navigation : public QDialog
+class Nav : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Navigation(QDialog *parent = nullptr);
-    ~Navigation();
+    explicit Nav(QWidget *parent = nullptr);
+    ~Nav();
 
     bool LoadNavigation (void);
     bool UnLoadNavigation (void);
@@ -30,17 +29,16 @@ public slots:
     void Exit (void);
 
 signals:
-    void CloseNavigation();
+    void CloseNav();
 
 private:
-    Ui::Navigation *ui;
+    Ui::Nav *ui;
 
     QTextToSpeech *Verbalize = new QTextToSpeech;
 
 private slots:
     void ID (void);
     void SetNavTime();
-
 };
 
-#endif // NAVIGATION_HPP
+#endif // NAV_HPP

@@ -30,37 +30,37 @@ double  Craft::FwdRevThrust(0);
 
 //Port/Starboard
 double Craft::HeadingThrottle (0);
-bool   Craft::HeadingThrusterOn (false);
+bool    Craft::HeadingThrusterOn (false);
 double  Craft::HeadingDirection (0);
 double  Craft::HeadingThrust(0);
 //double  Craft::HeadingValue(0);
 
 //Up/Down
-double  Craft::MarkThrottle (0);
-bool   Craft::MarkThrusterOn (false);
-double  Craft::MarkDirection (0);
-double  Craft::MarkThrust(0);
+float    Craft::MarkThrottle (0);
+bool     Craft::MarkThrusterOn (false);
+float    Craft::MarkDirection (0);
+float    Craft::MarkThrust(0);
 //double  Craft::MarkValue(0);
 
 // ROTATION
 
 //Pitch
 double  Craft::PitchThrottle (0);
-bool   Craft::PitchThrusterOn = false;
+bool    Craft::PitchThrusterOn = false;
 double  Craft::PitchDirection (0);
 double  Craft::PitchThrust (0);
 double  Craft::PitchAngle (0);
 
 //Yaw
 double  Craft::YawThrottle (0);
-bool   Craft::YawThrusterOn = false;
-int    Craft::YawDirection (0);
+bool    Craft::YawThrusterOn = false;
+int     Craft::YawDirection (0);
 double  Craft::YawThrust (0);
 double  Craft::YawAngle (0);
 
 //Roll
 double  Craft::RollThrottle (0);
-bool   Craft::RollThrusterOn = false;
+bool    Craft::RollThrusterOn = false;
 double  Craft::RollDirection (0);
 double  Craft::RollThrust (0);
 double  Craft::RollAngle (0);

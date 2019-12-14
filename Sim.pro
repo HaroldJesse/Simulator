@@ -14,6 +14,7 @@ TEMPLATE = app
 
 SOURCES +=\
     Craft/Helm/RCS1000.cpp \
+    Craft/Navigation/Navigation.cpp \
     Simulator/Audio.cpp \
     Simulator/Logs.cpp \
     Simulator/Setup.cpp \
@@ -31,7 +32,6 @@ SOURCES +=\
     Craft/Power/FusionCore.cpp \
     Craft/Power/BoronInjector.cpp \
     Craft/Helm/Helm.cpp \
-    Craft/Navigation/Navigation.cpp \
     Craft/Navigation/Spice.cpp \
     Craft/Computer/Voice.cpp \
     Simulator/Window.cpp \
@@ -48,6 +48,7 @@ SOURCES +=\
 HEADERS  += \
     Craft/Helm/Helm.hpp \
     Craft/Helm/RCS1000.hpp \
+    Craft/Navigation/Navigation.hpp \
     Simulator/Audio.hpp \
     Simulator/Logs.hpp \
     Simulator/SimConstants.hpp \
@@ -67,7 +68,6 @@ HEADERS  += \
     Craft/Power/Power.hpp \
     Craft/Power/FusionCore.hpp \
     Craft/Power/BoronInjector.hpp \
-    Craft/Navigation/Navigation.hpp \
     Craft/Navigation/Spice.hpp \
     Craft/Computer/Voice.hpp\
     dox.hpp \
@@ -83,6 +83,7 @@ HEADERS  += \
 
 FORMS    += \
     Craft/Helm/RCS1000.ui \
+    Craft/Navigation/Navigation.ui \
     Simulator/Logs.ui \
     Simulator/Setup.ui \
     Simulator/IDPort.ui \
@@ -94,7 +95,6 @@ FORMS    += \
     Craft/Communications/Transponder.ui \
     Craft/Power/FusionCore.ui \
     Craft/Power/BoronInjector.ui \
-    Craft/Navigation/Navigation.ui \
     Craft/Navigation/Spice.ui \
     Simulator/IDAdd.ui \
     Simulator/IDCheck.ui \

@@ -12,13 +12,14 @@ Helm::~Helm()
 
 bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 {
-
+    //qDebug() << "Helm started";
     QTextToSpeech Verbalize;
+
     Verbalize.say("Helm Control is online");
 
     //Camera = CameraEntity;
 
-    if (Setup::SimCraftClass == "Unknown")
+    if (Setup::SimCraftType == "Unknown")
     {
         qDebug() << "Unknown";
         //qApp->beep();
@@ -31,23 +32,12 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 
     else
 
-    if (Setup::SimCraftClass == "CargoShortHaul")
-
+    if (Setup::SimCraftType == "CargoShortHaul")
     {
-        RCS1000 *RCS1 =  new RCS1000(CameraEntity);
-        connect (this, SIGNAL(CloseHelm()), RCS1,SLOT(Exit()));
-        RCS1->exec ();
-
-        /*
-         * PositionOrientation *PO = new PositionOrientation();
+        PositionOrientation *PO = new PositionOrientation();
         connect (this, SIGNAL(CloseHelm()), PO,SLOT(Exit()));
 
         PO->show();
-
-        RCS2000 *RCS = new RCS2000(CameraEntity);
-        connect (this, SIGNAL(CloseHelm()), RCS,SLOT(Exit()));
-
-        RCS->show();
 
         OThruster *OT = new OThruster();
         connect (this, SIGNAL(CloseHelm()), OT,SLOT(Exit()));
@@ -58,12 +48,21 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
         connect (this, SIGNAL(CloseHelm()), PT,SLOT(Exit()));
 
         PT->show();
-        */
+
+        RCS2000 *RCS2 = new RCS2000(CameraEntity);
+        connect (this, SIGNAL(CloseHelm()), RCS2,SLOT(Exit()));
+        RCS2->show();
+
+        //RCS1000 *RCS1 =  new RCS1000(CameraEntity);
+        //connect (this, SIGNAL(CloseHelm()), RCS1,SLOT(Exit()));
+        //RCS1->show ();
+
+
     }
 
     else
 
-    if (Setup::SimCraftClass == "CargoLongHaul")
+    if (Setup::SimCraftType == "CargoLongHaul")
     {
         RCS1000 *RCS1 =  new RCS1000(CameraEntity);
         connect (this, SIGNAL(CloseHelm()), RCS1,SLOT(Exit()));
@@ -90,7 +89,7 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 
     else
 
-    if (Setup::SimCraftClass == "TransportShortHaul")
+    if (Setup::SimCraftType == "TransportShortHaul")
     {
         RCS1000 *RCS1 =  new RCS1000(CameraEntity);
         connect (this, SIGNAL(CloseHelm()), RCS1,SLOT(Exit()));
@@ -99,7 +98,7 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 
     else
 
-    if (Setup::SimCraftClass == "TransportLongHaul")
+    if (Setup::SimCraftType == "TransportLongHaul")
     {
         RCS1000 *RCS1 = new RCS1000(CameraEntity);
         connect (this, SIGNAL(CloseHelm()), RCS1,SLOT(Exit()));
@@ -112,6 +111,5 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 void Helm::ExitHelm (void)
 {
     emit Helmoff();
-    emit CloseHelm();
     this->close();
 }

@@ -11,6 +11,7 @@ RCS2000::RCS2000(Qt3DRender::QCamera *CameraEntity, QDialog *parent) :
     int Width = this->width();
     int Height = this->height();
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    this->setModal(true);
     this->move(Initialize::WindowWidth/2 - Width/2,Initialize::WindowHeight - CraftControls::Height - Height);
 
 
@@ -153,15 +154,15 @@ void RCS2000::TranslateReverse(void)
 
 void RCS2000::UpDateSphericalPosition (void)
 {
-    double Distance = Craft::Heading.z ();
+    qfloat16 Distance = Craft::Heading.z ();
     QString distance;
     distance = distance.setNum (Distance);
 
-    double Heading = Craft::Heading.x ();
+    qfloat16 Heading = Craft::Heading.x ();
     QString heading;
     heading = heading.setNum (Heading);
 
-    double Mark = Craft::Heading.y ();
+    qfloat16 Mark = Craft::Heading.y ();
     QString mark;
     mark = mark.setNum (Mark);
 
@@ -181,7 +182,7 @@ void RCS2000::UpDateCartesianPosition (void)
     PositionOrientation::Distance = Position.z();
 
     //Value = Value.setNum (Mark);
-    //PositionOrientation.Mark.         ->Mark->setText(Value);
+    //PositionOrientation.Mark->Mark->setText(Value);
 
     //Direction = Position.y();
     //Value = Value.setNum (Direction);
@@ -343,7 +344,8 @@ void RCS2000::MasterUpdate (void)
 
 void RCS2000::Exit (void)
 {
-    //qDebug() << "RCSExit";
+    qDebug() << "RCS2Exit";
+    emit RCS2Close ();
     Timer->stop();
     this->close();
 }

@@ -78,6 +78,10 @@ public:
     static double VernierThrust;
     static double PrimaryThrust;
 
+signals:
+
+    void RCS2Close ();
+
 public slots:
     void Exit (void);
 

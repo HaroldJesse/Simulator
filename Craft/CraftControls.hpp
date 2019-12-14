@@ -7,14 +7,13 @@
 #include <Qt3DRender>
 #include <QTimer>
 
-
-#include "Initialize.hpp"
 #include "Power.hpp"
 #include "Transponder.hpp"
 #include "Helm.hpp"
 #include "Voice.hpp"
 #include "Setup.hpp"
 #include "Navigation.hpp"
+#include "Helm.hpp"
 
 namespace Ui {
 class CraftControls;
@@ -26,6 +25,7 @@ class CraftControls : public QDialog
 
 public:
     explicit CraftControls(Qt3DRender::QCamera *CameraEntity, QWidget *parent = nullptr);
+
     ~CraftControls();
 
     static QString ShipTime;
@@ -57,16 +57,6 @@ public:
                           " color: white;"
                           "border-radius: 20px;";
 
-public slots:
-    void Exit (void);
-
-signals:
-    void CloseHelm (void);
-    void Helmoff();
-    //void CloseNavigation (void);
-    //void CloseAll (void);
-
-
 private:
     Ui::CraftControls *ui;
 
@@ -83,23 +73,27 @@ private:
     static bool SensUp;
     static bool TranUp;
 
+    //void Exit ();
 
+signals:
 
 
 private slots:
-    void Power (void);
-    void CCHelm (void);
-    void Navigation (void);
-    void Environment (void);
-    void Communication (void);
-    void Transponder (void);
-    void Computer (void);
-    void Sensors (void);
-    void SetTime (void);
-    void Broadcast (void);
-    void SetLocal (void);
-    void SetSolar (void);
-    void SetUTC (void);
+    void CraftPower (void);
+    void CraftHelm (void);
+    void CraftNavigation (void);
+    void CraftEnvironment (void);
+    void CraftCommunication (void);
+    void CraftTransponder (void);
+    void CraftComputer (void);
+    void CraftSensors (void);
+    void CraftSetTime (void);
+    void CraftBroadcast (void);
+    void CraftSetLocal (void);
+    void CraftSetSolar (void);
+    void CraftSetUTC (void);
+    void Exit ();
+    void HelmOff (void);
 };
 
 #endif // CRAFTCONTROLS_HPP

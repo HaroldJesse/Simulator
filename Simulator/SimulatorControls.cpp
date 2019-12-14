@@ -20,10 +20,11 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     //ui->ObjectText->setReadOnly(true);
     ui->ObjectText->hide();
 
-    QDir directory(Initialize::StartupPath + "/Description");
+    QDir directory(Initialize::StartupPath + "/Description" + "/" + Setup::SimLocation);
+    qDebug() << "Directory: " << directory;
     QStringList NameFilter("*.html");
     QStringList DescriptionFiles = directory.entryList(NameFilter);
-    qDebug() << "SelectionFiles: " << DescriptionFiles;
+    qDebug() << "DescriptionFiles: " << DescriptionFiles;
 
     ui->DescriptionSelection->clear();
     ui->DescriptionSelection->addItems(DescriptionFiles);
@@ -32,8 +33,6 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
 
     QString TextFile = ui->DescriptionSelection->currentText();
     TextFile.chop(5);
-    qDebug() << "Trimmed: " << TextFile;
-
 }
 
 SimulatorControls::~SimulatorControls()
@@ -44,10 +43,7 @@ SimulatorControls::~SimulatorControls()
 void SimulatorControls::Name (void)
 {
     Setup::SimObject = (ui->DescriptionSelection->currentText());
-    qDebug() << "link: " << Setup::SimObject;
 }
-
-
 
 void SimulatorControls::Run (void)
 {
@@ -78,8 +74,7 @@ void SimulatorControls::Written (void)
     {
         ui->Written->setStyleSheet(GrnRnd15);
 
-        QFile Name ("Description/" + Setup::SimObject);
-
+        QFile Name ("Description/" + Setup::SimLocation + "/" + Setup::SimObject);
         qDebug() << "Name: " << Name;
 
         //Check for database
@@ -93,7 +88,7 @@ void SimulatorControls::Written (void)
         Name.open(QIODevice::ReadOnly);
 
         QByteArray Script = Name.readAll();
-        //qDebug() << "Script: " << Script;
+        qDebug() << "Object Script: " << Script;
 
         ui->ObjectText->setText(Script);
 

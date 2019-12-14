@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #ifndef POSITIONORIENTATION_HPP
 #define POSITIONORIENTATION_HPP
 //#endif // POSITIONORIENTATION_HPP

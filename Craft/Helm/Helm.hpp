@@ -24,9 +24,10 @@ class Helm : public QWidget
 
 public:
     explicit Helm(QWidget *parent = nullptr);
-    void ExitHelm (void);
+
     ~Helm();
 
+    void ExitHelm ();
     bool LoadHelm (Qt3DRender::QCamera *CameraEntity);
     bool UnLoadHelm (Qt3DRender::QCamera *CameraEntity);
 
