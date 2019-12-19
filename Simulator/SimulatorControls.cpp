@@ -21,18 +21,13 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     ui->ObjectText->hide();
 
     QDir directory(Initialize::StartupPath + "/Description" + "/" + Setup::SimLocation);
-    qDebug() << "Directory: " << directory;
     QStringList NameFilter("*.html");
     QStringList DescriptionFiles = directory.entryList(NameFilter);
-    qDebug() << "DescriptionFiles: " << DescriptionFiles;
 
     ui->DescriptionSelection->clear();
     ui->DescriptionSelection->addItems(DescriptionFiles);
     ui->DescriptionSelection->show();
     ui->DescriptionSelectionlbl->show();
-
-    QString TextFile = ui->DescriptionSelection->currentText();
-    TextFile.chop(5);
 }
 
 SimulatorControls::~SimulatorControls()
@@ -52,8 +47,8 @@ void SimulatorControls::Run (void)
         ui->Run->setStyleSheet(GrnRnd15);
         RunUp = true;
 
-        Load ("Script/Moon.html");
-        GetText();
+        //Load ("Script/Moon.html");
+        //GetText();
     }
 
     else
@@ -63,8 +58,8 @@ void SimulatorControls::Run (void)
         ui->Run->setStyleSheet(RedSqr5);
         RunUp = false;
 
-        Load ("Script/Moon.html");
-        GetText();
+        //Load ("Script/Moon.html");
+        //GetText();
     }
 }
 
@@ -75,7 +70,6 @@ void SimulatorControls::Written (void)
         ui->Written->setStyleSheet(GrnRnd15);
 
         QFile Name ("Description/" + Setup::SimLocation + "/" + Setup::SimObject);
-        qDebug() << "Name: " << Name;
 
         //Check for database
         if (Name.exists() == false)
@@ -88,13 +82,10 @@ void SimulatorControls::Written (void)
         Name.open(QIODevice::ReadOnly);
 
         QByteArray Script = Name.readAll();
-        qDebug() << "Object Script: " << Script;
-
         ui->ObjectText->setText(Script);
 
         ui->ObjectText->show();
         WrittenUp = true;
-
 
     }
 
@@ -116,8 +107,12 @@ void SimulatorControls::Verbal (void)
         ui->Verbal->setStyleSheet(GrnRnd15);
         VerbalUp = true;
 
-        Verbalize->say ("Welcome to the location" + Setup::SimLocation + "and the object    " + Setup::SimObject + "    " + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
+        Verbalize->say ("Welcome to the location" + Setup::SimLocation  + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
+        //Verbalize->say ("Welcome to the location" + Setup::SimLocation + "and the object    " + Setup::SimObject.chopped(5) + "    " + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
         Verbalize->say (ui->ObjectText->toPlainText());
+
+        Verbalize->say("Select an object from the selection list");
+
     }
 
     else
