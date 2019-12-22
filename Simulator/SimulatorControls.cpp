@@ -20,9 +20,11 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     //ui->ObjectText->setReadOnly(true);
     ui->ObjectText->hide();
 
-    QDir directory(Initialize::StartupPath + "/Description" + "/" + Setup::SimLocation);
+    QDir directory(Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation);
+    qDebug() << "Directory: " << directory;
     QStringList NameFilter("*.html");
     QStringList DescriptionFiles = directory.entryList(NameFilter);
+    qDebug() << "Description Files: " << DescriptionFiles;
 
     ui->DescriptionSelection->clear();
     ui->DescriptionSelection->addItems(DescriptionFiles);
@@ -69,7 +71,8 @@ void SimulatorControls::Written (void)
     {
         ui->Written->setStyleSheet(GrnRnd15);
 
-        QFile Name ("Description/" + Setup::SimLocation + "/" + Setup::SimObject);
+        QFile Name (Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation + "/" + Setup::SimObject);
+        qDebug() << "Written Name: " << Name;
 
         //Check for database
         if (Name.exists() == false)
@@ -107,8 +110,8 @@ void SimulatorControls::Verbal (void)
         ui->Verbal->setStyleSheet(GrnRnd15);
         VerbalUp = true;
 
-        Verbalize->say ("Welcome to the location" + Setup::SimLocation  + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
-        //Verbalize->say ("Welcome to the location" + Setup::SimLocation + "and the object    " + Setup::SimObject.chopped(5) + "    " + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
+        //Verbalize->say ("Welcome to the location" + Setup::SimLocation  + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
+        Verbalize->say ("Welcome to the location" + Setup::SimLocation + "and the object    " + Setup::SimObject.chopped(5) + "    " + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
         Verbalize->say (ui->ObjectText->toPlainText());
 
         Verbalize->say("Select an object from the selection list");
@@ -154,6 +157,7 @@ bool SimulatorControls::Load(const QString &Scriptfile)
     textEdit = new QTextEdit(this);
 
     if (!QFile::exists(Scriptfile))
+        qDebug() << "Script file: " << Scriptfile;
         return false;
     QFile file(Scriptfile);
     if (!file.open(QFile::ReadOnly))

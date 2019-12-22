@@ -196,7 +196,7 @@ Initialize::Initialize()
 
 
     Qt3DRender::QTextureImage *ObjectTexture = new Qt3DRender::QTextureImage;
-    QString ObjectTextureFile = "Location/" + Setup::SimLocation +"/" + Setup::SimObject + ".jpg";
+    QString ObjectTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation +"/" + Setup::SimObject + ".jpg";
     //qDebug() << "Location folder" << ObjectTextureFile;
     QString TargetObject = "file:" + ObjectTextureFile;
     QFile Image(ObjectTextureFile);
@@ -212,7 +212,7 @@ Initialize::Initialize()
     else
 
     {
-        QString ObjectTextureFile = "Location/Bogus.jpg";
+        QString ObjectTextureFile = Initialize::StartupPath + "/Data-Pak/Location/Bogus.jpg";
         QString TargetObject = "file:" + ObjectTextureFile;
         ObjectTexture->setSource (QUrl(TargetObject));
     }
@@ -262,7 +262,7 @@ Initialize::Initialize()
     //add SpaceStation Texture
     Qt3DRender::QTextureImage *SpaceStationTexture = new Qt3DRender::QTextureImage;
     Setup::SimObject = "Moon";
-    QString StationTextureFile = "Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
+    QString StationTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
     QString StationObject = "file:" + StationTextureFile;
 
 
@@ -308,7 +308,7 @@ Initialize::Initialize()
 
     Qt3DRender::QTextureImage *MoonTexture = new Qt3DRender::QTextureImage;
     Setup::SimObject = "Moon";
-    QString MoonTextureFile = "Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
+    QString MoonTextureFile = "/Data=Pak/Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
     QString MoonObject = "file:" + MoonTextureFile;
 
     MoonTexture->setSource (QUrl(MoonObject));
@@ -336,31 +336,31 @@ Initialize::Initialize()
     //connect(SceneLoader, SIGNAL(statusChanged()), this, SLOT(OnStatusChanged()));
     // Scene loader
 
-    SceneLoaderEntity = new Qt3DCore::QEntity(SceneRoot);
-    SceneLoader = new Qt3DRender::QSceneLoader(SceneLoaderEntity);
+    //SceneLoaderEntity = new Qt3DCore::QEntity(SceneRoot);
+    //SceneLoader = new Qt3DRender::QSceneLoader(SceneLoaderEntity);
 
-    SceneLoaderEntity->addComponent(SceneLoader);
+    //SceneLoaderEntity->addComponent(SceneLoader);
 
     //Break down scene components
 
     //Object Transforms
 
-    Qt3DCore::QTransform *CraftTransforms = new Qt3DCore::QTransform();
-    CraftTransforms->setTranslation(QVector3D(-100.0f, 0.0f, -100.0f));
-    CraftTransforms->setRotationX(0.0f);
-    CraftTransforms->setScale (1.0f);
-    SceneLoaderEntity->addComponent(CraftTransforms);
+    //Qt3DCore::QTransform *CraftTransforms = new Qt3DCore::QTransform();
+    //CraftTransforms->setTranslation(QVector3D(-100.0f, 0.0f, -100.0f));
+    //CraftTransforms->setRotationX(0.0f);
+    //CraftTransforms->setScale (1.0f);
+    //SceneLoaderEntity->addComponent(CraftTransforms);
 
-    QDir Dir;
-    QString directory = Dir.currentPath();
+    //QDir Dir;
+    //QString directory = Dir.currentPath();
     //qDebug() << "Current directory: " << directory;
     QUrl SourceFileName;
 
     //qDebug() << "Before: " << Setup::SimObject;
-    Setup::SimLocation = "SpaceCraft";
-    Setup::SimObject = "Enterprise";
+    //Setup::SimLocation = "SpaceCraft";
+    //Setup::SimObject = "Enterprise";
 
-    SourceFileName = "file:" + "Location/Object/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
+    //SourceFileName = "file:" + "/DataPak/Location/Object/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
     //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Enterprise/Enterprise.obj";
     //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Spider.obj";
     //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Enterprise.obj";

@@ -7,7 +7,7 @@ Logs::Logs(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QDir directory(Initialize::StartupPath + "/SimLogs");
+    QDir directory(Initialize::StartupPath + "/Data-Pak/SimLogs");
     QStringList NameFilter("*.log");
     QStringList LogFiles = directory.entryList(NameFilter);
     //qDebug() << "LogFiles: " << LogFiles;
@@ -88,9 +88,6 @@ bool Logs::CreateLog (QString LogsName)
             return false ;
         }
 
-        //qDebug() << "Start table creation";
-
-    //QString SimLogFileName = CurrentDir  +  "SimLogs/" + LogName;
     QFile DatabaseFile(SimLogFileName);
 
 

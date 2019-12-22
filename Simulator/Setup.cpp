@@ -33,12 +33,6 @@ Setup::Setup(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
 
 
-    //VoiceList = Verbalize->availableVoices();
-    //qDebug() << "Voice: " << VoiceList[0];
-
-    Verbalize->setPitch(.3);
-    Verbalize->setRate(0);
-    Verbalize->stop();
 
     Setup::SimTypeList << "Training" << "Simulation" << "Deployment";
 

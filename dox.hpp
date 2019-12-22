@@ -2,7 +2,7 @@
  *  @brief General documentation built from a doxygen comment
  */
 
-/*! \mainpage Spacecraft Simulator
+/*! \mainpage Simulator
  *
  * \image html Pinwheel.gif
  *

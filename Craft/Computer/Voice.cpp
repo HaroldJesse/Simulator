@@ -17,7 +17,11 @@ Voice::~Voice()
 
 void Voice::Setup (void)
 {
-
+    //QVector<VoiceList> = Verbalize->availableVoices();
+    //qDebug() << "Voice: " << VoiceList[0];
+    Verbalize->setPitch(.3);
+    Verbalize->setRate(0);
+    Verbalize->stop();
 }
 
 void Voice::SetVoice(void)

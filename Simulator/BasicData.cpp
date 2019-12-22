@@ -271,7 +271,8 @@ void BasicData::Basic()
 
 
 
-    QFile Name ("DataBase/Objects.db");
+    QFile Name (Initialize::StartupPath + "/Data-Pak/DataBase/Objects.db");
+    qDebug() << "Database Name: " << Name;
 
     //Check for database
     if (Name.exists() == false)
@@ -286,7 +287,7 @@ void BasicData::Basic()
 
         QSqlDatabase Objectsdb = QSqlDatabase::addDatabase("QSQLITE","Objects");
         Objectsdb.setConnectOptions("QSQLITE_OPEN_READONLY");
-        Objectsdb.setDatabaseName("Database/Objects.db");
+        Objectsdb.setDatabaseName("Data-Pak/Database/Objects.db");
 
         if (Objectsdb.open() == false) //try to connect to the database
         {
@@ -480,12 +481,12 @@ void BasicData::Orbital (void)
 
 
 
-    QFile Name ("Database/Objects.db");
+    QFile Name (Initialize::StartupPath + "/Data-Pak/Database/Objects.db");
 
     //Check for database
     if (Name.exists() == false)
     {
-        qDebug() << "No object database found";
+        qDebug() << "No object Orbital database found" << Name;
     }
 
     else
@@ -495,7 +496,7 @@ void BasicData::Orbital (void)
         QSqlDatabase Objectsdb = QSqlDatabase::addDatabase("QSQLITE","Objects");
 
         Objectsdb.setConnectOptions("QSQLITE_OPEN_READONLY");
-        Objectsdb.setDatabaseName("Database/Objects.db");
+        Objectsdb.setDatabaseName("Data-Pak/Database/Objects.db");
 
         if (Objectsdb.open() == false) //try to connect to the database
         {
@@ -693,12 +694,12 @@ void BasicData::Environmental  (void)
     ui->UM24->setText("km");
     ui->UM25->setText("compounds");
 
-    QFile Name ("Database/Objects.db");
+    QFile Name (Initialize::StartupPath + "/Data-Pak/Database/Objects.db");
 
     //Check for database
     if (Name.exists() == false)
     {
-        qDebug() << "No object database found";
+        qDebug() << "No object Environmental database found" << Name;
     }
 
     else
@@ -708,7 +709,7 @@ void BasicData::Environmental  (void)
         QSqlDatabase Objectsdb = QSqlDatabase::addDatabase("QSQLITE","Objects");
 
         Objectsdb.setConnectOptions("QSQLITE_OPEN_READONLY");
-        Objectsdb.setDatabaseName("Database/Objects.db");
+        Objectsdb.setDatabaseName("Data-Pak/Database/Objects.db");
 
         if (Objectsdb.open() == false) //try to connect to the database
         {

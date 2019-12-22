@@ -20,6 +20,8 @@ class Voice : public QDialog
 
 public:
     explicit Voice(QWidget *parent = nullptr);
+    QTextToSpeech *Verbalize;
+
 
     ~Voice();
 
