@@ -390,6 +390,6 @@ void CraftControls::HelmOff (void)
         ui->Helm->setStyleSheet(RedSqr);
         HelmUp = false;
 
-        qDebug() << "Helm signal";
+        //qDebug() << "Helm signal";
     }
 

@@ -7,7 +7,7 @@ Voice::Voice(QWidget *parent) :
 {
     ui->setupUi(this);
     QStringList engines = QTextToSpeech::availableEngines();
-    qDebug() << "Engines: " << engines;
+   //qDebug() << "Engines: " << engines;
 }
 
 Voice::~Voice()
@@ -41,7 +41,7 @@ void Voice::SetGender (void)
 
 void Voice::Alert (QString Text)
 {
-    qDebug() << "Text: " << Text;
+    //qDebug() << "Text: " << Text;
     QTextToSpeech Verbalize;
     //while (!Verbalize.Ready)
     Verbalize.say(Text);

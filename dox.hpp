@@ -2,15 +2,12 @@
  *  @brief General documentation built from a doxygen comment
  */
 
-/*! \mainpage Simulator
+/*! \mainpage Sim (Simulator)
  *
- * \image html Pinwheel.gif
+    image html Pinwheel.gif
  *
  * \section intro_sec Introduction
- * This spacecraft simulator tries to provide a real world experience.
- * The user can choose the type of craft to pilot. In some cases the Object
- * that these craft operate in can also be chosen.
- * new line added.
- *
+ * This simulator tries to provide real world knowlege and experiences.
+ * The user can choose the training types, levels, and simulations.
  *
  */

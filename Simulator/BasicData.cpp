@@ -1,3 +1,14 @@
+/*!
+
+    Copyright (C) 2020, the Sim Development Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+*/
+
 #include "BasicData.hpp"
 #include "ui_BasicData.h"
 
@@ -10,14 +21,10 @@ BasicData::BasicData(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
     int Width = this->width();
     int Height = this->height();
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->move(Initialize::WindowWidth - Width  ,Initialize::WindowHeight - Height - 175);
-
-    //Basic();
 
 }
 
@@ -272,7 +279,6 @@ void BasicData::Basic()
 
 
     QFile Name (Initialize::StartupPath + "/Data-Pak/DataBase/Objects.db");
-    qDebug() << "Database Name: " << Name;
 
     //Check for database
     if (Name.exists() == false)
@@ -284,6 +290,7 @@ void BasicData::Basic()
 
     {
         //create new Objectsdb database and check if good connection
+
 
         QSqlDatabase Objectsdb = QSqlDatabase::addDatabase("QSQLITE","Objects");
         Objectsdb.setConnectOptions("QSQLITE_OPEN_READONLY");
@@ -721,6 +728,7 @@ void BasicData::Environmental  (void)
 
         QSqlQuery query(Objectsdb);
         query.exec("select * from ObjectsData where Name = '" + Setup::SimObject + "' ");
+        qDebug() << "Query exec: " << Setup::SimObject;
 
         if (query.lastError().isValid())
         {

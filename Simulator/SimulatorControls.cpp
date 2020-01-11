@@ -1,5 +1,18 @@
+/*!
+
+    Copyright (C) 2020, the Sim Development Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+*/
+
 #include "SimulatorControls.hpp"
 #include "ui_SimulatorControls.h"
+
+QString SimulatorControls::SimDescription;
 
 bool SimulatorControls::RunUp (false);
 bool SimulatorControls::WrittenUp (false);
@@ -21,10 +34,8 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     ui->ObjectText->hide();
 
     QDir directory(Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation);
-    qDebug() << "Directory: " << directory;
     QStringList NameFilter("*.html");
     QStringList DescriptionFiles = directory.entryList(NameFilter);
-    qDebug() << "Description Files: " << DescriptionFiles;
 
     ui->DescriptionSelection->clear();
     ui->DescriptionSelection->addItems(DescriptionFiles);
@@ -39,7 +50,8 @@ SimulatorControls::~SimulatorControls()
 
 void SimulatorControls::Name (void)
 {
-    Setup::SimObject = (ui->DescriptionSelection->currentText());
+    SimDescription = (ui->DescriptionSelection->currentText());
+
 }
 
 void SimulatorControls::Run (void)
@@ -71,8 +83,8 @@ void SimulatorControls::Written (void)
     {
         ui->Written->setStyleSheet(GrnRnd15);
 
-        QFile Name (Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation + "/" + Setup::SimObject);
-        qDebug() << "Written Name: " << Name;
+        QFile Name (Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation + "/" + SimDescription);
+        qDebug() << "Name: " << Name;
 
         //Check for database
         if (Name.exists() == false)
@@ -111,10 +123,10 @@ void SimulatorControls::Verbal (void)
         VerbalUp = true;
 
         //Verbalize->say ("Welcome to the location" + Setup::SimLocation  + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
-        Verbalize->say ("Welcome to the location" + Setup::SimLocation + "and the object    " + Setup::SimObject.chopped(5) + "    " + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
+        Verbalize->say ("Welcome to the location" + Setup::SimLocation + "and the object" + Setup::SimObject + "        " + IDCheck::Level + "    " + IDCheck::IndividualName + " " + IDCheck::FamilyName);
         Verbalize->say (ui->ObjectText->toPlainText());
 
-        Verbalize->say("Select an object from the selection list");
+        //Verbalize->say("Select a description file from the selection list above");
 
     }
 
@@ -148,8 +160,8 @@ QString SimulatorControls::GetText (void)
 
 void SimulatorControls::BasicDataDisplay (void)
 {
-        BasicData Display;
-        Display.exec();
+    BasicData Display;
+    Display.exec();
 }
 
 bool SimulatorControls::Load(const QString &Scriptfile)
@@ -159,7 +171,9 @@ bool SimulatorControls::Load(const QString &Scriptfile)
     if (!QFile::exists(Scriptfile))
         qDebug() << "Script file: " << Scriptfile;
         return false;
+
     QFile file(Scriptfile);
+
     if (!file.open(QFile::ReadOnly))
         return false;
 

@@ -1,3 +1,14 @@
+/*!
+
+    Copyright (C) 2020, the Sim Development Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+*/
+
 #include "Initialize.hpp"
 
 /*!
@@ -196,8 +207,8 @@ Initialize::Initialize()
 
 
     Qt3DRender::QTextureImage *ObjectTexture = new Qt3DRender::QTextureImage;
-    QString ObjectTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation +"/" + Setup::SimObject + ".jpg";
-    //qDebug() << "Location folder" << ObjectTextureFile;
+    QString ObjectTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation +"/" + Setup::SimObject + "/" + Setup::SimObject + ".jpg";
+    qDebug() << "Location folder" << ObjectTextureFile;
     QString TargetObject = "file:" + ObjectTextureFile;
     QFile Image(ObjectTextureFile);
 
@@ -620,7 +631,7 @@ void Initialize::OnStatusChanged()
     // The scene structure and names always depend on the asset.
     Qt3DCore::QEntity *e = root->findChild<Qt3DCore::QEntity *>(QStringLiteral("PlanePropeller_mesh")); // toyplane.obj
     if (e)
-        qDebug() << "Found propeller node" << e << "with components" << e->components();
+        //qDebug() << "Found propeller node" << e << "with components" << e->components();
 }
 
 */
@@ -637,7 +648,7 @@ void Initialize::WalkEntity(Qt3DCore::QEntity *e, int depth)
         if (entity) {
             QString indent;
             indent.fill(' ', depth * 2);
-            qDebug().noquote() << indent << "Entity:" << entity << "Components:" << entity->components();
+            //qDebug().noquote() << indent << "Entity:" << entity << "Components:" << entity->components();
             WalkEntity(entity, depth + 1);
         }
     }

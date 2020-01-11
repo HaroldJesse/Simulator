@@ -28,8 +28,10 @@ public:
     explicit SimulatorControls(QWidget *parent = nullptr);
     ~SimulatorControls();
 
-    void SetText (QString);
+    void SetText (QString);    
     QString GetText (void);
+
+    static QString SimDescription;
 
     QString RedSqr5 = "background-color: red;"
                      " color: white;"

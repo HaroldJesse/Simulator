@@ -1,3 +1,14 @@
+/*!
+
+    Copyright (C) 2020, the Sim Development Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+*/
+
 #include "Setup.hpp"
 #include "ui_Setup.h"
 
@@ -34,7 +45,7 @@ Setup::Setup(QWidget *parent) :
 
 
 
-    Setup::SimTypeList << "Training" << "Simulation" << "Deployment";
+    Setup::SimTypeList << ""  << "Training" << "Simulation" << "Deployment";
 
     // we  hide all the group boxes
     ui->Type->clear();
@@ -105,7 +116,7 @@ void Setup::TypeChanged (void)
     if(ui->Type->currentText() == "Training")
     {
        QStringList BranchList;
-       BranchList << "Basic Training" << "Advanced Training" << "Leadership Training";
+       BranchList << ""  << "Basic Training" << "Advanced Training" << "Leadership Training";
        ui->Branch->clear();
        ui->Branch->addItems(BranchList);
        ui->Branch->show();
@@ -116,7 +127,7 @@ void Setup::TypeChanged (void)
     {
 
         QStringList BranchList;
-        BranchList << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
+        BranchList << ""  << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
         ui->Branch->clear();
         ui->Branch->addItems(BranchList);
         ui->Branch->show();
@@ -126,7 +137,7 @@ void Setup::TypeChanged (void)
     if(ui->Type->currentText() == "Deployment")
     {
         QStringList BranchList;
-        BranchList << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
+        BranchList << ""  << "Space Craft" << "Extra Vehicular Activity" << "Space Station";
         ui->Branch->clear();
         ui->Branch->addItems(BranchList);
         ui->Branch->show();
@@ -146,7 +157,7 @@ void Setup::BranchChanged (void)
     if(ui->Branch->currentText() == "Basic Training")
     {
        QStringList ClassList;
-       ClassList << "Astronomy" << "Astrogeology" << "Mathematics";
+       ClassList << ""  << "Astronomy" << "Astrogeology" << "Mathematics";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();
@@ -156,7 +167,7 @@ void Setup::BranchChanged (void)
     if(ui->Branch->currentText() == "Space Craft")
     {
        QStringList ClassList;
-       ClassList << "Pilot" << "Navigator" << "Communications ";
+       ClassList << ""  << "Pilot" << "Navigator" << "Communications ";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();
@@ -166,7 +177,7 @@ void Setup::BranchChanged (void)
     if(ui->Branch->currentText() == "Extra Vehicular Activity")
     {
        QStringList ClassList;
-       ClassList << "Station Outside Support" << "Craft Outside Support" << "Surface  Research";
+       ClassList << ""  << "Station Outside Support" << "Craft Outside Support" << "Surface  Research";
        ui->Class->clear();
        ui->Class->addItems(ClassList);
        ui->Class->show();
@@ -243,7 +254,7 @@ void Setup::QuadrantChanged (void)
     if(ui->Quadrant->currentText() == "Alpha")
     {
        QStringList Sector;
-       Setup::SimSectorList << "Sol";
+       Setup::SimSectorList << ""  << "Sol";
        ui->Sector->clear();
        ui->Sector->addItems(SimSectorList);
        ui->Sector->show();
@@ -257,7 +268,7 @@ void Setup::QuadrantChanged (void)
      if(ui->Quadrant->currentText() == "Beta")
      {
         QStringList Sector;
-        Setup::SimSectorList << "Carng";
+        Setup::SimSectorList << ""  << "Carng";
         ui->Sector->clear();
         ui->Sector->addItems(SimSectorList);
         ui->Sector->show();
@@ -271,7 +282,7 @@ void Setup::QuadrantChanged (void)
       if(ui->Quadrant->currentText() == "Gamma")
       {
          QStringList Sector;
-         Setup::SimSectorList << "Solio";
+         Setup::SimSectorList << ""  << "Solio";
          ui->Sector->clear();
          ui->Sector->addItems(SimSectorList);
          ui->Sector->show();
@@ -285,7 +296,7 @@ void Setup::QuadrantChanged (void)
        if(ui->Quadrant->currentText() == "Delta")
        {
           QStringList Sector;
-          Setup::SimSectorList << "Zxio";
+          Setup::SimSectorList << ""  << "Zxio";
           ui->Sector->clear();
           ui->Sector->addItems(SimSectorList);
           ui->Sector->show();
@@ -305,7 +316,7 @@ void Setup::SectorChanged (void)
 
     if(ui->Sector->currentText() == "Sol")
     {
-        SimLocationList << "Sun" << "Mercury" << "Venus" << "Earth" << "Mars" << "Jupiter" << "Asteroid Belt" << "Saturn"  << "Uranus" << "Neptune" << "Kuiper Belt" << "Oort Cloud";
+        SimLocationList << ""  << "Sun" << "Mercury" << "Venus" << "Earth" << "Mars" << "Jupiter" << "Asteroid Belt" << "Saturn"  << "Uranus" << "Neptune" << "Kuiper Belt" << "Oort Cloud";
         ui->Location->clear();
         ui->Location->addItems(SimLocationList);
     }
@@ -358,7 +369,7 @@ void Setup::LocationChanged (void)
     if(ui->Location->currentText() == "Earth")
     {
         QStringList Object;
-        Object << "Earth" << "Moon" << "L1" << "L2" << "L3" << "L4" << "L5";                ;
+        Object << ""  << "Earth" << "Moon" << "L1" << "L2" << "L3" << "L4" << "L5";                ;
         ui->Object->clear();
         ui->Object->addItems(Object);
 
@@ -376,10 +387,20 @@ void Setup::LocationChanged (void)
 
     else
 
+    if(ui->Location->currentText() == "Asteroid Belt")
+    {
+        QStringList Object;
+        Object << "Ceres" << "Gerimenchencko";
+        ui->Object->clear();
+        ui->Object->addItems(Object);
+    }
+
+    else
+
     if(ui->Location->currentText() == "Jupiter")
     {
         QStringList Object;
-        Object << "Jupiter" << "Metis" << "Adrastrea" << "Io" << "Europa" << "Ganymede" << "Callisto"
+        Object << ""  << "Jupiter" << "Metis" << "Adrastrea" << "Io" << "Europa" << "Ganymede" << "Callisto"
                << "Amalthea" << "Himalia" << "Elara (7)" << "Metis" << "Sinope" << "Lysithea" << "Carme" << "Ananke"
                << "Leda" << "Thebe" << "Carpo" << "Callirrhoe" << "Themisto"
                << "Agamemnon (Trojan)" << "Diomedes (Trojan)" << "Äneas (Trojan)" << "Patroclus (Trojan)" << "Achilles (Trojan)" << "Deiphobus (Trojan)" << "Paris (Trojan)"
@@ -394,7 +415,7 @@ void Setup::LocationChanged (void)
     if(ui->Location->currentText() == "Saturn")
     {
         QStringList Object;
-        Object << "Saturn" << "Mimas" << "Enceladus"<< "Tethys"  << "Dione"  << "Rhea"
+        Object << ""  << "Saturn" << "Mimas" << "Enceladus"<< "Tethys"  << "Dione"  << "Rhea"
                << "Titan" << "Hyperion" << "Iapetus" << "Phoebe" << "Janus" << "Epimetheus" << "Helene" << "Telesto" << "Calypso"
                << "Atlas" << "Prometheus" << "Pandora" <<  "Pan" << "Ymir" << "Paaliaq" << "Tarvos" << "Ijiraq" << "Aegaeon"
                << "Kiviuq" << "Mundilfari" << "Atlas" << "Skathi" << "Erriapus"  << "Siarnaq" << "Thrymr" << "Narvi"  << "Methone"
@@ -411,7 +432,7 @@ void Setup::LocationChanged (void)
     if(ui->Location->currentText() == "Uranus")
     {
         QStringList Object;
-        Object << "Uranus" << "Ariel" << "Umbriel" << "Oberon" << "Titania" << "Oberon"  << "Miranda"
+        Object << ""  << "Uranus" << "Ariel" << "Umbriel" << "Oberon" << "Titania" << "Oberon"  << "Miranda"
                << "Cordelia" << "Ophelia" << "Bianca" << "Cressida" << "Desdemona" << "Juliet" << "Portia"<< "Rosalind" << "Belinda"
                << "Puck" << "Caliban" << "Sycorax" << "Prospero" << "Setebos" << "Stephano" << "Trinculo" << "Perdita" << "Margaret"
                << "Ferdinand" << "Perdita" << "Mab" << "Cupid";
@@ -425,7 +446,7 @@ void Setup::LocationChanged (void)
     if(ui->Location->currentText() == "Neptune")
     {
         QStringList Object;
-        Object << "Neptune" << "Triton" << "Nereid" << "Naiad" << "Thalassa" << "Despina"
+        Object << ""  << "Neptune" << "Triton" << "Nereid" << "Naiad" << "Thalassa" << "Despina"
                << "Galatea" << "Larissa" << "Proteus" << "Halimede" << "Psamathe" << "Sao" << "Laomedeia" << "Neso"  ;
         ui->Object->clear();
         ui->Object->addItems(Object);
@@ -433,13 +454,23 @@ void Setup::LocationChanged (void)
 
     else
 
-    if(ui->Location->currentText() == "Oort Cloud")
+    if(ui->Location->currentText() == "Kuiper Belt")
     {
         QStringList Object;
-        Object << "Pluto" << "Charon" << "Nix" << "Hydra" << "Kerberos" << "Styx";
+        Object << ""  << "Pluto" << "Charon" << "Nix" << "Hydra" << "Kerberos" << "Styx";
         ui->Object->clear();
         ui->Object->addItems(Object);
     }
+
+    else
+
+        if(ui->Location->currentText() == "Oort Cloud")
+        {
+            QStringList Object;
+            Object << "XXXXX";
+            ui->Object->clear();
+            ui->Object->addItems(Object);
+        }
 
     Verbalize->say("You have set the location to  " + ui->Location->currentText());
     SimLocation = ui->Location->currentText();
@@ -466,7 +497,7 @@ void Setup::ObjectChanged (void)
         Verbalize->say("Choose a Craft type");
 
         QStringList CraftList;
-        CraftList << "CargoShortHaul" << "CargoLongHaul" << "TransportShortHaul" << "TransportLongHaul" << "Research" << "Prospector";
+        CraftList << ""  << "CargoShortHaul" << "CargoLongHaul" << "TransportShortHaul" << "TransportLongHaul" << "Research" << "Prospector";
         ui->CraftType->clear();
         ui->CraftType->addItems(CraftList);
         ui->CraftType->show();
@@ -493,7 +524,7 @@ void Setup::CraftType(void)
     number.remove(QChar (':'));
 
     QStringList CraftNameList;
-    CraftNameList << "Silva " + number << "Isis " + number << "Zeus" + number << "Odin" + number;
+    CraftNameList << ""  << "Silva " + number << "Isis " + number << "Zeus" + number << "Odin" + number;
 
     ui->CraftName->clear();
     ui->CraftName->addItems(CraftNameList);

@@ -1,3 +1,14 @@
+/*!
+
+    Copyright (C) 2020, the Sim Development Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+*/
+
 #include "IDAdd.hpp"
 #include "ui_IDAdd.h"
 
@@ -57,7 +68,7 @@ void IDAdd::CreateID (void)
         msgBox.setStandardButtons(QMessageBox::Ok);
         Verbalize->say(msgBox.text());
         msgBox.show();
-        qDebug() << "Can't open database";
+        //qDebug() << "Can't open database";
     }
 
 
@@ -137,7 +148,7 @@ void IDAdd::CreateCertificates (void)
         msgBox.setStandardButtons(QMessageBox::Ok);
         Verbalize->say(msgBox.text());
         msgBox.show();
-        qDebug() << "Can't open database";
+        //qDebug() << "Can't open database";
     }
 
     /* set up table Certificates for the database */
@@ -179,7 +190,7 @@ void IDAdd::CreateCertificates (void)
     if (Edit->insertRecord(-1, Crecord) == false)
     {
         qDebug() << "Failed to update Certificates";
-        qDebug() << Edit->lastError();
+        //qDebug() << Edit->lastError();
     }
 
     this->close();

@@ -21,7 +21,6 @@ bool Helm::LoadHelm (Qt3DRender::QCamera *CameraEntity)
 
     if (Setup::SimCraftType == "Unknown")
     {
-        qDebug() << "Unknown";
         //qApp->beep();
         QMessageBox msgBox;
         msgBox.setText("Craft Creation Error The Craft type is unknown");

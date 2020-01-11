@@ -405,12 +405,12 @@ void RCS1000::UpDateAttitudeThrust (void)
 void RCS1000::MasterUpdate (void)
 {
 /*
-    qDebug() << "FwdRvrThrottle: " << FwdRvrThrottle;
-    qDebug() << "HeadingThrottle: " << HeadingThrottle;
-    qDebug() << "MarkThrottle: " << MarkThrottle;
-    qDebug() << "PitchThrottle: " << PitchThrottle;
-    qDebug() << "YawThrottle: " << YawThrottle;
-    qDebug() << "RollThrottle: " << RollThrottle;
+    //qDebug() << "FwdRvrThrottle: " << FwdRvrThrottle;
+    //qDebug() << "HeadingThrottle: " << HeadingThrottle;
+    //qDebug() << "MarkThrottle: " << MarkThrottle;
+    //qDebug() << "PitchThrottle: " << PitchThrottle;
+    //qDebug() << "YawThrottle: " << YawThrottle;
+    //qDebug() << "RollThrottle: " << RollThrottle;
 
 */
 

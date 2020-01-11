@@ -166,7 +166,7 @@ void PThruster::SetFwdRevValue(void)
         Multiplier = .1;
 
         FwdRevThrottle = ui->FwdRevTSlider->value() * Multiplier;
-        qDebug() << "FwdRevThrottle .1: " << FwdRevThrottle;
+        //qDebug() << "FwdRevThrottle .1: " << FwdRevThrottle;
     }
 
     else if (ui->FROne->isChecked())
@@ -174,7 +174,7 @@ void PThruster::SetFwdRevValue(void)
         Multiplier = 1;
 
         FwdRevThrottle = ui->FwdRevTSlider->value() * Multiplier;
-        qDebug() << "FwdRevThrottle 1: " << FwdRevThrottle;
+        //qDebug() << "FwdRevThrottle 1: " << FwdRevThrottle;
     }
 
     else if (ui->FRTen->isChecked())
@@ -182,7 +182,7 @@ void PThruster::SetFwdRevValue(void)
         Multiplier = 10;
 
         FwdRevThrottle = ui->FwdRevTSlider->value() * Multiplier;
-        qDebug() << "FwdRevThrottle 10: " << FwdRevThrottle;
+        //qDebug() << "FwdRevThrottle 10: " << FwdRevThrottle;
     }
 
     else
@@ -190,7 +190,7 @@ void PThruster::SetFwdRevValue(void)
     Multiplier = .01;
 
     FwdRevThrottle = ui->FwdRevTSlider->value() * Multiplier;
-    qDebug() << "FwdRevThrottle: " << FwdRevThrottle;
+    //qDebug() << "FwdRevThrottle: " << FwdRevThrottle;
 
     ui->FwdRevT->setText("FwdRev: " + Value.setNum(FwdRevThrottle));
 }

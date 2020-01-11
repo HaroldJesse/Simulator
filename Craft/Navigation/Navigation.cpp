@@ -46,7 +46,7 @@ bool Navigation::LoadNavigation (void)
 
     if (Setup::SimCraftType == "CargoLongHaul")
     {
-        qDebug() << "Nav: ";
+        //qDebug() << "Nav: ";
         Navigation *Nav1 =  new Navigation();
         connect (this, SIGNAL(CloseNavigation()), Nav1,SLOT(Exit()));
         Nav1->show();
@@ -92,7 +92,7 @@ void Navigation::Exit (void)
 void Navigation::ID (void)
 {
 
-    qDebug() << "ID";
+    //qDebug() << "ID";
     //IDConversion *ID = new IDConversion();
     //ID->show();
 }

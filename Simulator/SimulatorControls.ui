@@ -183,9 +183,9 @@ border-radius: 5px;
   <widget class="QComboBox" name="DescriptionSelection">
    <property name="geometry">
     <rect>
-     <x>1120</x>
-     <y>10</y>
-     <width>161</width>
+     <x>1010</x>
+     <y>30</y>
+     <width>131</width>
      <height>22</height>
     </rect>
    </property>

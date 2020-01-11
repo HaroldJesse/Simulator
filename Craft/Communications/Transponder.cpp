@@ -16,7 +16,7 @@ Transponder::Transponder(QWidget *parent) :
     UDPSocket = new QUdpSocket(this);
     UDPSocket->bind(63666, QUdpSocket::ShareAddress);
     connect(UDPSocket, SIGNAL(readyRead()), this, SLOT(Listen()));
-    qDebug() << "Status: " << UDPSocket->hasPendingDatagrams();
+    //qDebug() << "Status: " << UDPSocket->hasPendingDatagrams();
 }
 
 Transponder::~Transponder()
@@ -43,25 +43,25 @@ void Transponder::DeactivateDisplay (void)
 
 void Transponder::Stop(void)
 {
-    qDebug() << "Stop";
+    //qDebug() << "Stop";
     Timer->stop();
 }
 
 void Transponder::Listen (void)
 {
-    qDebug() << "Listen";
+    //qDebug() << "Listen";
 
     while (UDPSocket->hasPendingDatagrams())
     {
         QByteArray Datagram;
         Datagram.resize(UDPSocket->pendingDatagramSize());
         quint64 Count = UDPSocket->readDatagram(Datagram.data(), Datagram.size());
-        qDebug() << "Receive: " << Datagram.data() << "Count: " << Count;
+        //qDebug() << "Receive: " << Datagram.data() << "Count: " << Count;
         ui->TransponderData->clear();
         ui->TransponderData->setText(Datagram);
 
         Transponder::TransponderData.clear();
-        qDebug() << "Data:" << Datagram.data();
+        //qDebug() << "Data:" << Datagram.data();
     }
 }
 

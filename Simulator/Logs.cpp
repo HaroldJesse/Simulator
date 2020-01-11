@@ -1,3 +1,14 @@
+/*!
+
+    Copyright (C) 2020, the Sim Development Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+*/
+
 #include "Logs.hpp"
 #include "ui_Logs.h"
 
@@ -255,7 +266,7 @@ bool Logs::ReadLog (QString LogsName)
             Verbalize.say(LogOpen.text());
             LogOpen.exec();
             Log.close();
-            qDebug() << "Logdb open fail";
+            //qDebug() << "Logdb open fail";
             return false ;
         }
 

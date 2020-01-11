@@ -231,12 +231,12 @@ void RCS2000::UpDateAttitude (void)
 void RCS2000::MasterUpdate (void)
 {
 /*
-    qDebug() << "FwdRvrThrottle: " << FwdRvrThrottle;
-    qDebug() << "HeadingThrottle: " << HeadingThrottle;
-    qDebug() << "MarkThrottle: " << MarkThrottle;
-    qDebug() << "PitchThrottle: " << PitchThrottle;
-    qDebug() << "YawThrottle: " << YawThrottle;
-    qDebug() << "RollThrottle: " << RollThrottle;
+    //qDebug() << "FwdRvrThrottle: " << FwdRvrThrottle;
+    //qDebug() << "HeadingThrottle: " << HeadingThrottle;
+    //qDebug() << "MarkThrottle: " << MarkThrottle;
+    //qDebug() << "PitchThrottle: " << PitchThrottle;
+    //qDebug() << "YawThrottle: " << YawThrottle;
+    //qDebug() << "RollThrottle: " << RollThrottle;
 
 */
     QString Rotation;
@@ -344,7 +344,6 @@ void RCS2000::MasterUpdate (void)
 
 void RCS2000::Exit (void)
 {
-    qDebug() << "RCS2Exit";
     emit RCS2Close ();
     Timer->stop();
     this->close();
