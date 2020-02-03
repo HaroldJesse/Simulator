@@ -32,6 +32,8 @@ CraftControls::CraftControls(Qt3DRender::QCamera *BasicCamera, QWidget *parent) 
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->move(Initialize::WindowWidth/2 - Width/2,Initialize::WindowHeight - Height);
 
+        qDebug() << "CraftControls: " << this->width() << this->height() << this->pos();
+
     ui->Communication->hide();
     ui->Computer->hide();
     ui->Enviroment->hide();
@@ -140,7 +142,9 @@ void CraftControls::CraftComputer (void)
         CompUp = true;
         ui->Computer->setStyleSheet(GrnRnd);
 
-        //ComputerControl *CompControl = new ComputerControl() ;
+        ComputerControls *CompControl = new ComputerControls() ;
+        CompControl->show();
+
     }
 
     else

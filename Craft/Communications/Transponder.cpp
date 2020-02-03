@@ -1,8 +1,6 @@
 #include "Transponder.hpp"
 #include "ui_Transponder.h"
 
-
-
 QByteArray Transponder::TransponderData = "";
 QByteArray Transponder::TransponderDataSend = "";
 

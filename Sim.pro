@@ -13,6 +13,8 @@ TEMPLATE = app
 
 
 SOURCES +=\
+    Craft/Computer/ComputerControls.cpp \
+    Craft/Computer/ComputerVoice.cpp \
     Craft/Helm/RCS1000.cpp \
     Craft/Navigation/Navigation.cpp \
     Simulator/Audio.cpp \
@@ -33,19 +35,19 @@ SOURCES +=\
     Craft/Power/BoronInjector.cpp \
     Craft/Helm/Helm.cpp \
     Craft/Navigation/Spice.cpp \
-    Craft/Computer/Voice.cpp \
     Simulator/Window.cpp \
-    Simulator/main.cpp \    
+    Simulator/main.cpp \
     Simulator/IDAdd.cpp \
     Simulator/IDCheck.cpp \
     Simulator/Certificate.cpp \
-    Craft/Computer/ComputerControl.cpp \
     Craft/CraftControls.cpp \
     Simulator/SimulatorControls.cpp \
     Simulator/BasicData.cpp
 
 
 HEADERS  += \
+    Craft/Computer/ComputerControls.hpp \
+    Craft/Computer/ComputerVoice.hpp \
     Craft/Helm/Helm.hpp \
     Craft/Helm/RCS1000.hpp \
     Craft/Navigation/Navigation.hpp \
@@ -69,12 +71,10 @@ HEADERS  += \
     Craft/Power/FusionCore.hpp \
     Craft/Power/BoronInjector.hpp \
     Craft/Navigation/Spice.hpp \
-    Craft/Computer/Voice.hpp\
     dox.hpp \
     Simulator/IDAdd.hpp \
     Simulator/IDCheck.hpp \
     Simulator/Certificate.hpp \
-    Craft/Computer/ComputerControl.hpp \
     Craft/CraftControls.hpp \
     Simulator/SimulatorControls.hpp \
     Simulator/BasicData.hpp
@@ -82,6 +82,8 @@ HEADERS  += \
 
 
 FORMS    += \
+    Craft/Computer/ComputerControls.ui \
+    Craft/Computer/ComputerVoice.ui \
     Craft/Helm/RCS1000.ui \
     Craft/Navigation/Navigation.ui \
     Simulator/Logs.ui \
@@ -99,8 +101,6 @@ FORMS    += \
     Simulator/IDAdd.ui \
     Simulator/IDCheck.ui \
     Simulator/Certificate.ui \
-    Craft/Computer/Voice.ui \
-    Craft/Computer/ComputerControl.ui \
     Craft/CraftControls.ui \
     Simulator/SimulatorControls.ui \
     Simulator/BasicData.ui

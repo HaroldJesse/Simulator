@@ -110,16 +110,17 @@ Initialize::Initialize()
     Initialize::WindowWidth = View->width();
 
     //qDebug() << "ID";
-    IDCheck ID;
-    ID.exec();
+    //IDCheck ID;
+    //ID.exec();
     //qDebug() << "Current Path ID: " << QDir::currentPath();
 
+    /*
     if (IDCheck::Status == "Running")
     {
         Certificate Cert;
         Cert.exec();
     }
-
+    */
 
     //qDebug() << "Current Path Certificate: " << QDir::currentPath();
 
@@ -208,11 +209,9 @@ Initialize::Initialize()
 
     Qt3DRender::QTextureImage *ObjectTexture = new Qt3DRender::QTextureImage;
     QString ObjectTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation +"/" + Setup::SimObject + "/" + Setup::SimObject + ".jpg";
-    qDebug() << "Location folder" << ObjectTextureFile;
+    //qDebug() << "Object texture file: " << ObjectTextureFile;
     QString TargetObject = "file:" + ObjectTextureFile;
     QFile Image(ObjectTextureFile);
-
-    //qDebug() << "Texture file:" << ObjectTextureFile;
 
     //Check for texture photo
     if (Image.exists() == true)
@@ -340,47 +339,52 @@ Initialize::Initialize()
     MoonAnim->setTargetObject(MoonTransforms);
     MoonAnim->setPropertyName ("rotationY");
     MoonAnim->start (); //needed for tidal locking
+*/
+
+/*
 
     // SpaceCraft
     //qDebug() << "SpaceCraft";
 
-    //connect(SceneLoader, SIGNAL(statusChanged()), this, SLOT(OnStatusChanged()));
-    // Scene loader
+    connect(SceneLoader, SIGNAL(statusChanged()), this, SLOT(OnStatusChanged()));
 
-    //SceneLoaderEntity = new Qt3DCore::QEntity(SceneRoot);
-    //SceneLoader = new Qt3DRender::QSceneLoader(SceneLoaderEntity);
+    //Scene loader
 
-    //SceneLoaderEntity->addComponent(SceneLoader);
+    SceneLoaderEntity = new Qt3DCore::QEntity(SceneRoot);
+    SceneLoader = new Qt3DRender::QSceneLoader(SceneLoaderEntity);
+
+    SceneLoaderEntity->addComponent(SceneLoader);
 
     //Break down scene components
 
     //Object Transforms
 
-    //Qt3DCore::QTransform *CraftTransforms = new Qt3DCore::QTransform();
-    //CraftTransforms->setTranslation(QVector3D(-100.0f, 0.0f, -100.0f));
-    //CraftTransforms->setRotationX(0.0f);
-    //CraftTransforms->setScale (1.0f);
-    //SceneLoaderEntity->addComponent(CraftTransforms);
+    Qt3DCore::QTransform *CraftTransforms = new Qt3DCore::QTransform();
+    CraftTransforms->setTranslation(QVector3D(-100.0f, 0.0f, -100.0f));
+    CraftTransforms->setRotationX(0.0f);
+    CraftTransforms->setScale (1.0f);
+    SceneLoaderEntity->addComponent(CraftTransforms);
 
-    //QDir Dir;
-    //QString directory = Dir.currentPath();
-    //qDebug() << "Current directory: " << directory;
+    QDir Dir;
+    QString directory = Dir.currentPath();
+    qDebug() << "Current directory: " << directory;
     QUrl SourceFileName;
 
     //qDebug() << "Before: " << Setup::SimObject;
-    //Setup::SimLocation = "SpaceCraft";
-    //Setup::SimObject = "Enterprise";
+    Setup::SimLocation = "SpaceCraft";
+    Setup::SimObject = "Enterprise";
 
-    //SourceFileName = "file:" + "/DataPak/Location/Object/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
-    //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Enterprise/Enterprise.obj";
-    //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Spider.obj";
-    //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Enterprise.obj";
+    SourceFileName = "file: "DataPak/Location/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
+
+    SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Enterprise/Enterprise.obj";
+    SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Spider.obj";
+    SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Enterprise.obj";
     //qDebug() << "sourcefilename: " << SourceFileName;
 
     SceneLoader->setSource(QUrl(SourceFileName));
 
-    //Qt3DRender::QTextureImage *ShipTexture = new Qt3DRender::QTextureImage;
-    //ShipTexture->setSource (QUrl(QStringLiteral("file:Objects/Moon.webp")));
+    Qt3DRender::QTextureImage *ShipTexture = new Qt3DRender::QTextureImage;
+    ShipTexture->setSource (QUrl(QStringLiteral("file:Objects/Moon.webp")));
 
     Qt3DExtras::QDiffuseMapMaterial *ShipDiffuse = new Qt3DExtras::QDiffuseMapMaterial;
     ShipDiffuse->setShininess (2.0);

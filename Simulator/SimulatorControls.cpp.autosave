@@ -96,7 +96,7 @@ void SimulatorControls::Written (void)
 
         Name.open(QIODevice::ReadOnly);
 
-        QByteArray Script = Name.readAll();
+        QByteArray Script = Name.readAll(); // 
         ui->ObjectText->setText(Script);
 
         ui->ObjectText->show();

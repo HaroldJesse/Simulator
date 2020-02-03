@@ -6,8 +6,9 @@
 #include <QDialog>
 #include "Initialize.hpp"
 
-namespace Ui {
-class OThruster;
+namespace Ui
+{
+    class OThruster;
 }
 
 class OThruster : public QDialog

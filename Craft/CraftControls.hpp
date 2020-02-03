@@ -10,10 +10,9 @@
 #include "Power.hpp"
 #include "Transponder.hpp"
 #include "Helm.hpp"
-#include "Voice.hpp"
 #include "Setup.hpp"
 #include "Navigation.hpp"
-#include "Helm.hpp"
+#include "ComputerControls.hpp"
 
 namespace Ui {
 class CraftControls;
@@ -65,28 +64,28 @@ private:
     QUdpSocket *UDPSocket;
 
     static bool PwrUp;
-    static bool EnvUp;
-    static bool HelmUp;
-    static bool NavUp;
-    static bool ComUp;
-    static bool CompUp;
-    static bool SensUp;
     static bool TranUp;
-
-    //void Exit ();
+    static bool CompUp;
+    static bool EnvUp;
+    static bool ComUp;
+    static bool SensUp;
+    static bool NavUp;
+    static bool HelmUp;
 
 signals:
 
 
 private slots:
+
     void CraftPower (void);
-    void CraftHelm (void);
-    void CraftNavigation (void);
-    void CraftEnvironment (void);
-    void CraftCommunication (void);
     void CraftTransponder (void);
     void CraftComputer (void);
+    void CraftEnvironment (void);
+    void CraftCommunication (void);
     void CraftSensors (void);
+    void CraftNavigation (void);
+    void CraftHelm (void);
+
     void CraftSetTime (void);
     void CraftBroadcast (void);
     void CraftSetLocal (void);
