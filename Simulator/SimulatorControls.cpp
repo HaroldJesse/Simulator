@@ -33,7 +33,7 @@ SimulatorControls::SimulatorControls(QWidget *parent) :
     //ui->ObjectText->setReadOnly(true);
     ui->ObjectText->hide();
 
-    QDir directory(Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation);
+    QDir directory(Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation + "/" + Setup::SimObject);
     QStringList NameFilter("*.html");
     QStringList DescriptionFiles = directory.entryList(NameFilter);
 
@@ -83,8 +83,7 @@ void SimulatorControls::Written (void)
     {
         ui->Written->setStyleSheet(GrnRnd15);
 
-        QFile Name (Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation + "/" + SimDescription);
-        qDebug() << "Name: " << Name;
+        QFile Name (Initialize::StartupPath + "/Data-Pak/Description/" + Setup::SimLocation + "/" +  Setup::SimObject + "/" + SimDescription);
 
         //Check for database
         if (Name.exists() == false)

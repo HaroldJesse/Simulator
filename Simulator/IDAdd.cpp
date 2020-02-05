@@ -20,7 +20,7 @@ IDAdd::IDAdd(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->RecordNumber->setText(CraftControls::ShipTime);
+    // here ui->RecordNumber->setText(CraftControls::ShipTime);
     ui->Department->setText("Basic Training");
     ui->Level->setText("Trainee");
     ui->ActivationDate->setText(QDateTime::currentDateTime().toString());
@@ -108,9 +108,6 @@ void IDAdd::CreateID (void)
     Crecord.append(F5);
     Crecord.append(F6);
 
-
-//    qDebug() << "Add Id has run";
-//    qDebug() << Crecord;
 
     if (Edit->insertRecord(-1, Crecord) == false)
     {

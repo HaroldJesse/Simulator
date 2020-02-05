@@ -728,7 +728,6 @@ void BasicData::Environmental  (void)
 
         QSqlQuery query(Objectsdb);
         query.exec("select * from ObjectsData where Name = '" + Setup::SimObject + "' ");
-        qDebug() << "Query exec: " << Setup::SimObject;
 
         if (query.lastError().isValid())
         {

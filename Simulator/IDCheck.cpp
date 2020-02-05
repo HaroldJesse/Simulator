@@ -63,14 +63,17 @@ void IDCheck::ConnectDevice (void)
     if (GetIDFile () == false)
     {
         QMessageBox msgBox;
-        msgBox.setText("An ID device could not be created. Go directly to the simulator or quit the simulation");
+        msgBox.setText("An ID device could not be created.");
         msgBox.setStandardButtons(QMessageBox::Ok);
         Verbalize->say(msgBox.text());
         msgBox.exec();
 
-        //qDebug() << "getfileID";
+        Certificate::CertificateStatus = "Aborted";
+
+        this->close();
     }
-         this->close();
+
+        this->close();
 }
 
 
@@ -86,9 +89,7 @@ bool IDCheck::GetIDFile (void)
     {
         QString Dev = Devices.at(i).filePath();
         QDir Folder;
-        Folder.setPath(Dev + "IDFolder");  //Do not use / after folder name
-
-        //qDebug() << "Folder:" << Folder.dirName();
+        Folder.setPath(Dev + "IDFolder");  //Do not use "/" after folder name
 
         QFile File;
         File.setFileName("/ID.sim");
@@ -100,7 +101,7 @@ bool IDCheck::GetIDFile (void)
         if (File.exists(DataBase))
         {
             Verbalize->say("ID file found");
-            //SimFile = DataBase;
+            qDebug() << "Folder:" << Folder.path();
 
             IDCheck::Device = Dev;
             IDCheck::DeviceFolder = Folder.dirName();
@@ -124,23 +125,21 @@ bool IDCheck::GetIDFile (void)
 
         if (button == QMessageBox::Yes)
         {
-            Verbalize->say("You have chosen to create an I  D device");
+            Verbalize->say("You have chosen to create an I D device. This may take a few seconds to create. Please be patient.");
 
             IDPort Port;
             Port.exec();
 
-
-            CreateID();
-
+            CreateID();          
         }
 
         else
 
         if (button == QMessageBox::No)
         {
-            Verbalize->say("You have chosen to not created an  I  D device");
+            Verbalize->say("You have chosen to not create an I D device. You will be sent directly to the Simulator" );
+            Certificate::CertificateStatus = "Aborted";
             //return false;
-            //QDir = Initialize::StartupPath;
         }
 
     }

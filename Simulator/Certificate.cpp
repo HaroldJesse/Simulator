@@ -20,6 +20,10 @@ Certificate::Certificate(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //this->setWindowFlags(Qt::WindowStaysOnTopHint||Qt::FramelessWindowHint)
+
+    qDebug() << "Status: " << CertificateStatus;
+
     if (CertificateStatus == "Normal")
     {
         GetCertificates();
@@ -28,6 +32,8 @@ Certificate::Certificate(QWidget *parent) :
 
     else if (CertificateStatus == "Aborted")
     {
+        qDebug() << "Certificate Status: " << CertificateStatus;
+        this->close();
         return;
     }
 

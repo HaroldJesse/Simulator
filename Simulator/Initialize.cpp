@@ -27,38 +27,6 @@ QString Initialize::StartupPath = QDir::currentPath();
 
 Initialize::Initialize()
 {
-
-/*
-    //Bullet
-    /// collision configuration contains default setup for memory , collision setup . Advanced users can create their own configuration .
-    ///
-    btDefaultCollisionConfiguration * collisionConfiguration = new btDefaultCollisionConfiguration ();
-    /// use the default collision dispatcher . For parallel processing you can use a different dispatcher (see Extras / BulletMultiThreaded )
-    btCollisionDispatcher * dispatcher = new btCollisionDispatcher ( collisionConfiguration );
-
-    /// btDbvtBroadphase is a good general purpose broadphase . You can also try out btAxis3Sweep .
-    btBroadphaseInterface * overlappingPairCache = new btDbvtBroadphase ();
-
-    /// the default constraint solver . For parallel processing you can use a different solver(see Extras / BulletMultiThreaded )
-    btSequentialImpulseConstraintSolver * solver = new btSequentialImpulseConstraintSolver ;
-
-    btDiscreteDynamicsWorld * dynamicsWorld = new btDiscreteDynamicsWorld ( dispatcher ,
-    overlappingPairCache ,solver , collisionConfiguration );
-
-    dynamicsWorld -> setGravity ( btVector3 (0 , -10 ,0));
-*/
-    //CSpice
-
-    //SpiceDouble Half = halfpi_c ();
-    //furnsh_c ("Data/de421.bsp");
-    //qDebug() << "Pi/2: " << Half;
-
-    //Start Initialization
-
-    //LogView.WriteLog(LogView.MasterLog,LogView.Info,"Main","Logging is on");
-    //LogView.ReadLog(LogView.MasterLog);
-    //LogView.exec();
-
     //Window
 
     Initialize::StartupPath = QDir::currentPath();
@@ -120,7 +88,10 @@ Initialize::Initialize()
         Cert.exec();
     }
 
+    if (IDCheck::Status == "Aborted")
+    {
 
+    }
     //qDebug() << "Current Path Certificate: " << QDir::currentPath();
 
 
@@ -208,11 +179,9 @@ Initialize::Initialize()
 
     Qt3DRender::QTextureImage *ObjectTexture = new Qt3DRender::QTextureImage;
     QString ObjectTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation +"/" + Setup::SimObject + "/" + Setup::SimObject + ".jpg";
-    qDebug() << "Location folder" << ObjectTextureFile;
+    //qDebug() << "Object texture file: " << ObjectTextureFile;
     QString TargetObject = "file:" + ObjectTextureFile;
     QFile Image(ObjectTextureFile);
-
-    //qDebug() << "Texture file:" << ObjectTextureFile;
 
     //Check for texture photo
     if (Image.exists() == true)
@@ -247,149 +216,6 @@ Initialize::Initialize()
     ObjectAnim->setTargetObject(ObjectTransforms);
     ObjectAnim->setPropertyName ("rotationY");
     ObjectAnim->start ();
-
-
-/*
-    //SpaceStation
-    //qDebug() << "SpaceStation";
-
-    Qt3DCore::QEntity *SpacestationEntity = new Qt3DCore::QEntity(SceneRoot);
-
-    //add Spacestation Mesh
-    Qt3DExtras::QTorusMesh *SpaceStation = new Qt3DExtras::QTorusMesh();
-    SpaceStation->setRadius(100);
-    SpaceStation->setMinorRadius(20);
-    SpaceStation->setRings(72);
-    SpaceStation ->setSlices(40);
-    SpacestationEntity->addComponent(SpaceStation);
-
-    //add SpaceStation Transforms
-    Qt3DCore::QTransform *SpaceStationTransforms = new Qt3DCore::QTransform();
-    SpaceStationTransforms->setTranslation(QVector3D(0.0f, 0.0f, -50.0f));
-    SpaceStationTransforms->setRotationX(90.0f);
-    SpaceStationTransforms->setScale (0.05f);
-    SpacestationEntity->addComponent(SpaceStationTransforms);
-
-    //add SpaceStation Texture
-    Qt3DRender::QTextureImage *SpaceStationTexture = new Qt3DRender::QTextureImage;
-    Setup::SimObject = "Moon";
-    QString StationTextureFile = Initialize::StartupPath + "/Data-Pak/Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
-    QString StationObject = "file:" + StationTextureFile;
-
-
-    SpaceStationTexture->setSource (QUrl(StationObject));
-
-    Qt3DExtras::QDiffuseMapMaterial *SpaceStationDiffuse = new Qt3DExtras::QDiffuseMapMaterial;
-    SpaceStationDiffuse->setShininess (2.0);
-    SpaceStationDiffuse->setSpecular (QColor::fromRgbF(0.2, 0.2, 0.2, 1.0));
-    SpaceStationDiffuse->diffuse ()->addTextureImage (SpaceStationTexture);
-    SpacestationEntity->addComponent(SpaceStationDiffuse);
-
-    //add SpaceStation Animation
-    QPropertyAnimation *SpaceStationAnim = new QPropertyAnimation (SceneRoot);
-    SpaceStationAnim->setDuration (20000);
-    SpaceStationAnim->setStartValue(0.0f);
-    SpaceStationAnim->setEndValue(360.0f);
-    SpaceStationAnim->setLoopCount(-1);
-    SpaceStationAnim->setDirection(QAbstractAnimation::Forward);
-    SpaceStationAnim->setTargetObject(SpaceStationTransforms);
-    SpaceStationAnim->setPropertyName ("rotationY");
-    SpaceStationAnim->start ();
-
-    //Moon
-    //qDebug() << "Moon";
-
-    Qt3DCore::QEntity *MoonEntity = new Qt3DCore::QEntity(SceneRoot);
-
-    //Moon shape data
-    Qt3DExtras::QSphereMesh *MoonMesh = new Qt3DExtras::QSphereMesh();
-    MoonMesh->setSlices (72);
-    MoonMesh->setRings (72);
-    MoonMesh->setRadius(40);
-    MoonEntity->addComponent(MoonMesh);
-
-    // Add Moon Transforms
-    Qt3DCore::QTransform *MoonTransforms = new Qt3DCore::QTransform();
-    MoonTransforms->setTranslation(QVector3D(100.0f, 0.0f, -100.0f));
-    MoonTransforms->setRotationX(180.0f);
-    MoonTransforms->setRotationY(0.0f);
-    MoonTransforms->setRotationZ(0.0f);
-    MoonTransforms->setScale (0.123f);
-    MoonEntity->addComponent(MoonTransforms);
-
-    Qt3DRender::QTextureImage *MoonTexture = new Qt3DRender::QTextureImage;
-    Setup::SimObject = "Moon";
-    QString MoonTextureFile = "/Data=Pak/Location/" + Setup::SimLocation + "/" + Setup::SimObject + ".jpg";
-    QString MoonObject = "file:" + MoonTextureFile;
-
-    MoonTexture->setSource (QUrl(MoonObject));
-    Qt3DExtras::QDiffuseMapMaterial *MoonDiffuse = new Qt3DExtras::QDiffuseMapMaterial;
-    MoonDiffuse->setShininess (2.0);
-    MoonDiffuse->setSpecular (QColor::fromRgbF(0.2, 0.2, 0.2, 1.0));
-    MoonDiffuse->diffuse ()->addTextureImage (MoonTexture);
-    MoonEntity->addComponent(MoonDiffuse);
-
-    //add Moon Animations
-    QPropertyAnimation *MoonAnim = new QPropertyAnimation (SceneRoot);
-    //ObjectObj->setDuration (8640000);
-    MoonAnim->setDuration (2000);
-    MoonAnim->setStartValue(0.0f);
-    MoonAnim->setEndValue(360.0f);
-    MoonAnim->setLoopCount(-1);
-    MoonAnim->setDirection(QAbstractAnimation::Forward);
-    MoonAnim->setTargetObject(MoonTransforms);
-    MoonAnim->setPropertyName ("rotationY");
-    MoonAnim->start (); //needed for tidal locking
-
-    // SpaceCraft
-    //qDebug() << "SpaceCraft";
-
-    //connect(SceneLoader, SIGNAL(statusChanged()), this, SLOT(OnStatusChanged()));
-    // Scene loader
-
-    //SceneLoaderEntity = new Qt3DCore::QEntity(SceneRoot);
-    //SceneLoader = new Qt3DRender::QSceneLoader(SceneLoaderEntity);
-
-    //SceneLoaderEntity->addComponent(SceneLoader);
-
-    //Break down scene components
-
-    //Object Transforms
-
-    //Qt3DCore::QTransform *CraftTransforms = new Qt3DCore::QTransform();
-    //CraftTransforms->setTranslation(QVector3D(-100.0f, 0.0f, -100.0f));
-    //CraftTransforms->setRotationX(0.0f);
-    //CraftTransforms->setScale (1.0f);
-    //SceneLoaderEntity->addComponent(CraftTransforms);
-
-    //QDir Dir;
-    //QString directory = Dir.currentPath();
-    //qDebug() << "Current directory: " << directory;
-    QUrl SourceFileName;
-
-    //qDebug() << "Before: " << Setup::SimObject;
-    //Setup::SimLocation = "SpaceCraft";
-    //Setup::SimObject = "Enterprise";
-
-    //SourceFileName = "file:" + "/DataPak/Location/Object/" + Setup::SimLocation + "/" + Setup::SimObject + "/" + Setup::SimObject + ".obj";
-    //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Enterprise/Enterprise.obj";
-    //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Spider.obj";
-    //SourceFileName = "file:///" + directory +  "/" + "Objects/SpaceCraft/Spider/Enterprise.obj";
-    //qDebug() << "sourcefilename: " << SourceFileName;
-
-    SceneLoader->setSource(QUrl(SourceFileName));
-
-    //Qt3DRender::QTextureImage *ShipTexture = new Qt3DRender::QTextureImage;
-    //ShipTexture->setSource (QUrl(QStringLiteral("file:Objects/Moon.webp")));
-
-    Qt3DExtras::QDiffuseMapMaterial *ShipDiffuse = new Qt3DExtras::QDiffuseMapMaterial;
-    ShipDiffuse->setShininess (2.0);
-    ShipDiffuse->setSpecular (QColor::fromRgbF(0.2, 0.2, 0.2, 1.0));
-    //ShipDiffuse->diffuse ()->addTextureImage (ShipTexture);
-    SceneLoaderEntity->addComponent(ShipDiffuse);
-
-*/
-
 
     //Stars
 
@@ -583,13 +409,13 @@ Initialize::Initialize()
     //if (Setup::SimType == "Simulation" && Setup::SimBranch == "SpaceCraft")
 
 
-
+/*
     if (Setup::SimType == "Simulation")
     {
         CraftControls *Craft = new CraftControls(BasicCamera);
         Craft->exec();
     }
-
+*/
     if (Setup::SimType == "Training")
     {
         SimulatorControls *Sim = new SimulatorControls();
@@ -607,51 +433,4 @@ Initialize::~Initialize()
 
 }
 
-/*
-void Initialize::OnStatusChanged()
-{
-    //qDebug() << "Status changed:" << SceneLoader->status();
-    if (SceneLoader->status() != Qt3DRender::QSceneLoader::Ready)
-        return;
 
-    // The QSceneLoader instance is a component of an entity. The loaded scene
-    // tree is added under this entity.
-    QVector<Qt3DCore::QEntity *> entities = SceneLoader->entities();
-
-    // Technically there could be multiple entities referencing the scene loader
-    // but sharing is discouraged, and in our case there will be one anyhow.
-    if (entities.isEmpty())
-        return;
-    Qt3DCore::QEntity *root = entities[0];
-
-    // Print the tree.
-    //walkEntity(root);
-
-    // To access a given node (like a named mesh in the scene), use QObject::findChild().
-    // The scene structure and names always depend on the asset.
-    Qt3DCore::QEntity *e = root->findChild<Qt3DCore::QEntity *>(QStringLiteral("PlanePropeller_mesh")); // toyplane.obj
-    if (e)
-        //qDebug() << "Found propeller node" << e << "with components" << e->components();
-}
-
-*/
-
-
-/*
- *
-void Initialize::WalkEntity(Qt3DCore::QEntity *e, int depth)
-{
-    Qt3DCore::QNodeVector nodes = e->childNodes();
-    for (int i = 0; i < nodes.count(); ++i) {
-        Qt3DCore::QNode *node = nodes[i];
-        Qt3DCore::QEntity *entity = qobject_cast<Qt3DCore::QEntity *>(node);
-        if (entity) {
-            QString indent;
-            indent.fill(' ', depth * 2);
-            //qDebug().noquote() << indent << "Entity:" << entity << "Components:" << entity->components();
-            WalkEntity(entity, depth + 1);
-        }
-    }
-}
-
-*/

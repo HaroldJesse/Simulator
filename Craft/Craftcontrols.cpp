@@ -19,6 +19,7 @@ int CraftControls::Height = 0;
 CraftControls::CraftControls(Qt3DRender::QCamera *BasicCamera, QWidget *parent) :
         QDialog(parent),
         ui(new Ui::CraftControls)
+
 {
     ui->setupUi(this);
 
@@ -140,7 +141,9 @@ void CraftControls::CraftComputer (void)
         CompUp = true;
         ui->Computer->setStyleSheet(GrnRnd);
 
-        //ComputerControl *CompControl = new ComputerControl() ;
+        ComputerControls *CompControl = new ComputerControls() ;
+        CompControl->exec();
+
     }
 
     else
